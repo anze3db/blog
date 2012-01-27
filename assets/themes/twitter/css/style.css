@@ -12,17 +12,30 @@ p {
   text-align: justify;
   margin-bottom: 20px;
 }
+.brand{
+  font-weight: bold ! important;
+  font-family: 'Droid Serif', serif;
+}
+footer p{
+  font-size: 12px;
+  line-height: 10px;
+}
+
 h1{
   background-color: whiteSmoke;
   padding: 10px 20px;
   margin: 0px -20px 20px;
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
+  font-family: 'Droid Serif', serif;
 }
 h1 a, h1 a:hover{
   color:#333;
 }
-
+.brand{
+  font-size: 40px;
+  font-weight: bolder;
+}
 .container > footer p {
   text-align: center; /* center align it with the container */
 }

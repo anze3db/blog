@@ -1,6 +1,4 @@
-<h1>{{ page.title }} <small>Supporting tagline</small></h1>
-
-
+<h1>{{ page.title }}</h1>
 <div class="row">
   <div class="span10">
     {{ content }}
@@ -27,13 +25,14 @@
   <div class="span4">
     <h4>Published</h4>
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
-
-  {% unless page.tags == empty %}
+    {% unless page.tags == empty %}
     <h4>Tags</h4>
     <ul class="tag_box">
     {% assign tags_list = page.tags %}
     {% include JB/tags_list %}
     </ul>
+    <h4>Share</h4>
+    {% include JB/sharing %}
   {% endunless %}  
   </div>
 </div>

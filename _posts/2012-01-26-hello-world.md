@@ -5,5 +5,7 @@ category: test
 tags: [hello]
 ---
 {% include JB/setup %}
-
-    print "hello world"
+{% highlight python %}
+def fun():
+	print "hello world"
+{% endhighlight %}

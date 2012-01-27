@@ -12,6 +12,9 @@ p {
   text-align: justify;
   margin-bottom: 20px;
 }
+code {
+  background-color: transparent;
+}
 .brand{
   font-weight: bold ! important;
   font-family: 'Droid Serif', serif;

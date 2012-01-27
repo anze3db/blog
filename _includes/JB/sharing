@@ -28,7 +28,7 @@
 <script type="text/javascript" src="http://www.reddit.com/buttonlite.js?i=1"></script>
 </li>
 <li>
-<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+<div class="fb-like" data-send="false" data-layout="button_count" data-width="100" data-show-faces="true"></div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

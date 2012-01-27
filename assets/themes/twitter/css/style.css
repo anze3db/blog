@@ -35,8 +35,15 @@ h1 a, h1 a:hover{
 ul.share li{
 padding:6px 0px 0px;
 }
-
-
+.nav{
+  float:right ! important;
+}
+.tagline{
+  float:left;
+  color:#eee;
+  font-family: 'Droid Serif', serif;
+  line-height:40px;
+}
 .brand{
   font-size: 40px;
   font-weight: bolder;

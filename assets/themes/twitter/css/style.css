@@ -3,7 +3,6 @@ html, body {
   background-color: #eee;
 }
 body {
-  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
 }
 p {
   color:#444;
@@ -14,6 +13,11 @@ p {
 }
 code {
   background-color: transparent;
+  border: 0px;
+}
+h2 {
+margin-bottom:20px;
+color:green;
 }
 .brand{
   font-weight: bold ! important;
@@ -22,6 +26,7 @@ code {
 footer p{
   font-size: 12px;
   line-height: 10px;
+  margin-top:20px;
 }
 
 h1{
@@ -55,7 +60,6 @@ padding:6px 0px 0px;
   text-align: center; /* center align it with the container */
 }
 .container {
-  width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
 
 /* The white background content wrapper */
@@ -63,12 +67,12 @@ padding:6px 0px 0px;
   background-color: #fff;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 0 0 6px 6px;
-     -moz-border-radius: 0 0 6px 6px;
-          border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-          box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -webkit-border-radius: 6px 6px;
+     -moz-border-radius: 6px 6px;
+          border-radius: 6px 6px;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.15);
+          box-shadow: 0 1px 3px rgba(0,0,0,.15);
 }
 
 /* Page header tweaks */
@@ -100,8 +104,8 @@ padding:6px 0px 0px;
 .tag_box a {
 	padding: 3px 6px;
 	margin: 2px;
-	background: #eee;
-	color:#005F6B;
+	color: #eee;
+	background:#005F6B;
 	border-radius: 3px;
 	text-decoration:none;
 }

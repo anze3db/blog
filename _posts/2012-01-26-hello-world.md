@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "Hello world"
+title: "Hello World"
 category: test
-tags: [hello]
+tags: [code, meta]
 ---
 {% include JB/setup %}
 {% highlight python %}
-def fun():
-	print "hello world"
+print "hello world"
 {% endhighlight %}

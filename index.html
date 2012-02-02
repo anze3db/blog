@@ -1,11 +1,16 @@
 ---
 layout: home
-title: A geek's blog
+title: A Geek's Blog
 ---
 {% include JB/setup %}
 {% for post in site.posts %}
-<div>
 <h1><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
-<div>{{post.content}}</div>
+<div class="row">
+<div class="span9">{{post.content}}</div>
+{% assign page = post %}
+{% assign hide = True %}
+
+
+{% include JB/post_sidebar%}
 </div>
 {% endfor %}

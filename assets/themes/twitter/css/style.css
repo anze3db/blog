@@ -4,16 +4,22 @@ html, body {
 }
 body {
 }
-p {
+p, .content li {
   color:#444;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 20px;
   text-align: justify;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+}
+ol{
+  margin-left: 20px;
 }
 code {
   background-color: transparent;
   border: 0px;
+}
+pre {
+  margin-bottom: 18px;
 }
 h2 {
 margin-bottom:20px;

@@ -9,20 +9,23 @@ p, .content li {
   font-size: 15px;
   line-height: 20px;
   text-align: justify;
-  margin-bottom: 18px;
 }
 ol{
   margin-left: 20px;
 }
-code {
+pre code {
   background-color: transparent;
   border: 0px;
 }
 pre {
   margin-bottom: 18px;
 }
+code {
+  padding:4px;
+}
 h2 {
-margin-bottom:20px;
+margin-bottom:10px;
+margin-top:10px;
 color:#005F6B;
 }
 .brand{
@@ -47,8 +50,17 @@ h1 a, h1 a:hover{
   color:#333;
 }
 ul.share li{
-padding:6px 0px 0px;
+  padding:6px 0px 0px;
 }
+.follow {
+  color: gray;
+  font-size: 12px;
+  text-align: left;
+}
+.comment {
+  margin-bottom:18px;
+}
+
 .nav{
   float:right ! important;
 }

@@ -10,7 +10,6 @@
     {% endunless %}  
     {% unless post  %}
 	<h4>Share</h4>
-    {% include JB/sharing %}
-	{% endunless %}
-  </div>
-
+	{% include JB/sharing %}
+    {% endunless %}
+ </div>

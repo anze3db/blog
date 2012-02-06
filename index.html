@@ -6,11 +6,15 @@ title: A Geek's Blog
 {% for post in site.posts %}
 <h1><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
 <div class="row">
-<div class="span9">{{post.content}}</div>
+<div class="span9">
+	{{post.content}}
+	<hr>
+	<p class="comment">	
+	<a href="{{ post.url }}#disqus_thread">Add a comment</a>
+	</p>
+</div>
 {% assign page = post %}
 {% assign hide = True %}
-
-
 {% include JB/post_sidebar%}
 </div>
 {% endfor %}

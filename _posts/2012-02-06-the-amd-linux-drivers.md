@@ -14,7 +14,7 @@ Why did I put myself through this?
 Installing AMD drivers on Linux is never a pleasant experience and the open source drivers work out of the box, so why did I put myself through this? Well the open source drivers have a few shortcomings:
 
 1. Battery life: My laptop battery lasts roughly an hour longer on official drivers.
-2. GPU temperature: The core temperature is down to a pleasant 42 degrees (was 60+ on open source drivers).
+2. GPU temperature: The core temperature is down to a pleasant 42 degrees C (was 60+ on open source drivers).
 3. I can now run more graphically intensive applications (yay games!). 
 
 Full of hope that this new release will fix all the issues I had with previous versions, I embarked on an epic quest to get it working on my laptop.
@@ -50,7 +50,7 @@ There is a similar solution for the gnome-shell desktop. I had to add the line:
 
     export CLUTTER_VBLANK=none
 
-To the end of the `~/.profile` file and then everything seemed to be working. That was a fact until I tried to plug in my second monitor.
+to the end of the `~/.profile` file and then everything seemed to be working. That was a fact until I tried to plug in my second monitor.
 
 Multidisplay support
 --------------------

@@ -81,6 +81,66 @@ But this isn't an optimal solution as it has a few issues:
 
 There is probably a way to solve both of these issues, but my *google* skills have failed me, any ideas?
 
+*EDIT:* I managed to solve the both of these problems by copying an xorg.conf file from the Ubumtu 12.04 Beta 1:
+
+	Section "ServerLayout"
+		Identifier     "aticonfig Layout"
+		Screen      0  "aticonfig-Screen[0]-0" 0 0
+	EndSection
+
+	Section "Module"
+	EndSection
+
+	Section "Monitor"
+		Identifier   "aticonfig-Monitor[0]-0"
+		Option	    "VendorName" "ATI Proprietary Driver"
+		Option	    "ModelName" "Generic Autodetecting Monitor"
+		Option	    "DPMS" "true"
+	EndSection
+
+	Section "Monitor"
+		Identifier   "0-LVDS"
+		Option	    "VendorName" "ATI Proprietary Driver"
+		Option	    "ModelName" "Generic Autodetecting Monitor"
+		Option	    "DPMS" "true"
+		Option	    "PreferredMode" "1680x1050"
+		Option	    "TargetRefresh" "60"
+		Option	    "Position" "0 0"
+		Option	    "Rotate" "normal"
+		Option	    "Disable" "false"
+	EndSection
+
+	Section "Monitor"
+		Identifier   "0-CRT1"
+		Option	    "VendorName" "ATI Proprietary Driver"
+		Option	    "ModelName" "Generic Autodetecting Monitor"
+		Option	    "DPMS" "true"
+		Option	    "PreferredMode" "1680x1050"
+		Option	    "TargetRefresh" "60"
+		Option	    "Position" "1680 0"
+		Option	    "Rotate" "normal"
+		Option	    "Disable" "false"
+	EndSection
+
+	Section "Device"
+		Identifier  "aticonfig-Device[0]-0"
+		Driver      "fglrx"
+		Option	    "Monitor-LVDS" "0-LVDS"
+		Option	    "Monitor-CRT1" "0-CRT1"
+		BusID       "PCI:1:0:0"
+	EndSection
+
+	Section "Screen"
+		Identifier "aticonfig-Screen[0]-0"
+		Device     "aticonfig-Device[0]-0"
+		DefaultDepth     24
+		SubSection "Display"
+			Viewport   0 0
+			Virtual   3360 1680
+			Depth     24
+		EndSubSection
+	EndSection
+
 [1]: http://wiki.cchtml.com/index.php/Ubuntu_Oneiric_Installation_Guide#Installing_Proprietary_Drivers_a.k.a._Catalyst.2Ffglrx
 
 

@@ -104,6 +104,12 @@ ul.share li{
   border: 0;
 }
 
+.txt-img{
+float:right; 
+margin:0px 0px 5px 15px; 
+padding: 2px;
+border:2px solid #005F6B;
+}
 
 /* tag_box ======================================================== */
 

@@ -18,7 +18,6 @@ What does all this go to do with coding
 
 The number of keys on a keyboard is more or less fixed for all the countries round the world. This of course means that those extra letters need to replace other characters. To access those one must do some weird finger acrobatics. Let me give you an example. Writing square brackets (`[]`) is really easy on a English keyboard, but on a Slovenian one it requires you to press two keys `alt gr` and  `f` for \[ and `alt gr` and  `g` for \]. It is similar with curly brackets, the afna symbol, backslash and so on. These are all characters that programmers use very often and having to excess them by weird keyboard combinations is annoying to say the least.
 
-
 Reasons why I now code on a English layout
 -------------------------------------
 

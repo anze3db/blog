@@ -17,23 +17,23 @@ Unless you have been living under a rock, you probably already know what a Raspb
 Why do I want one
 -----------------
 
-I already own a similar device - an ARMv5 board whith a 196MHz processor and some RAM. I use it to run an annoying IRC bot, that logs our chats and tells us when a link is a repost (some of it's code is on [Github](https://github.com/Smotko/botko), but I must warn you that it isn't written very well). This little ARM board is great, but I have run into a few problems with it. I haven't managed to get git working, as all of my crosscompiling attempts have failed and compiling on the actual board takes forever before it throws up a random error. To be fair, I had this problem with everything that isn't in the default buildroot environment, which only contains a handful of applications I would like to use.
+I already own a similar device - an ARMv5 board whith a 196MHz processor and some RAM. I use it to run an annoying IRC bot, that logs our chats and tells us when a link is a repost (some of it's code is on [Github](https://github.com/Smotko/botko), but I must warn you that it isn't written very well). This little ARM board is great, but I have ran into a few problems with it. I haven't managed to get git working, as all of my crosscompiling attempts have failed and compiling on the actual board takes forever before it throws up a random error. To be fair, I had this problem with everything that isn't in the default buildroot environment, which only contains a handful of applications I would like to use.
 
-Raspberry Pi is, on the other hand, backed up by actual Linux distributions (Arch, Debian and Fedora) and I am very confident, that installing software will not be such a pain. This will of course make the Pi useful for many things. Here are a few things that come to mind: 
+Raspberry Pi is, on the other hand, backed up by actual Linux distributions (Arch, Debian and Fedora) and I am very confident, that installing software will not be such a pain. This will of course make the Pi useful for many things. Here are a few that come to mind: 
 
 * Host for private git repositories,
 * simple webserver for testing out things like nodejs,
 * SSH "entrance" for my home network,
 * my IRC chat bot.
 
-The Raspberry Pi is ideal for this as it has a processor that can tackle all of these things, and, as it doesn't have any movable parts, is completely silent. It also uses a small amount of energy which is always a good thing.
+The Raspberry Pi is ideal for this as it has a processor that can tackle all of these things and is completely silent, as it doesn't have any movable parts. To top off, it uses only a small amount of energy.
 
 And much more
 -------------
 
 The stuff I mentioned so far is just the geeky stuff that I will be doing as soon as I get my new board. There are many uses for it for less techy users as well. It  can be used as a movie player (it even plays full hd videos), and it can probably transform ones USB hard drive into a network disk. As it can run a desktop environment it could even be used for some simple office work or web browsing.
 
-How about you
+What about you
 -------------
 
 What are you going to do with your Raspberry 3.14?

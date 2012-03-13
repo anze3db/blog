@@ -36,4 +36,4 @@ The stuff I mentioned so far is just the geeky stuff that I will be doing as soo
 What about you
 -------------
 
-Do you have any great ideas? What are you going to do with your Raspberry 3.14?
+Do you have any ideas? What are you going to do with your Raspberry 3.14?

@@ -6,7 +6,7 @@ tags: [hardware, fun]
 ---
 {% include JB/setup %}
 
-A week or so ago I was able to preorder a little piece of hardware named Raspberry Pi. On the day the thing got released I and quite a few other people from the internets managed to take down both Farnell and RS Components websites. I heard the first 10.000 units sold out in 7 minutes or so. Wow!
+A week or so ago I was able to preorder a little piece of hardware named Raspberry Pi. On the day the thing got released I and quite a few other people, managed to take down websites from Farnell and RS Components. The first 10.000 units sold out in 7 minutes or so. 
 
 What is it
 ----------

@@ -2,7 +2,7 @@
 layout: post
 title: "My plans for Raspberry Pi"
 category: 
-tags: [programming, development, coding]
+tags: [hardware, fun]
 ---
 {% include JB/setup %}
 

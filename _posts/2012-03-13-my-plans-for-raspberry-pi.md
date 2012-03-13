@@ -26,7 +26,7 @@ Raspberry Pi is, on the other hand, backed up by actual Linux distributions (Arc
 * SSH "entrance" for my home network,
 * my IRC chat bot.
 
-The Raspberry Pi is ideal for this as it has a processor that can tackle all of these things and is completely silent, as it doesn't have any movable parts. To top off, it uses only a small amount of energy.
+The Raspberry Pi is ideal for this as it has a processor that can tackle all of these things and is completely silent, as it doesn't need a fan. To top off, it uses only a small amount of energy.
 
 And much more
 -------------

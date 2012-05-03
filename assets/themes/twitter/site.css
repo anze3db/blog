@@ -1,0 +1,16 @@
+.navbar-inner{
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+
+
+}
+.navbar-inner a, .navbar-inner .tagline{
+}
+html,body{
+	background-color: #f2f1f0;
+}
+
+code{
+    color: #111;
+}

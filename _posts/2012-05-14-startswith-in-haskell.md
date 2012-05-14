@@ -6,7 +6,7 @@ tags: [coding, programming, fun]
 ---
 {% include JB/setup %}
 
-So I started learning Haskell a day or so ago. I dived right into http://learnyouahaskell.com/ and read through the first few chapters. As soon as I learned how to write an if statement and got familiar with some basic list functions (head, tail and such) I started experimenting with my own code. I don't know why, but I decided to implement a simple startsWith function, here is the first version:
+So I started learning Haskell a day or so ago. I dived right into <http://learnyouahaskell.com> and read through the first few chapters. As soon as I learned how to write an if statement and got familiar with some basic list functions (head, tail and such) I started experimenting with my own code. I don't know why, but I decided to implement a simple startsWith function, here is the first version:
 
 {% highlight haskell %}
     startsWith' l s =

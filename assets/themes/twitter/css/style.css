@@ -26,7 +26,6 @@ code {
 h2 {
 margin-bottom:10px;
 margin-top:10px;
-color:#005F6B;
 }
 .brand{
   font-weight: bold ! important;
@@ -108,7 +107,7 @@ ul.share li{
 float:right; 
 margin:0px 0px 5px 15px; 
 padding: 2px;
-border:2px solid #005F6B;
+border:5px solid #EEE;
 }
 
 /* tag_box ======================================================== */
@@ -128,8 +127,8 @@ border:2px solid #005F6B;
 .tag_box a {
 	padding: 3px 6px;
 	margin: 2px;
-	color: #eee;
-	background:#005F6B;
+	color: #222;
+	background:#EEE;
 	border-radius: 3px;
 	text-decoration:none;
 }

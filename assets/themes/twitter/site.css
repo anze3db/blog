@@ -2,15 +2,25 @@
 	-webkit-border-radius: 0px !important;
 	-moz-border-radius: 0px !important;
 	border-radius: 0px !important;
-
-
 }
 .navbar-inner a, .navbar-inner .tagline{
 }
 html,body{
-	background-color: #f2f1f0;
+	background-color: white;
 }
 
 code{
     color: #111;
+}
+
+h1 {
+    background-color:white;   
+    border-top:0px;
+}
+
+.content{
+    box-shadow: none;
+}
+.navbar{
+    margin-bottom:0px;
 }

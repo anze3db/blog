@@ -32,3 +32,8 @@ Why is this happening?
 
 I don't really care about the solution, I will never be serving static files from a shared folder. But I would like to know **why** this is happening. From what I can tell, the file edited on my local machine is identical in every way to the file edited on the server and yet Nginx does not agree. Is this a bug in nginx? Is this a bug in vboxfs? Am I doing something wrong? What is going on here?
 
+Update:
+-------
+
+Thanks to a comment on [reddit](http://www.reddit.com/r/linux/comments/12ssxq/i_ran_into_a_really_strange_issue_with_nginx_and/c6xvzv3) I have solved the issue. I needed to set the `sendfile off` flag in the nginx config.
+

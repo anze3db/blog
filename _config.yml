@@ -10,7 +10,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : A Geek's Blog
-tagline : hacking, web, android, linux and dragons
+tagline : gamedev, web, android, linux and dragons
 author :
   name : Smotko
   email : smotko@smotko.si 

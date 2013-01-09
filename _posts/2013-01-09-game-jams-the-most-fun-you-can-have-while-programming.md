@@ -54,7 +54,7 @@ We were coding almost nonstop for 48 hours and we had fun all the way to the las
 I was doing the jump animation for the icecube and I messed up a value by a factor of 100. It made
 the cube taller than the height of the level for a few seconds and then small again. It was hilarious. 
 
-I don't even care if we win a prize (we probably won't, our game sucks, hehe), we had fun and we learned a lot of cool new things (webgl with three.js!). 
+I don't even care if we win a prize (we probably won't, our game sucks, haha), we had fun and we learned a lot of cool new things (webgl with three.js!). 
 
 Go do it!
 --------

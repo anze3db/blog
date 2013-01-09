@@ -9,7 +9,7 @@ tags: [gamedev, programming]
 Programming is a lot of fun. It's an awesome feeling when your code compiles without 
 errors, the app passes all the tests, and runs without any (noticeable) bugs. 
 It's an awesome feeling even if you are working on a boring enterprise app. You made the primitive machine under your keyboard *do* something.
-If this isn't amazing I don't know what is. 
+If that isn't amazing I don't know what is. 
 
 Now take the satisfaction you get when you produce working code and multiply it by 100. This is how awesome 
 it feels when you are making a game.

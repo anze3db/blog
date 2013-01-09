@@ -48,8 +48,8 @@ probably going to be buggy and unfinished you will be able to play it. And it wi
 
 Our Indie Speed Run
 ------------------
-<a href=""><img src="/assets/pics/indiespeedrun.png" title="Screenshot of our game" style="float:right; margin:5px 0px 5px 10px; border:5px solid #EEE;" /></a>
-Me and a few of my friends did the the [Indie Speed Run](http://www.indiespeedrun.com/) a week before new year's (you can actually play our game [here]()). 
+<a href="http://www.escapistmagazine.com/content/indie-speed-run/?game=111"><img src="/assets/pics/indiespeedrun.png" title="Screenshot of our game" style="float:right; margin:5px 0px 5px 10px; border:5px solid #EEE;" /></a>
+Me and a few of my friends did the the [Indie Speed Run](http://www.indiespeedrun.com/) a week before new year's (you can actually play our game [here](http://www.escapistmagazine.com/content/indie-speed-run/?game=111)). 
 We were coding almost nonstop for 48 hours and we had fun all the way to the last second. At one point I couldn't stop laughing. 
 I was doing the jump animation for the icecube and I messed up a value by a factor of 100. It made
 the cube taller than the height of the level for a few seconds and then small again. It was hilarious. 

@@ -2,7 +2,7 @@
 layout: post
 title: "Useful GNU/Linux tools"
 category: 
-tags: [linux]
+tags: [linux,bash]
 ---
 {% include JB/setup %}
 

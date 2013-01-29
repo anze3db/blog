@@ -6,7 +6,7 @@
 .navbar-inner a, .navbar-inner .tagline{
 }
 html,body{
-	background: url('/assets/patrn.png');
+    background: url('/assets/patrn.png');
 }
 
 code{

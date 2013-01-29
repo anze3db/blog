@@ -2,7 +2,7 @@
 layout: post
 title: "Useful GNU/Linux tools"
 category: 
-tags: [linux,bash]
+tags: [linux, bash]
 ---
 {% include JB/setup %}
 
@@ -23,7 +23,7 @@ rmr
 
     find . -name $1 | xargs rm
     
-`rmr` is similar to grepr. It makes the rm utility recursive. It's useful when you have a bunch of files that end up with .orig in multiple subfolders. You would just write rmr *.orig to delete them all.
+`rmr` is similar to grepr. It makes the rm utility recursive. It's useful when you have a bunch of files that end up with .orig in multiple subfolders. You would just write rmr \*.orig to delete them all.
 
 
 sedre

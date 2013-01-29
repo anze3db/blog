@@ -2,6 +2,6 @@
 
 $(document).ready(function() {
 
-    $('.side').jScroll();
+    $('.side').jScroll({top:60});
 
 });

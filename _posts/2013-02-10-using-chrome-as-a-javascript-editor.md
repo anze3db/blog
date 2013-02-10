@@ -25,7 +25,7 @@ You can even have the editor side by side with the web page:
 
 Most importantly it supports **hot swapping out of the box**. When you press `control+s` Chrome will start using the updated file immediately. The need for refreshing the page will greatly decrease.
 
-Saving the files locally
+Saving files locally
 -----------------------
 
 By default changes made will be lost when you refresh the page. But with right clicking the source file you can choose the `Save As...` option. Now just point the dialogue box to your local version of the site and now all the changes you make will get written to you hard drive. Awesome! 

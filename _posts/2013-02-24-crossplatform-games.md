@@ -6,7 +6,7 @@ tags: [gamedev, web, webgl]
 ---
 {% include JB/setup %}
 
-So you want to create a cross-platform game that works on all the major operating system and mobile as well? Here are some of your options:
+So you want to create a cross-platform game that works on all the major operating systems and mobile as well? Here are some of your options:
 
 2D Canvas
 ---------
@@ -27,12 +27,12 @@ LycheeJS
 libgdx
 ------
 
-[LibGDX](http://libgdx.badlogicgames.com/) is a game framework written in Java. It allows you to write your game from the comfort of your desktop and it even has code [hot swapping](http://smotko.si/hotswapping/) support. It uses Google Web Toolkit for porting to the web and Xamarin.iOS for iOS, but the latter requires a license.
+[LibGDX](http://libgdx.badlogicgames.com/) is a game framework written in Java. It allows you to write your game from the comfort of your desktop and it even has code [hot swapping](http://smotko.si/hotswapping/) support. Supported platforms are: Windows, Linux, Mac OS X, Android (1.5+), iOS (requires a MonoTouch license, 79$ for students, 399$ otherwise), Javascript/WebGL (GWT).
 
 MonoGame
 --------
 
-[Monogame](http://monogame.codeplex.com/) is an opensource implementation of the XNA Framework. It's goal is to allow developers to port their games to all the major operating systems including Linux, iOS and Android. Only 2D games are supported on iOS and Android at the moment though.
+[Monogame](http://monogame.codeplex.com/) is an opensource implementation of the XNA Framework. It's goal is to allow developers to port their games to all the major operating systems including Linux, iOS and Android. Only 2D games are supported on iOS and Android at the moment though and you need a xamarin license if you want to sell your games.
 
 Unity
 -----

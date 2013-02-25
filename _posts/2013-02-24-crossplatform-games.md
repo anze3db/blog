@@ -6,7 +6,7 @@ tags: [gamedev, web, webgl]
 ---
 {% include JB/setup %}
 
-So you want to create a cross-platform game? Here are your options:
+So you want to create a cross-platform game that works on all the major operating system and mobile as well? Here are some of your options:
 
 2D Canvas
 ---------

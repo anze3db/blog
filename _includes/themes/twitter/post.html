@@ -1,8 +1,10 @@
 <h1>{{ page.title }}</h1>
 <div class="row">
-  <div class="span9">
+  <div class="span12">
     {{ content }}
-    <hr>
+
+    <p class='shameless_self_promotion'>Need a freelance developer? 
+   <a href="mailto:smotko@smotko.si">Email me!</a></p>
     <div class="pagination">
       <ul>
       {% if page.previous %}
@@ -18,7 +20,7 @@
       {% endif %}
       </ul>
     </div>
-
+    
     <hr>
     {% include JB/comments %}
     <hr>
@@ -30,5 +32,5 @@
 
     </p>
   </div>
-  {% include JB/post_sidebar%}  
+  
 </div>

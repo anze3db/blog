@@ -9,6 +9,12 @@ html,body{
     background: url('/assets/patrn.png');
 }
 
+p {
+    font-size: 17px;
+    line-height: 24px;
+
+}
+
 code{
     color: #111;
 }
@@ -16,6 +22,18 @@ code{
 h1 {
     background-color:white;   
     border-top:0px;
+}
+
+h2 {
+    margin: 20px 0px !important;
+}
+
+.shameless_self_promotion{
+    font-size: 19px !important;
+    
+    
+    margin: 40px 0px;
+    
 }
 
 .content{

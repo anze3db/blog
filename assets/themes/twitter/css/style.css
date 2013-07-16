@@ -5,7 +5,6 @@ html, body {
 body {
 }
 p, .content li {
-  color:#444;
   font-size: 15px;
   line-height: 20px;
   text-align: justify;
@@ -81,7 +80,6 @@ ul.share li{
 
 /* The white background content wrapper */
 .content {
-  background-color: #fff;
   padding: 20px;
   margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 6px 6px;

@@ -52,7 +52,14 @@ h2 {
     padding: 12px 20px 12px;
 }
 .tagline{
-    line-height:44px;
+    line-height:48px;
+    color: #fff ! important;
+    font-size: 15px ! important;
+}
+.navbar .nav>li>a {
+    font-size: 15px ! important;
+    line-height:23px ! important;
+    color: white ! important;
 }
 .middlepic{
     margin:15px auto; 

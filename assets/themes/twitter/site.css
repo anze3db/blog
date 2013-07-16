@@ -38,11 +38,10 @@ h2 {
 .content{
     box-shadow: none;
     background-color: none ! important;
-    margin-top: 80px;
+    margin-top: 10px;
 }
 .navbar{
     margin-bottom:0px;
-    position: fixed;
     width: 100%;
     z-index: 999;
 }
@@ -54,4 +53,8 @@ h2 {
 }
 .tagline{
     line-height:44px;
+}
+.middlepic{
+    margin:15px auto; 
+    display:block;
 }

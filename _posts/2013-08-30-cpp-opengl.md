@@ -28,6 +28,11 @@ mobile applications I've managed to found. (I have also tried with OGRE and SDL)
 
 Now lets see if I can make this prototype into something actually useful.
 
+PS
+--
+
+You can check out the source code on [Github](https://github.com/Smotko/graph), but there is not much there yet.
+
 ---------------------------------------
 
 <p><sup id="win">1</sup> Not on tablets and phones running Windows though. It seems to be the only mobile platform not using OpenGL ES.</p>

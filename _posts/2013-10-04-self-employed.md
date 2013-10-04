@@ -9,7 +9,7 @@ tags: [life, freelancing, work]
 It's Friday night and I've just survived my first week of being self-employed. It's been a helluva ride getting all
 the paperwork straightened out, finding an accountant, opening a new bank account, sending out invoices, and, the most frightening of all, actually talking to *people*. 
 I much prefer talking to computers - programming, solving problems or even dealing with merge conflicts, but I'm an adult now 
-and I'm told I can't just play round and code all day anymore.
+and I'm told I can't just play around and code all day anymore.
 
 <img src="/assets/pics/runkeeper.png" title="My Cycling Activites" class="middlepic" alt="3D graph" />
 

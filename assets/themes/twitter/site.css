@@ -2,17 +2,21 @@
 	-webkit-border-radius: 0px !important;
 	-moz-border-radius: 0px !important;
 	border-radius: 0px !important;
+
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }
 .navbar-inner a, .navbar-inner .tagline{
 }
 html,body{
-    background: url('/assets/pattern.png');
+    background-color:#FEFEFE;
+    font-family: "Lora",Georgia,"Times New Roman",Times,serif;
 }
 
 p {
-    font-size: 17px;
-    line-height: 24px;
-
+    font-size: 20px;
+    line-height: 30px;
 }
 
 code{

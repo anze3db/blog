@@ -5,19 +5,21 @@ category:
 tags: [sideprojects, freelancing, work, fun, webdev, css]
 ---
 {% include JB/setup %}
-
+<img src="/assets/pics/windowshopper.gif" alt="gif showing how the animation looks like" style="float: right;
+margin: 0 0 0 15px;
+border-radius: 10px;
+border: 1px solid #666;" />
 Recently, I've helped in the making of a cool little side project <a href="http://windowshopper.me">WindowShopper</a>. 
 
 My task (among other things) was to make sure the experience on mobile devices is as fun as possible. We drew upon heavily from
-the awesome Tinder app, which is a joy to use - mostly due to the slick swipe gestures and animations. 
+the awesome <a href="http://www.gotinder.com/">Tinder app</a>, which is a joy to use, mostly due to the slick swipe gestures and animations. 
 
-Even though, we were making a web application, we wanted a similar experience for our app as well. This is the end result using a pinch 
-of JavaScript and the awesome CSS3 animations: 
 
-(TODO: turn this into a gif: [http://www.youtube.com/watch?v=mAkHVxp7Cgg])
+Even though, we were making a web application, we wanted a similar experience for our app as well. On the right you can see the end result which using a pinch 
+of JavaScript and the awesome CSS3 animations. 
 
-*The gif was captured on a 3 year old Android phone, while running recording software in the background. In real life it's
-even smoother, try it out yourself!*
+The gif was captured on a 3 year old Android phone while running recording software in the background. In real life it's
+even smoother, try it out yourself!
 
 CSS3 animations are amazing
 ---------------------------

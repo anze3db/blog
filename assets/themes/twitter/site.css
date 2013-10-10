@@ -6,6 +6,9 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+
+    background-image: none;
+    background-color: #006D88;
 }
 html,body{
     background-color:#FEFEFE;
@@ -14,7 +17,7 @@ html,body{
 
 p {
     font-size: 16px;
-    line-height: 30px;
+    line-height: 26px;
 }
 
 code{
@@ -24,6 +27,10 @@ code{
 h1 {
     border-top:0;
     font-size: 40px;
+    color: #006D88 ;
+}
+h2,a, h1 a{
+    color: #006D88;
 }
 
 

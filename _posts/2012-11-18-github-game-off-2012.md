@@ -12,8 +12,6 @@ Here is a screenshot:
 
 <a href="/assets/pics/game-off-2012.png" style="text-align:center;"><img class="" src="/assets/pics/game-off-2012.png"  width="700" alt="Ducking hipster" /></a>
 
-
-
 There is still a lot on my TODO list though
 -------------------------------------------- 
 

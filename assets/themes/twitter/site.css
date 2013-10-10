@@ -1,13 +1,11 @@
 .navbar-inner{
-	-webkit-border-radius: 0px !important;
-	-moz-border-radius: 0px !important;
-	border-radius: 0px !important;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
-}
-.navbar-inner a, .navbar-inner .tagline{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 html,body{
     background-color:#FEFEFE;
@@ -15,7 +13,7 @@ html,body{
 }
 
 p {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 30px;
 }
 
@@ -24,46 +22,45 @@ code{
 }
 
 h1 {
-    border-top:0px;
+    border-top:0;
+    font-size: 40px;
 }
 
-h2 {
-    margin: 20px 0px !important;
-}
+
 
 .shameless_self_promotion{
-    font-size: 19px !important;
-    
-    
-    margin: 40px 0px;
+    font-size: 20px;
+    margin: 40px 0;
     
 }
 
 .content{
     box-shadow: none;
-    background-color: none ! important;
+    background-color: transparent;
     margin-top: 10px;
 }
 .navbar{
-    margin-bottom:0px;
+    margin-bottom:0;
     width: 100%;
     z-index: 999;
 }
 .navbar .nav{
-    margin: 2px 10px 0px 0px;
+    margin: 4px 10px 0 0;
 }
 .navbar .brand{
+    font-size: 26px;
     padding: 12px 20px 12px;
 }
 .tagline{
     line-height:48px;
-    color: #fff ! important;
-    font-size: 15px ! important;
+    color: #fff;
+    font-size: 18px;
+    display:none;
 }
 .navbar .nav>li>a {
-    font-size: 15px ! important;
-    line-height:23px ! important;
-    color: white ! important;
+    font-size: 20px;
+    line-height:23px;
+    color: white;
 }
 .middlepic{
     margin:15px auto; 

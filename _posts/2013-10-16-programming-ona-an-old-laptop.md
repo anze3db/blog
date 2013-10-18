@@ -37,7 +37,7 @@ less than 1000 pixels of height and it's quite scary it's still quite common tod
 The case is a bit bumped and dented (it survived a few falls), but I wouldn't say it shows it's age. I've been taking good
 care of it.
 
-I bought an SSD disk two years ago and it really helps with startup times - I'd probably go crazy without the SSD many moons ago. 
+I bought an SSD two years ago and it really helps with startup times - I'd probably go crazy without the SSD many moons ago. 
 And this was the only upgrade I made. I did consider adding some more RAM, but DDR2 is too expensive. I'll just have to make do with 4GB
 until I switch to a laptop with DDR3.
 

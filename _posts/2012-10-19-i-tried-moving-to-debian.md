@@ -4,7 +4,7 @@ title: "I tried moving to Debian"
 category: 
 tags: [linux, fail, ubuntu]
 ---
-{% include JB/setup %}
+
 
 Yesterday I decided it was time to say goodbye to Ubuntu 12.04 and move to Debian Wheezy. This wasn't due to the controversial changes Ubuntu made this release cycle, I don't mind uninstalling a lens I find annoying. I couldn't upgrade to 12.10 because the legacy fglrx drivers no longer work with kernel 3.5. I still wanted to try out something new though, hence Wheezy.
 

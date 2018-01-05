@@ -4,7 +4,7 @@ title: "The Chrome Javascript editor can do hot swapping"
 category: 
 tags: [gamedev, web, javascript]
 ---
-{% include JB/setup %}
+
 
 Hot swapping is the process of replacing code while the application is *running*. It allows a developer to see changes immediately - no recompiling, no waiting on page reloads, and no clicking to get to the application state where the code was changed. Just save the file and you'll see the changes.
 

@@ -4,7 +4,7 @@ title: "Creating Tinder like animations with CSS"
 category: 
 tags: [sideprojects, freelancing, work, fun, webdev, css]
 ---
-{% include JB/setup %}
+
 <img src="http://i.imgur.com/NkVwpKT.gif" alt="gif showing how the animation looks like" style="float: right;
 margin: 0 0 0 15px;
 border-radius: 10px;

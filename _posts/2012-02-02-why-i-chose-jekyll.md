@@ -4,7 +4,7 @@ title: "Why I chose Jekyll"
 category: 
 tags: [meta, blog]
 ---
-{% include JB/setup %}
+
 
 Choosing a blogging platform that  you like may seem trivial to some, but not to me. All the blogging platforms out there seem either too simple or too complicated for me. This is why I have always resorted to writing my own simple CMS, but the problem was that my own CMS was even worse than all the others. At first it seemed like it suits my needs but I ended up hating it nonetheless.
 

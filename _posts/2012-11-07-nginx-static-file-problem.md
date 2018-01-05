@@ -4,7 +4,7 @@ title: "Nginx and VirtualBox shared folders"
 category: 
 tags: [wtf, web, nginx]
 ---
-{% include JB/setup %}
+
 
 I found something really peculiar. If you are trying to serve static files with Nginx from a Virtualbox Shared folder, you are going to have a bad time. I agree, you shouldn't be doing this in the first place, but this issue is so weird I really had to write a blog post about it. 
 

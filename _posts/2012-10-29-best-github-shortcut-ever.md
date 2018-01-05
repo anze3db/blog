@@ -4,7 +4,7 @@ title: "Best Github shortcut ever"
 category: 
 tags: [mindblow, fun, git]
 ---
-{% include JB/setup %}
+
 
 Today I watched [this awesome talk](http://confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets) and it blew my mind. I never knew how many *secret* features github actually has. The talk is rather long, so let me just highlight the best shortcuts mentioned.
 

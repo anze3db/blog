@@ -4,7 +4,7 @@ title: "Disqus redesigned"
 category: 
 tags: [blog, meta]
 ---
-{% include JB/setup %}
+
 
 A couple of days ago I noticed Disqus started experimenting with a new design. Because I am always eager to try out new things I requested an invite immediatly. One day later I received an email informing me I can activate the new design on my sites.
 

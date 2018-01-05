@@ -4,7 +4,7 @@ title: "Cross-platform Games"
 category: 
 tags: [gamedev, web, webgl]
 ---
-{% include JB/setup %}
+
 
 So you want to create a cross-platform game that works on all the major operating systems and mobile as well? Here are some of your options:
 

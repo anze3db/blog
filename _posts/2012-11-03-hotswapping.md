@@ -4,7 +4,7 @@ title: "Why don't we have code hot swapping on mobile?"
 category: 
 tags: [gamedev, programming, android, mobile]
 ---
-{% include JB/setup %}
+
 
 Code hot swapping is one of the most useful features a language can offer. It allows the developer to see changes as soon as he saves the source code. No restarting needed, your changes just pop up on the screen and your application state is preserved. Hot swapping magically updates method runtimes and gives you **immediate feedback**. This is invaluable and double so for developing graphical applications such as games. You don't believe me, checkout [this talk](http://vimeo.com/36579366#at=3).
 

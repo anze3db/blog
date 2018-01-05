@@ -4,7 +4,7 @@ title: "Game Jams: The most fun you can have while programming"
 category: 
 tags: [gamedev, programming]
 ---
-{% include JB/setup %}
+
 
 Programming is a lot of fun. It's an awesome feeling when your code compiles without 
 errors, the app passes all the tests, and runs without any (noticeable) bugs. 

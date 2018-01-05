@@ -4,7 +4,7 @@ title: "Useful GNU/Linux tools"
 category: 
 tags: [linux, bash]
 ---
-{% include JB/setup %}
+
 
 GNU/Linux is awesome because it gives you a whole lot of simple but useful tools that you can play with. Utilities like `dd`, `sed`, `grep`, `rm`, `find`, `ssh` and many others all have a small sea of parameters that make them do exactly what you want. 
 

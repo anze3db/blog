@@ -4,7 +4,7 @@ title: "Navbar in Django Admin"
 category: 
 tags: [django, python, coding]
 ---
-{% include JB/setup %}
+
 
 I wanted to add navigation to the Django top bar. The idea was that all of the installed apps should show up in the navbar beside the brand name. This is a screenshot of the working solution in action:
 

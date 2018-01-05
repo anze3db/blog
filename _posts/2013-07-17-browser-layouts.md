@@ -4,7 +4,7 @@ title: "Shrinking the address bar width in browsers"
 category: 
 tags: [web, browsers]
 ---
-{% include JB/setup %}
+
 
 Most modern browsers have a huge address bar that makes up a huge chunk of the browser chrome:
 

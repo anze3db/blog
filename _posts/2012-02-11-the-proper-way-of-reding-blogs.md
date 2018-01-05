@@ -4,7 +4,7 @@ title: "The proper way of reading blogs"
 category: 
 tags: []
 ---
-{% include JB/setup %}
+
 
 Reading blogs is something I believe every developer should do often. Not only is it a good way to broaden ones horizon and get up to date with all the great things happening round the world, you can also get in touch with the author and have a discussion about the subject in the comments. 
 

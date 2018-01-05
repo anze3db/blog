@@ -3,7 +3,6 @@
 permalink: /:title
 
 exclude: [".rbenv-version", "README.md", "Rakefile"]
-auto: true
 
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
@@ -27,4 +26,3 @@ author :
 #
 
 production_url : https://smotko.si
-theme: jekyll-theme-cayman

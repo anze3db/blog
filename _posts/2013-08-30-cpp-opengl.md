@@ -4,7 +4,7 @@ title: "Using a game engine to draw a 3D graph crossplatform"
 category: 
 tags: [gamedev, 3d, android]
 ---
-{% include JB/setup %}
+
 
 It was just a matter of time until my game development hobby started creeping into my *serious* work. I have made 
 an application prototype, that draws a 3D graph, using what is essentially a game engine. The application can be run

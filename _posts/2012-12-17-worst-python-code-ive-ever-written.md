@@ -4,7 +4,7 @@ title: "Worst python code I've ever written"
 category: 
 tags: [python, code]
 ---
-{% include JB/setup %}
+
 
 I was doing my homework for the bioinformatics class when I started experimenting with scope in Python. The first thing I noticed 
 was that Python list comprehensions don't create a closure. This means that variables defined in the list comprehension 

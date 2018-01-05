@@ -4,7 +4,7 @@ title: "Can I write a blog post on this?"
 category: 
 tags: [blog, writing, fun, hardware]
 ---
-{% include JB/setup %}
+
 
 Recently I've bought a small bluetooth keyboard for my nexus 7. And when I say small I actually mean tiny. The keyboard is as big as the tablet.
 

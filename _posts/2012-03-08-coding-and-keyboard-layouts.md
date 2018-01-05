@@ -4,7 +4,7 @@ title: "Coding and keyboard layouts"
 category: 
 tags: [programming, development, coding]
 ---
-{% include JB/setup %}
+
 
 Keyboard layouts are important, especially for us programmers, as we spend most of the day cranking out code. But some layouts seem to be better for coding than others. I have recently switched from Slovenian layout to the English one and I am really happy with my decision. Let me tell you why. 
 

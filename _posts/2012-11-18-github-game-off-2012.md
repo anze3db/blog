@@ -4,7 +4,7 @@ title: "My Github Game Off Submission"
 category: 
 tags: [gamedev, coding, fun]
 ---
-{% include JB/setup %}
+
 
 I've started working on a simple webgl game, and after just 4 days of development it's already sort of playable. You can go ahead and [try it out](http://psywerx.github.com/game-off-2012/) right now.
 

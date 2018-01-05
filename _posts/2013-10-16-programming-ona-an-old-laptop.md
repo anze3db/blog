@@ -4,7 +4,7 @@ title: "Programming on a 5 year old laptop"
 category: 
 tags: [hardware, fun, work, fun]
 ---
-{% include JB/setup %}
+
 
 <img alt="the laptop" class="txt-img" style="width: 400px;" 
 src="/assets/pics/laptop.jpg" />

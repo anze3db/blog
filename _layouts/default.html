@@ -2,5 +2,46 @@
 theme :
   name : twitter
 ---
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/vim.css" rel="stylesheet">
+    <link href="/assets/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/assets/site.css" rel="stylesheet">
+    <script src="/assets/jquery.js"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">{{ site.title }}</a> <div class="tagline">{{site.tagline}}</div>
+          <ul class="nav">
+            <li><a href="/contact/index.html">Contact me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="content">
+        {{ content }}
+      </div>
+    </div> <!-- /container -->
+  </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4205070-25"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4205070-25');
+  </script>
+</html>

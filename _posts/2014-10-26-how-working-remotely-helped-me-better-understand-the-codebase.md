@@ -4,7 +4,7 @@ title: "How working remotely helped me better understand the codebase"
 category: 
 tags: [programming, work, freelancing]
 ---
-{% include JB/setup %}
+
 
 Last Friday a coworker asked me how was I able to grasp the complexity of our project so quickly, while he's been struggling with it for months. I never gave it much thought, but it was true. I went from novice to pro faster than any other dev that joined the team. This even went so far that the CEO started calling me 'star developer'. At first I fought they were all mocking me, but later I came to realize they were honestly impressed by the progress I've made.
 

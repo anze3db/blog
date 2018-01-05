@@ -4,7 +4,7 @@ title: "I'm glad I became fit before becoming self-employed"
 category: 
 tags: [life, freelancing, work]
 ---
-{% include JB/setup %}
+
 
 It's Friday night and I've just survived my first week of being self-employed. It's been a helluva ride getting all
 the paperwork straightened out, finding an accountant, opening a new bank account, sending out invoices, and, the most frightening of all, actually talking to *people*. 

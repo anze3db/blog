@@ -4,7 +4,7 @@ title: "Gnome Shell and Unity"
 category: 
 tags: [linux, desktop, ubuntu]
 ---
-{% include JB/setup %}
+
 
 Ubuntu 12.04 LTS is just a few weeks away and it is going to bring a new version of the Unity desktop. The recently released [Gnome Shell 3.4](http://www.gnome.org/gnome-3/) will also be only one `apt-get install` command away. I am therefore left with a tough decision: which desktop shell should I primarily use when the new Ubuntu lands.
 

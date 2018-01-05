@@ -4,7 +4,7 @@ title: "The AMD Linux Drivers"
 category: 
 tags: [linux, drivers, catalyst, wtf]
 ---
-{% include JB/setup %}
+
 
 A couple of days ago AMD released Catalyst 12.1 drivers for Linux. I have been looking forward to this release as I had a lot of issues with previous drivers, namely with gnome-shell support.
 

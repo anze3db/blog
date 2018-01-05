@@ -4,7 +4,7 @@ title: "Three CS students and a tablet"
 category: 
 tags: [android, programming, fun]
 ---
-{% include JB/setup %}
+
 
 A few weeks ago ComTrade - a local tech company decided to sponsor a challenge event in association with our faculty. The idea was that three teams, each with three students, would work on a fun little project - building an android application that visualizes data received from a remote controlled car. Because the application was meant to run on a Samsung Galaxy Tab 10.1 me and a few of my friends got excited and we signed up for the challenge immediately. 
 

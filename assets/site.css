@@ -8,11 +8,11 @@
     box-shadow: none;
 
     background-image: none;
-    background-color: #006D88;
+    background-color: #0288D1;
 }
 html,body{
     background-color:#FEFEFE;
-    font-family: "Lora",Georgia,"Times New Roman",Times,serif;
+    font-family: "Roboto";
 }
 
 p {
@@ -27,10 +27,10 @@ code{
 h1 {
     border-top:0;
     font-size: 40px;
-    color: #006D88 ;
+    color: #0288D1 ;
 }
 h2,a, h1 a{
-    color: #006D88;
+    color: #0288D1;
 }
 
 
@@ -38,7 +38,7 @@ h2,a, h1 a{
 .shameless_self_promotion{
     font-size: 20px;
     margin: 40px 0;
-    
+
 }
 
 .content{
@@ -70,6 +70,6 @@ h2,a, h1 a{
     color: white;
 }
 .middlepic{
-    margin:15px auto; 
+    margin:15px auto;
     display:block;
 }

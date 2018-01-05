@@ -4,7 +4,7 @@ title: "Google Analytics should use log scale"
 category: 
 tags: [stats, math, blog]
 ---
-{% include JB/setup %}
+
 
 Google Analytics is an awesome tool. I have the utmost respect for the googlers working on it every day.
 

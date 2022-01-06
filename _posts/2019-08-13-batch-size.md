@@ -12,9 +12,9 @@ If you are reviewing, testing, and deploying multiple thousands of line changes 
 
 Putting it plainly, your big releases prevent small fixes and changes from going out sooner. Bigger releases require more testing, more preparation for deployment and it makes the process even slower. This is how you end up on a release schedule that can take months, is always late, and causes havoc when deployed to production in the form of blocker bugs.
 
-Let's focus on the code review side of things and take a look at why big pull requests are never desired. 
+Let's focus on the code review side of things and take a look at why big pull requests are never desired.
 
-# Problem with big pull requests
+## Problem with big pull requests
 
 Developers have this joke that a 5 line pull request will have at least 5 comments or change requests while a 1000 line pull request will be accepted immediately with the words "looks good to me".
 
@@ -24,19 +24,19 @@ It's often the case that those 1000 lines or more don't change just one aspect o
 
 Let's take a look at how big pull requests can be broken down into smaller ones that are easier to review, test, and deploy.
 
-# Avoid batching features in a single pull request
+## Avoid batching features in a single pull request
 
-We are often tempted to fix or complete multiple tasks while working on a particular part of the codebase and then combine all those changes in a single pull request. 
+We are often tempted to fix or complete multiple tasks while working on a particular part of the codebase and then combine all those changes in a single pull request.
 
-An example of this could be a pull request that fixes a production issue *and* improves logging around that issue.
+An example of this could be a pull request that fixes a production issue _and_ improves logging around that issue.
 
-When reviewing this pull request a potential problem with the code that adds the logging could delay the merge of the code that fixes a production issue. Your users will be stuck with the bug while you are fixing a logging issue that your users don't even know exists. 
+When reviewing this pull request a potential problem with the code that adds the logging could delay the merge of the code that fixes a production issue. Your users will be stuck with the bug while you are fixing a logging issue that your users don't even know exists.
 
-When you write *and* in your PR title consider opening two pull requests instead. This will help the reviewer focus on one problem at the time, making it less likely for mistakes to go through.
+When you write _and_ in your PR title consider opening two pull requests instead. This will help the reviewer focus on one problem at the time, making it less likely for mistakes to go through.
 
 This point is even more severe if the issue pops up only when the code is deployed. If there is an issue with the logging code, you might have to revert the bugfix as well to resolve the problem. Not a good place to be in.
 
-# Small code batches
+## Small code batches
 
 If you had been burnt by the issue above and then decided to vigilantly deploy only one feature at a time, you still occasionally run into issues. Features that are useful to your customers tend not to be just a change to a few lines of code. Instead, they require days or even weeks of work before they become useful.
 
@@ -44,7 +44,7 @@ Checking in code after weeks of work tends to be painful. You'll be working on a
 
 The only solution to this is to decouple features from code changes.
 
-# Decouple Features From Code Changes
+## Decouple Features From Code Changes
 
 The only way to address these issues is to avoid having long-running feature branches in the first place. Instead, all the changes should be reviewed and merged into your develop branch as soon as possible. This means deploying code that's not yet ready to be run on production and is therefore hidden from the word in a form of a feature flag.
 

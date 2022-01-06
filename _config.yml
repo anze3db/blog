@@ -7,14 +7,13 @@ exclude: [".rbenv-version", "README.md", "Rakefile"]
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Smotko's Blog
-tagline : webdev, gamedev, linux and dragons
+title : Anže's Blog
+tagline : python, webdev, and dragons
 author :
-  name : Smotko
-  email : smotko@smotko.si
-  github : Smotko
-  twitter : Smotko
-  feedburner : Smotko
+  name : Anže
+  email : anze@pecar.me
+  github : anze3db
+  twitter : anze3db
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt

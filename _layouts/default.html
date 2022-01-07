@@ -1,35 +1,36 @@
 ---
-theme :
-  name : twitter
+theme:
+  name: twitter
 ---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/vim.css" rel="stylesheet">
-    <link href="/assets/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/site.css" rel="stylesheet">
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+    <meta name="author" content="{{ site.author.name }}" />
+    <link href="/assets/css/vim.css" rel="stylesheet" />
+    <link href="/assets/css/pico.min.css" rel="stylesheet" />
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="/">{{ site.title }}</a> <div class="tagline">{{site.tagline}}</div>
-          <ul class="nav">
-            <li><a href="https://pecar.me/">Contact me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="content">
-        {{ content }}
-      </div>
-    </div> <!-- /container -->
+    <header class="container">
+      <hgroup>
+        <h1><a href="/">{{ site.title }}</a></h1>
+        <h2>{{ site.tagline }}</h2>
+      </hgroup>
+    </header>
+    <main class="container">{{ content }}</main>
+    <article style="text-align: center">
+      <a href="mailto:anze@pecar.me">Email</a> •
+      <a href="https://twitter.com/anze3db">Twitter</a> •
+      <a href="https://github.com/anze3db">GitHub</a> •
+      <a href="https://www.linkedin.com/in/an%C5%BEe-pe%C4%8Dar-a98b4033/"
+        >LinkedIn</a
+      >
+    </article>
   </body>
 </html>

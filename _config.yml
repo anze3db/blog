@@ -8,7 +8,7 @@ exclude: [".rbenv-version", "README.md", "Rakefile"]
 # so be sure to set them if your theme uses them.
 #
 title : Anže's Blog
-tagline : python, webdev, and dragons
+tagline : Snakes, servers, and surfing
 author :
   name : Anže
   email : anze@pecar.me

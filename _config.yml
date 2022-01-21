@@ -7,13 +7,13 @@ exclude: [".rbenv-version", "README.md", "Rakefile"]
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Anže's Blog
-tagline : Snakes, servers, and surfing
-author :
-  name : Anže
-  email : anze@pecar.me
-  github : anze3db
-  twitter : anze3db
+title: Anže's Blog
+tagline: Python, webdev, and surfing
+author:
+  name: Anže
+  email: anze@pecar.me
+  github: anze3db
+  twitter: anze3db
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
@@ -24,4 +24,4 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 
-production_url : https://smotko.si
+production_url: https://smotko.si

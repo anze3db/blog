@@ -11,6 +11,12 @@ theme:
     <title>{{ page.title }}</title>
     {% if page.description %}
     <meta name="description" content="{{ page.description }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@anze3db" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+    <meta name="twitter:image" content="/assets/me.jpeg" />
     {% endif %}
     <meta name="author" content="{{ site.author.name }}" />
     <link href="/assets/css/vim.css" rel="stylesheet" />

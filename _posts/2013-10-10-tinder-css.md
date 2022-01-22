@@ -5,7 +5,7 @@ category:
 tags: [sideprojects, freelancing, work, fun, webdev, css]
 ---
 
-<img src="/assets/pics/windowshpper.gif" alt="gif showing how the animation looks like" style="float: right;
+<img src="/assets/pics/windowshopper.gif" alt="gif showing how the animation looks like" style="float: right;
 margin: 0 0 0 15px;
 border-radius: 10px;
 border: 1px solid #666;" />

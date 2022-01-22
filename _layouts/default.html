@@ -9,14 +9,20 @@ theme:
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
-    {% if page.description %}
     <meta name="description" content="{{ page.description }}" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@anze3db" />
+    <meta name="twitter:creator" content="@anze3db" />
     <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="{{ page.description }}" />
-    <meta name="twitter:image" content="/assets/me.jpeg" />
+
+    <meta property="og:url" content="{{site.url }}{{ page.url }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    {% if page.image %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="{{site.url }}/{{ page.image }}" />
+    {% else %}
+    <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
     {% endif %}
     <meta name="author" content="{{ site.author.name }}" />
     <link href="/assets/css/vim.css" rel="stylesheet" />

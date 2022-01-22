@@ -18,8 +18,7 @@ The application would be receiving data via bluetooth. The remote controlled car
 Our solution
 ------------
 
-<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/5YaPM/embed">
-</iframe>
+<img src="/assets/pics/three-student-one-tablet-2.png" alt="Tablet screenshot">
 
 We quickly decided that drawing graphs is all well and good but it would not be enough. So we came up with an idea to draw the actual car in 3D space. The car would move on a virtual road that it plotted as it went. Our final solution actually worked rather well although we would have to do some more calibration with the actual car, if we wanted the path in our simulation to match the path that the car actually made. One can't believe what a difference turning radius can have on the path.
 
@@ -32,8 +31,7 @@ There were a lot of things that we could still improve, but the final applicatio
 The development process
 -------------------
 
-<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="http://imgur.com/a/hZCk3/embed">
-</iframe>
+<img src="/assets/pics/three-student-one-tablet-1.png" alt="Tablet screenshot">
 
 We had one tablet but there were three of us. This of course meant that at any given time, two team mates would be forced to use the emulator. Now the thing with the android emulator is that it doesn't really work if you are trying to do something a bit more complex. We all had android phones though so we decided to split the main application into multiple parts. We created a library project that did most of the hard work, and two applications one for the tablet and on really basic for the phone. This allowed me to work on the OpenGl part of the application even if somebody else got the tablet for the night.
 

@@ -11,7 +11,6 @@ theme:
     <title>{{ page.title }}</title>
     <meta name="description" content="{{ page.description }}" />
 
-    <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@anze3db" />
     <meta name="twitter:title" content="{{ page.title }}" />
 
@@ -20,8 +19,10 @@ theme:
     <meta property="og:description" content="{{ page.description }}" />
     {% if page.image %}
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{site.url }}/{{ page.image }}" />
     <meta property="og:image" content="{{site.url }}/{{ page.image }}" />
     {% else %}
+    <meta name="twitter:card" content="summary" />
     <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
     {% endif %}
     <meta name="author" content="{{ site.author.name }}" />

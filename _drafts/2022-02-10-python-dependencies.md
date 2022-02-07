@@ -2,7 +2,7 @@
 layout: post
 title: "Python Dependency Management"
 description: "...."
-date: 2022-02-28 7:00:00 +0000
+date: 2022-02-01 7:00:00 +0000
 image: assets/pics/django32-query-perf.png
 ---
 

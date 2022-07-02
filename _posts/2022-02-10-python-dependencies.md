@@ -2,14 +2,11 @@
 layout: post
 title: "Python Dependency Management"
 description: "...."
-date: 2022-02-01 7:00:00 +0000
-image: assets/pics/django32-query-perf.png
+date: 2022-02-10 7:00:00 +0000
+# image: assets/pics/django32-query-perf.png
 ---
 
-1. What do I want to tell people?
-That Python has multiple ways for delaing with dependecies. Starting with the most straightforward (requirements.txt -> pyproject.toml / setup.py also in the mix).
-
-
+Python has multiple ways for delaing with dependecies and the options can seem intimidating. This blogpost explains the most common dependency management tools and some of the most common commands that one would run.
 
 ## requirements.txt
 
@@ -48,11 +45,9 @@ Successfully installed asgiref-3.5.0 django-4.0.2 sqlparse-0.4.2
 
 And we can see that our requirements.txt file installed 3 packages. `asgiref-3.5.0 django-4.0.2 sqlparse-0.4.2`.
 
-Now we usually want our project dependencies to be pinned to a single version, so that when a new version of Django is released we don't immediately just install it because it could have breaking changes.
+The issue with this is that you might install a newer version of Django, sqlparse, or asgiref anytime you run `pip install -r requirements.txt`. This might break your application code and is considered a bad practice.
 
-We can pin the Django version in our requirements.txt file by specifying the version `django==4.0.2`, but that won't pin the versions for `asgiref` and `sqlparse` which could still get upgraded between pip installs potentially breaking your builds.
-
-So to properly make the installs reproducible the `requirements.txt` file would look like this:
+To solve this problem you can lock all of the pacakges with `pip freeze > requirements.txt` that will save all the versions:
 
 <!-- prettier-ignore-start -->
 {% highlight python %}
@@ -62,13 +57,13 @@ sqlparse==0.4.2
 {% endhighlight %}
 <!-- prettier-ignore-end -->
 
-But now we have a different problem. We would now have to carefully track when Django adds or remove dependencies and update our requirements.txt file accordingly. Django is a good citizen and only has 2 depenencies so this would not be impossible, but having more dependencies makes this extremely difficult.
+But now we have a different problem. We no longer know which dependencies are direct dependencies for our application (django) and which came from our dependencies' dependencies. This makes upgrading dependencies tricky.
 
-There has to be a better way! And yes, there are, many different ways.
+Only use this approach for small side projects.
 
 ## pip-tools
 
-pip-tools is a suite of tools that automate pinning and installing dependencies. You give it a list of dependencies that your project depends on (in our case that would be `django`) and it generates a requirements.txt file for us automatically. This way we can clearly separate the dependencies that we need from the dependencies or dependencies need.
+pip-tools is a suite of tools that automate pinning and installing dependencies. You give it a list of dependencies that your project depends on (in our case that would be `django`) and it generates a requirements.txt file for us automatically. This way we can clearly separate the dependencies that we need from the dependencies or dependencies need, thus solving the main problem from the previous section.
 
 We can create a file called `requirements.in` (although `setup.py` and `pyproject.toml` are also supported) with the following content:
 
@@ -97,13 +92,26 @@ sqlparse==0.4.2
 {% endhighlight %}
 <!-- prettier-ignore-end -->
 
-Now that we have the generatd requirement.txt file we can install all the dependencies with pip install -r requirements.txt or with `pip-sync requirements.txt`. The advantage of using pip-sync is that it will also uninstall all the packages not in requirements.txt making sure your environment matches the specification.
+Now that we have the generatd requirement.txt filem, we can install all the dependencies with `pip install -r requirements.txt` or with `pip-sync requirements.txt`. The advantage of using pip-sync is that it will also uninstall all the packages not in requirements.txt making sure your environment matches the specification.
+
+### Upgrading dependencies
+
+Upgrading dependencies is done with `pip-compile --upgrade`. The command will respect the version pins in your `requirements.in` file. This means that if your `requirements.in` file contains `django<4.1` it will never upgrade django to Django 4.1.
+
+### Dev dependencies
+
+pip-tools doesn't have a way a built in way to separate your production dependencies with your development dependencies like some of the other tools do. Instead, we define a new requirements file and name it something like requirements-dev.in:
+
+{% highlight python %}
+-c requirements.txt
+black
+{% endhighlight %}
+
+We can generate a compiled requirements-dev.txt file that will include our dev dependencies.
 
 ## Pipenv
 
-Pipenv 
-
-We can start using pipenv by running `pipenv --python 3.10`
+Pipenv is not just a dependency management tool like pip-tools, but also a Python virtual enviornment manager. To start using pipenv we need to tell it which python version the project will be using: `pipenv --python 3.10`:
 
 <!-- prettier-ignore-start -->
 {% highlight python %}
@@ -123,7 +131,7 @@ Virtualenv location: /Users/anze/.local/share/virtualenvs/python-package-manager
 <!-- prettier-ignore-end -->
 
 This command will do two things:
-1. Generate a new development environment
+1. Generate a new development virtual environment using Python 3.10
 2. Create a Pipfile with the following content:
 
 <!-- prettier-ignore-start -->
@@ -215,7 +223,15 @@ And we will also have a Pipenv.lock file with the following content:
 {% endhighlight %}
 <!-- prettier-ignore-end -->
 
-This includes the three packages as the old format but the file is a little bit verbose.
+We can see that like pip-tools from the section above, Pipfile.lock also includes the same version pins.
+
+### Upgrading dependencies
+
+To upgrade the dependencies we can run `pipenv update` and it will update all the versions in Pipfile.lock, respecting the constraint in the Pipfile.
+
+### Dev dependencies
+
+To add development dependencies we have to run `pipenv install --dev black` and this will place black into the development section of Pipenv.
 
 ## Poetry
 
@@ -383,135 +399,10 @@ tzdata = [
 {% endhighlight %}
 <!-- prettier-ignore-end -->
 
-## PDM
+### Upgrading dependencies
 
-<!-- prettier-ignore-start -->
-{% highlight python %}
-pdm init
-{% endhighlight %}
-<!-- prettier-ignore-end -->
+To upgrade the dependencies we can run `poetry update` and it will update all the versions in poetry.lock, respecting the constraint in the `pyproject.toml`.
 
+### Dev dependencies
 
-<!-- prettier-ignore-start -->
-{% highlight python %}
-pdm init
-Creating a pyproject.toml for PDM...
-Please enter the Python interpreter to use
-0. /System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python (2.7)
-1. /usr/local/bin/python3 (3.10)
-Please select: [0]: 1
-Using Python interpreter: /usr/local/bin/python3 (3.10)
-Is the project a library that will be uploaded to PyPI? [y/N]: N
-License(SPDX name) [MIT]:
-Author name [Anže Pečar]:
-Author email [anze@pecar.me]:
-Python requires('*' to allow any) [>=3.10]:
-Changes are written to pyproject.toml.
-{% endhighlight %}
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-{% highlight python %}
-pdm add django
-Adding packages to default dependencies: django
-✔ 🔒 Lock successful
-Changes are written to pdm.lock.
-Changes are written to pyproject.toml.
-Synchronizing working set with lock file: 3 to add, 0 to update, 0 to remove
-
-  ✔ Install django 4.0.2 successful
-  ✔ Install asgiref 3.5.0 successful
-  ✔ Install sqlparse 0.4.2 successful
-
-🎉 All complete!
-{% endhighlight %}
-<!-- prettier-ignore-end -->
-
-<!-- prettier-ignore-start -->
-{% highlight python %}
-[project]
-name = ""
-version = ""
-description = ""
-authors = [
-    {name = "Anže Pečar", email = "anze@pecar.me"},
-]
-dependencies = [
-    "django>=4.0.2",
-]
-requires-python = ">=3.10"
-license = {text = "MIT"}
-
-[project.urls]
-homepage = ""
-
-[tool]
-[tool.pdm]
-
-[build-system]
-requires = ["pdm-pep517"]
-build-backend = "pdm.pep517.api"
-{% endhighlight %}
-<!-- prettier-ignore-end -->
-
-
-<!-- prettier-ignore-start -->
-{% highlight python %}
-[[package]]
-name = "asgiref"
-version = "3.5.0"
-requires_python = ">=3.7"
-summary = "ASGI specs, helper code, and adapters"
-
-[[package]]
-name = "django"
-version = "4.0.2"
-requires_python = ">=3.8"
-summary = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
-dependencies = [
-    "asgiref<4,>=3.4.1",
-    "sqlparse>=0.2.2",
-    "tzdata; sys_platform == \"win32\"",
-]
-
-[[package]]
-name = "sqlparse"
-version = "0.4.2"
-requires_python = ">=3.5"
-summary = "A non-validating SQL parser."
-
-[[package]]
-name = "tzdata"
-version = "2021.5"
-requires_python = ">=2"
-summary = "Provider of IANA time zone data"
-
-[metadata]
-lock_version = "3.1"
-content_hash = "sha256:905b93afd78f13f7a197541c39f847879ab42a4cfdd984977bc2be628720e4d4"
-
-[metadata.files]
-"asgiref 3.5.0" = [
-    {file = "asgiref-3.5.0-py3-none-any.whl", hash = "sha256:88d59c13d634dcffe0510be048210188edd79aeccb6a6c9028cdad6f31d730a9"},
-    {file = "asgiref-3.5.0.tar.gz", hash = "sha256:2f8abc20f7248433085eda803936d98992f1343ddb022065779f37c5da0181d0"},
-]
-"django 4.0.2" = [
-    {file = "Django-4.0.2-py3-none-any.whl", hash = "sha256:996495c58bff749232426c88726d8cd38d24c94d7c1d80835aafffa9bc52985a"},
-    {file = "Django-4.0.2.tar.gz", hash = "sha256:110fb58fb12eca59e072ad59fc42d771cd642dd7a2f2416582aa9da7a8ef954a"},
-]
-"sqlparse 0.4.2" = [
-    {file = "sqlparse-0.4.2-py3-none-any.whl", hash = "sha256:48719e356bb8b42991bdbb1e8b83223757b93789c00910a616a071910ca4a64d"},
-    {file = "sqlparse-0.4.2.tar.gz", hash = "sha256:0c00730c74263a94e5a9919ade150dfc3b19c574389985446148402998287dae"},
-]
-"tzdata 2021.5" = [
-    {file = "tzdata-2021.5-py2.py3-none-any.whl", hash = "sha256:3eee491e22ebfe1e5cfcc97a4137cd70f092ce59144d81f8924a844de05ba8f5"},
-    {file = "tzdata-2021.5.tar.gz", hash = "sha256:68dbe41afd01b867894bbdfd54fa03f468cfa4f0086bfb4adcd8de8f24f3ee21"},
-]
-{% endhighlight %}
-<!-- prettier-ignore-end -->
-
-
-## Bonus: pipx
-
-
-
+To add development dependencies we have to run `poetry add --dev black` and this will place black into the development section of `pyproject.toml`.

@@ -17,9 +17,9 @@ It piqued my interest for two reasons:
 
 Something very fishy was going on, so I immediately went and checked if MySQL was to blame:
 
-{% highlight sql %}
+```sql
 SELECT * FROM boring_table WHERE id < 0
-{% endhighlight %}
+```
 
 No results. Can't blame MySQL for this one. 😔
 
@@ -29,7 +29,7 @@ In Python, Integer Overflows aren't common. In fact, since [PEP-0237](https://pe
 
 So the Sentry error made no sense, but thanks to my untrusting nature, I decided to walk through the codebase and see what we were doing with `boring_group_id`. A couple of functions up the stack, I found this code:
 
-{% highlight python %}
+```python
 return (
     pd.concat(
         [
@@ -41,7 +41,7 @@ return (
     .astype("int16")
     .unique()
 )
-{% endhighlight %}
+```
 
 Looks like those ids were going through a [pandas](https://pandas.pydata.org) dataframe where invalid values and duplicates were dropped. For some reason, we were also casting the values to 16-bit integers. Because of this, the function was returning incorrect values for any id greater than `32_767`. 🤦‍♂️ 
 

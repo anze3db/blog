@@ -15,7 +15,7 @@ A solution
 
 I hacked together a solution using a custom context processor in order to feed the installed applications to every template in the django admin site. I borrowed most of the code from the admin index view. `context_processors.py`:
 
-{% highlight python %} 
+```python 
     from django.utils.text import capfirst
     from django.db.models import get_models
     from django.utils.safestring import mark_safe
@@ -68,12 +68,12 @@ I hacked together a solution using a custom context processor in order to feed t
         for app in app_list:
             app['models'].sort(key=lambda x: x['name'])
         return {'apps': app_list}
-{% endhighlight python %}
+```
 
         
 We add the custom context processor to the `settings.py`:
  
-{% highlight python %} 
+```python 
     TEMPLATE_CONTEXT_PROCESSORS = (
         "django.contrib.auth.context_processors.auth",
         "django.core.context_processors.debug",
@@ -83,7 +83,7 @@ We add the custom context processor to the `settings.py`:
         "django.contrib.messages.context_processors.messages",
         "context_processors.app_list"
     )
-{% endhighlight python %}
+```
 
 With the context processor in place we should have an 'apps' variable available in our admin templates. The only thing left to do is to add the code that renders the installed applications. I am using [twitter bootstrap](http://twitter.github.com/bootstrap) for the navbar. Here is my `templates/admin/base.html`: 
 

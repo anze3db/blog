@@ -10,20 +10,20 @@ I was doing my homework for the bioinformatics class when I started experimentin
 was that Python list comprehensions don't create a closure. This means that variables defined in the list comprehension 
 bleed out into the current scope:
 
-{% highlight python %}
+```python
 >>> [i for i in range(10)]
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >>> i
 9
 >>> 
-{% endhighlight %}
+```
 
 
 I've combined this with the fact that functions have access to variables from the same scope, and come up with this 
 example:
 
 
-{% highlight python %}
+```python
 def dpt(s,t):
     def cost():
         gap = -5
@@ -36,7 +36,7 @@ def dpt(s,t):
     M = defaultdict(int)
     [cost() for i,si in enumerate(s) for j,tj in enumerate(t)]
     return M[len(s)-1, len(t)-1]
-{% endhighlight %}
+```
 
         
 At first glance it doesn't seem like there is something horrbly wrong. But when you try to figure out what the `dpt` 
@@ -50,11 +50,11 @@ be written like this as it makes your program very difficult to understand.
 
 Just for kicks I included these two lines in the homework report as well:
 
-{% highlight python %}
+```python
 # Two horrible lines that turn the above string into a dict. I am sorry.
 arr = [j.split(' ') for j in [i.strip().replace('  ', ' ') for i in b50]]
 return reduce(lambda a,b: dict(a.items() + b.items()), [{(arr[0][j],arr[i][0]): int(arr[i][j]) for j in xrange(1, len(arr[i]))} for i in xrange(1,len(arr))])
-{% endhighlight %}
+```
 
 I am a horrible person.
     

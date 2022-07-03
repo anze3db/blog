@@ -5,6 +5,6 @@ category: test
 tags: [code, meta]
 ---
 
-{% highlight python %}
+```python
 print "hello world"
-{% endhighlight %}
+```

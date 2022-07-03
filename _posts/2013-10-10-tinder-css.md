@@ -27,7 +27,7 @@ CSS3 animations are amazing
 We managed to get the smooth animations by relaying entirely on CSS3. These are styles which make the magic 
 happen:
 
-{% highlight css %}
+```css
 
 /*I've left out browser specific prefixes (-webkit-transition, -moz-transition, -o-transition, ...) for clarity */
 
@@ -53,7 +53,7 @@ happen:
   transform: translateX(100%) rotate(60deg);
 }
 
-{% endhighlight %}
+```
 
 When you drag your finger across the screen, a class will be set based on the direction you're dragging (`.animate-like-partial`
 or `.animate-dislike-partial`). This will cause the item to move and rotate slightly. If you change your mind and move 

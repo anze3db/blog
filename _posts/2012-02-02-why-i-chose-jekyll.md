@@ -43,7 +43,7 @@ Not only does this force you to keep your blogs in a git repository (which is a 
 Some more sugars
 ----------------
 Have you ever wanted beautiful syntax highlighting on your blog? Well Jekyll does Pygments which means I can have beautiful syntax highlighting like this:
-{% highlight python %}
+```python
 def prob42():
     f = open('words.txt')
     
@@ -61,7 +61,7 @@ def prob42():
             if x in triangle:
                 tri += 1
     print tri 
-{% endhighlight %}
+```
 
 I even heard there is LaTeX to PNG support, although I haven't had the time to check that out yet.
 

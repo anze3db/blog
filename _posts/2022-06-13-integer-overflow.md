@@ -6,7 +6,7 @@ date: 2022-07-02 7:00:00 +0000
 image: /assets/pics/boring-sentry-error.png
 ---
 
-The other day a Sentry error popped up that looked very suspicious.
+A Sentry error popped up that looked very suspicious.
 
 ![Exception stack trace with KeyError -24212](/assets/pics/boring-sentry-error.png)
 
@@ -21,7 +21,7 @@ Something very fishy was going on, so I immediately went and checked if MySQL wa
 SELECT * FROM boring_table WHERE id < 0
 ```
 
-No results. Can't blame MySQL for this one. 😔
+No results. Can't blame MySQL for this one.
 
 A wildly incorrect integer value can sometimes result from of an [Integer Overflow](https://en.wikipedia.org/wiki/Integer_overflow). Integer Overflow happens when the integer field does not have enough bits to store the value. Part of the bits gets clipped, producing a result that is very much unlike the value we were trying to store.
 
@@ -43,8 +43,8 @@ return (
 )
 ```
 
-Looks like those ids were going through a [pandas](https://pandas.pydata.org) dataframe where invalid values and duplicates were dropped. For some reason, we were also casting the values to 16-bit integers. Because of this, the function was returning incorrect values for any id greater than `32_767`. 🤦‍♂️ 
+Looks like those ids were going through a [pandas](https://pandas.pydata.org) dataframe where invalid values and duplicates were dropped. For some reason, we were also casting the values to 16-bit integers. Because of this, the function was returning incorrect values for any id greater than `32_767`. 
 
-Changing the line to `.astype("int64")` resolved the issue and the problem will only pop up again when ids become greater than `9_223_372_036_854_775_807` at which point I should be long gone.
+Changing the line to `.astype("int64")` resolved the issue and the problem will only pop up again when ids become greater than `9_223_372_036_854_775_807` at which point I *should* be long gone.
 
-We pushed the fix to production and made the customers happy, or at least a bit less upset. 🎉
+We pushed the fix to production and made the customers happy, or at least a little less upset. 🎉

@@ -6,8 +6,10 @@ gem "jekyll"
 
 gem "webrick"
 
-gem "rouge", "~> 3.27"
+gem "kramdown"
 
-gem "kramdown-parser-gfm", "~> 1.1"
+gem "rouge"
+
+gem "kramdown-parser-gfm"
 
 gem "jekyll-watch", "~> 2.2"

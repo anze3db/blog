@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Integer Overflow Error in a Python Application"
-description: "..."
+description: "How we found and fixed an integer overflow error in our Django app."
 date: 2022-07-02 7:00:00 +0000
 image: /assets/pics/boring-sentry-error.png
 ---
 
 The other day a Sentry error popped up that looked very suspicious.
 
-<img src="/assets/pics/boring-sentry-error.png" alt="Exception stack trace with KeyError -24212">
+![Exception stack trace with KeyError -24212](/assets/pics/boring-sentry-error.png)
 
 It piqued my interest for two reasons:
 

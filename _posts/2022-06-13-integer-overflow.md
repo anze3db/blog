@@ -3,7 +3,7 @@ layout: post
 title: "Integer Overflow Error in a Python Application"
 description: "..."
 date: 2022-07-02 7:00:00 +0000
-# image: assets/pics/django32-query-perf.png
+image: /assets/pics/boring-sentry-error.png
 ---
 
 The other day a Sentry error popped up that looked very suspicious.

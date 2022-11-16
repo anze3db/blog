@@ -1,52 +1,53 @@
 ---
 theme:
-  name: twitter
+name: twitter
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }}</title>
-    <meta name="description" content="{{ page.description }}" />
 
-    <meta name="twitter:creator" content="@anze3db" />
-    <meta name="twitter:title" content="{{ page.title }}" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
 
-    <meta property="og:url" content="{{site.url }}{{ page.url }}" />
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{{ page.description }}" />
-    {% if page.image %}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="{{site.url }}/{{ page.image }}" />
-    <meta property="og:image" content="{{site.url }}/{{ page.image }}" />
-    {% else %}
-    <meta name="twitter:card" content="summary" />
-    <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
-    {% endif %}
-    <meta name="author" content="{{ site.author.name }}" />
-    <link href="/assets/css/vim.css" rel="stylesheet" />
-    <link href="/assets/css/pico.min.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  </head>
+  <meta name="twitter:creator" content="@anze3db" />
+  <meta name="twitter:title" content="{{ page.title }}" />
 
-  <body>
-    <header class="container">
-      <hgroup>
-        <h1><a href="/">{{ site.title }}</a></h1>
-        <h2>{{ site.tagline }}</h2>
-      </hgroup>
-    </header>
-    <main class="container">{{ content }}</main>
-    <article style="text-align: center">
-      <a href="mailto:anze@pecar.me">Email</a> •
-      <a href="https://twitter.com/anze3db">Twitter</a> •
-      <a href="https://github.com/anze3db">GitHub</a> •
-      <a href="https://www.linkedin.com/in/an%C5%BEe-pe%C4%8Dar-a98b4033/"
-        >LinkedIn</a
-      >
-    </article>
-  </body>
+  <meta property="og:url" content="{{site.url }}{{ page.url }}" />
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  {% if page.image %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{site.url }}/{{ page.image }}" />
+  <meta property="og:image" content="{{site.url }}/{{ page.image }}" />
+  {% else %}
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
+  {% endif %}
+  <meta name="author" content="{{ site.author.name }}" />
+  <link href="/assets/css/vim.css" rel="stylesheet" />
+  <link href="/assets/css/pico.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+</head>
+
+<body>
+  <header class="container">
+    <hgroup>
+      <h1><a href="/">{{ site.title }}</a></h1>
+      <h2>{{ site.tagline }}</h2>
+    </hgroup>
+  </header>
+  <main class="container">{{ content }}</main>
+  <article style="text-align: center">
+    <a href="mailto:anze@pecar.me">Email</a> •
+    <a href="https://twitter.com/anze3db">Twitter</a> •
+    <a href="https://github.com/anze3db">GitHub</a> •
+    <a href="https://fosstodon.org/@anze3db">Fosstodon</a> •
+    <a href="https://www.linkedin.com/in/an%C5%BEe-pe%C4%8Dar-a98b4033/">LinkedIn</a>
+  </article>
+</body>
+
 </html>

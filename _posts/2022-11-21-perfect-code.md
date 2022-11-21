@@ -36,6 +36,8 @@ The Django ORM query fetches the whole `Template` row data, even though we only 
 
 Last week this code finally broke. A customer had too many `Template` objects and the query started to time out. Because of the bare try-except, we haven't received a Sentry error and we haven't noticed that the code was broken until the customer reached out 😢
 
+When the query timed out the for loop didn't execute. The bare except block caught the time out exception, but didn't do anything with it. The code continued with `load_hub = False` even though it should have been `True` based on the data in the database. Later on in the code a permission check failed and the users got an unexpected 404.
+
 Luckily, it didn't take us long to debug and fix the issue. We rewrote the code into the following:
 
 ```python

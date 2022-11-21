@@ -44,8 +44,8 @@ load_hub = (
     Template.objects.filter(
         id=template_id,
         company__hubs__tree_id=tree_id,
-        is_public=1,
-        deleted=0,
+        is_public=True,
+        deleted=False,
     )
     .exclude(company_id=company_id)
     .exists()

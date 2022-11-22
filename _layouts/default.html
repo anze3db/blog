@@ -27,6 +27,7 @@ name: twitter
   <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
   {% endif %}
   <meta name="author" content="{{ site.author.name }}" />
+  <link rel="alternate" type="application/rss+xml" href="{{ production_url }}/feed.xml" title="{{ site.title }}" />
   <link href="/assets/css/vim.css" rel="stylesheet" />
   <link href="/assets/css/pico.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -42,7 +43,8 @@ name: twitter
   </header>
   <main class="container">{{ content }}</main>
   <footer style="text-align: center">
-    <a href="mailto:anze@pecar.me">Email</a> •
+    <a href="{{ site.production_url }}/feed.xml">RSS</a><br>
+    <a href="mailto:{{ site.author.email }}">Email</a> •
     <a href="https://github.com/anze3db" rel="me">GitHub</a> •
     <a href="https://fosstodon.org/@anze3db" rel="me">Mastodon</a> •
     <a href="https://twitter.com/anze3db" rel="me">Twitter</a> •

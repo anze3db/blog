@@ -12,4 +12,6 @@ gem "rouge"
 
 gem "kramdown-parser-gfm"
 
-gem "jekyll-watch", "~> 2.2"
+gem "jekyll-watch"
+
+gem 'jekyll-feed'

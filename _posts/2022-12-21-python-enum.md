@@ -134,4 +134,4 @@ Unless I'm misunderstanding something, the documentation should state that the f
 
 I was avoiding the use of `Enum`s because of the gotchas outlined in this post, but I do like how the new `StrEnum` (and `IntEnum`) classes work and I think I'll be using them a lot more going forward 🎉
 
-Do you have a better way of dealing with Enum classes? Send a [toot](https://fosstodon.org/@anze3db), [tweet](https://twitter.com/anze3db), or [email](mailto:anze@pecar.me) and I'll update the blog post with your idea.
+Do you have a better way of dealing with Enum classes? Send a [toot](https://fosstodon.org/@anze3db), [tweet](https://twitter.com/anze3db), [email](mailto:anze@pecar.me), or [open a PR](https://github.com/anze3db/anze3db.github.io/blob/main/_posts/2022-12-21-python-enum.md) and I'll update the blog post with your idea.

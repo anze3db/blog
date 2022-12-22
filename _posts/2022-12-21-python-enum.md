@@ -6,7 +6,7 @@ date: 2022-12-21 1:00:00 +0000
 # image: assets/pics/django32-query-perf.png
 ---
 
-Python 3.11 was released almost two months ago and brought [some great improvements to the Enum class](https://docs.python.org/3/whatsnew/3.11.html#enum). Unfortunately, there is also a breaking change if you are using Enum classes with a `str`/`int` mixin:
+Python 3.11 was released almost two months ago and brought [some great improvements to the Enum class](https://docs.python.org/3/whatsnew/3.11.html#enum). Unfortunately, there is also a breaking change and you might be impacted if you are using Enum classes with a `str`/`int` mixin:
 
 ```python
 from enum import Enum
@@ -16,7 +16,16 @@ class Foo(str, Enum):
     BAR = "bar"
 ```
 
-`Foo.BAR` in Python 3.11 will no longer return the member value `"bar"` when using `format()` or f-strings the way that prior Python versions used to. Instead, it will return the `Foo.BAR` member, so `Foo.BAR`. If your code was expecting `Foo.BAR` to return `"bar"` you'll need to make some changes (described below). But first, let's take one step back and take a look at Enum classes and why my project ended up having more than 50 of them with the `str` mixin.
+`Foo.BAR` in Python 3.11 will no longer return the member value `"bar"` when using `format()` or f-strings the way that prior Python versions used to. Instead, it will return the `Foo.BAR` member class. If you are using `Foo.BAR == "bar"` or `f"{Foo.BAR}"` your code will very likely break when you migrate to 3.11. The easiest way to fix it is to replace the `str` mixin with the newly added `StrEnum` class:
+
+```python
+from enum import StrEnum
+
+class Foo(StrEnum):
+    BAR = "bar"
+```
+
+Let's take one step back and take a look at Enum classes and why my project ended up having more than 50 of them with the `str` mixin.
 
 # Enum
 
@@ -56,29 +65,21 @@ This only works for f-strings and format functions. The old `%` based str format
 
 
 ```python
-print(Foo.BAR)
-print(str(Foo.BAR))
-print("%s" % Foo.BAR)
-print(f"{Foo.BAR}")
-print("{}".format(Foo.BAR))
-```
-prints
-```
-Foo.BAR
-Foo.BAR
-Foo.BAR
-bar
-bar
+print(Foo.BAR)                 # > Foo.BAR
+print(str(Foo.BAR))            # > Foo.BAR
+print("%s" % Foo.BAR)          # > Foo.BAR
+print(f"{Foo.BAR}")            # > bar
+print("{}".format(Foo.BAR))    # > bar
 ```
 
 This inconsistency was what was fixed in Python 3.11 and the output is now the same everywhere:
 
-```
-Foo.BAR
-Foo.BAR
-Foo.BAR
-Foo.BAR
-Foo.BAR
+```python
+print(Foo.BAR)                 # > Foo.BAR
+print(str(Foo.BAR))            # > Foo.BAR
+print("%s" % Foo.BAR)          # > Foo.BAR
+print(f"{Foo.BAR}")            # > Foo.BAR
+print("{}".format(Foo.BAR))    # > Foo.BAR
 ```
 
 Consistency is always good! But this fix was what broke our code.
@@ -99,21 +100,11 @@ class Foo(StrEnum):
 And the results are going to be exactly what we originally wanted with the `str` mixin, except that it's going to work consistenlty for all cases that I could come up with:
 
 ```python
-print(Foo.BAR)
-print(str(Foo.BAR))
-print("%s" % Foo.BAR)
-print(f"{Foo.BAR}")
-print("{}".format(Foo.BAR))
-```
-
-This will now print a far less confusing:
-
-```
-bar
-bar
-bar
-bar
-bar
+print(Foo.BAR)                 # > bar
+print(str(Foo.BAR))            # > bar
+print("%s" % Foo.BAR)          # > bar
+print(f"{Foo.BAR}")            # > bar
+print("{}".format(Foo.BAR))    # > bar
 ```
 
 # Python 3.10 or older

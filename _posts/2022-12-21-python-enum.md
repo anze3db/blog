@@ -16,7 +16,7 @@ class Foo(str, Enum):
     BAR = "bar"
 ```
 
-`Foo.BAR` in Python 3.11 will no longer return the member value `"bar"` when using `format()` or f-strings the way that prior Python versions used to. Instead, it will return the `Foo.BAR` member class. If you are using `Foo.BAR == "bar"` or `f"{Foo.BAR}"` your code will very likely break when you migrate to 3.11. The easiest way to fix it is to replace the `str` mixin with the newly added `StrEnum` class:
+`Foo.BAR` in Python 3.11 will no longer return the member value `"bar"` when using `format()` or f-strings the way that prior Python versions used to. Instead, it will return the `Foo.BAR` member class. If you are using `Foo.BAR == "bar"` or `f"{Foo.BAR}"` your code will very likely break when you migrate to 3.11. The easiest way to fix it is to replace the `str` mixin with the newly added [`StrEnum` class](https://docs.python.org/3/library/enum.html#enum.StrEnum) (same goes for `int` mixin and [`IntEnum` class](https://docs.python.org/3/library/enum.html#enum.IntEnum)):
 
 ```python
 from enum import StrEnum
@@ -72,7 +72,7 @@ print(f"{Foo.BAR}")            # > bar
 print("{}".format(Foo.BAR))    # > bar
 ```
 
-This inconsistency was what was fixed in Python 3.11 and the output is now the same everywhere:
+This inconsistency was fixed in Python 3.11 and the output is now the same everywhere:
 
 ```python
 print(Foo.BAR)                 # > Foo.BAR

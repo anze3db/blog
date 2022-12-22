@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Python 3.11 Enum Breaking Change"
-description: "A story on how Enum classes were broken before Python 3.11."
+title: "Enum with `str` or `int` Mixin Breaking Change in Python 3.11"
+description: "A change in how Python handles `str` and `int` mixins in Enum classes might break your code when you upgrade to Python 3.11."
 date: 2022-12-21 1:00:00 +0000
 # image: assets/pics/django32-query-perf.png
 ---
 
-Python 3.11 was released almost two months ago and brought [some great improvements to the Enum class](https://docs.python.org/3/whatsnew/3.11.html#enum). Unfortunately, there is also a breaking change and you might be impacted if you are using Enum classes with a `str`/`int` mixin:
+Python 3.11 was released almost two months ago and brought [some great improvements to the Enum class](https://docs.python.org/3/whatsnew/3.11.html#enum). Unfortunately, there is also a breaking change. You might be impacted if you are using Enum classes with a `str`/`int` mixin:
 
 ```python
 from enum import Enum
@@ -16,16 +16,20 @@ class Foo(str, Enum):
     BAR = "bar"
 ```
 
-`Foo.BAR` in Python 3.11 will no longer return the member value `"bar"` when using `format()` or f-strings the way that prior Python versions used to. Instead, it will return the `Foo.BAR` member class. If you are using `Foo.BAR == "bar"` or `f"{Foo.BAR}"` your code will very likely break when you migrate to 3.11. The easiest way to fix it is to replace the `str` mixin with the newly added [`StrEnum` class](https://docs.python.org/3/library/enum.html#enum.StrEnum) (same goes for `int` mixin and [`IntEnum` class](https://docs.python.org/3/library/enum.html#enum.IntEnum)):
+`Foo.BAR` in Python 3.11 will no longer return the member value `"bar"` when used in the `format()` function or f-strings the way that prior Python versions used to. Instead, it will return the `Foo.BAR` member class. 
 
 ```python
-from enum import StrEnum
-
-class Foo(StrEnum):
-    BAR = "bar"
+# Python 3.10
+f"{Foo.BAR}"  # > bar
+# Python 3.11
+f"{Foo.BAR}"  # > Foo.BAR
 ```
 
-Let's take one step back and take a look at Enum classes and why my project ended up having more than 50 of them with the `str` mixin.
+If you have `f"{Foo.BAR}"` in your code, it will likely break when you migrate to 3.11, so upgrade with caution.
+
+In my project we used a `str` Enum class like this for Elastic Search index names. We then used them the Enum classes to construct the full request urls using f-strings. Because of this the urls switched from something like `https://xyz.elastic-cloud.com/bar` to something like `https://xyz.elastic-cloud.com/FOO.BAR/`.
+
+The easiest way to fix it is to replace the `str` mixin with the newly added [`StrEnum` class](https://docs.python.org/3/library/enum.html#enum.StrEnum), but let's take one step back and take a look at Enum classes and why my project ended up having more than 50 of them with the `str` mixin.
 
 # Enum
 

@@ -27,8 +27,6 @@ f"{Foo.BAR}"  # > Foo.BAR
 
 If you have `f"{Foo.BAR}"` in your code, it will likely break when you migrate to 3.11, so upgrade with caution.
 
-In my project we used a `str` Enum class like this for Elastic Search index names. We then used them the Enum classes to construct the full request urls using f-strings. Because of this the urls switched from something like `https://xyz.elastic-cloud.com/bar` to something like `https://xyz.elastic-cloud.com/FOO.BAR/`.
-
 The easiest way to fix it is to replace the `str` mixin with the newly added [`StrEnum` class](https://docs.python.org/3/library/enum.html#enum.StrEnum), but let's take one step back and take a look at Enum classes and why my project ended up having more than 50 of them with the `str` mixin.
 
 # Enum

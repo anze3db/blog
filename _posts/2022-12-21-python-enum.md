@@ -52,7 +52,7 @@ You will receive an assertion error! This is because `Foo.BAR` is not a `str` in
 assert Foo.BAR.value == "bar"
 ```
 
-But knowing when to use `.value` is inconvenient. Engineers will try to find a workaround. On the project that I work on the workaround was to add a `str` mixin:
+But knowing when to use `.value` is inconvenient. Engineers will try to find a workaround. On my project the workaround was to add a `str` mixin:
 
 ```python
 class Foo(str, Enum):
@@ -86,7 +86,7 @@ print("{}".format(Foo.BAR))    # > Foo.BAR
 
 Consistency is always good! But this fix was what broke our code.
 
-We were expecting `"bar"` but were now getting `Foo.BAR`! So now we are back on square one. In the cases above `Foo(str, Enum)` behaves the same as `Foo(Enum)` So how can we avoid writing `.value` everywhere?
+We were expecting `"bar"` but were now getting `Foo.BAR`! So now we are back on square one. In the cases above `Foo(str, Enum)` behaves the same as `Foo(Enum)`. So how can we avoid writing `.value` everywhere?
 
 # StrEnum to the rescue
 
@@ -122,9 +122,9 @@ class Foo(StrEnum):
 
 You can keep using the StrEnum package even after you upgrade to Python 3.11, it even has some extra features that the standard library `StrEnum` version doesn't have.
 
-# Python 3.11 what's new page
+# "What's New In Python 3.11" Page
 
-The [Python 3.11 what's new page](https://docs.python.org/3/whatsnew/3.11.html#enum) seems to have a small mistake in the changelog that describes this change:
+The ["What’s New In Python 3.11" page](https://docs.python.org/3/whatsnew/3.11.html#enum) seems to have a small mistake in the changelog that describes this change:
 
 > Changed Enum.__format__() (the default for format(), str.format() and f-strings) of enums with mixed-in types (e.g. int, str) to also include the class name in the output, not just the member’s key. This matches the existing behavior of enum.Enum.__str__(), returning e.g. 'AnEnum.MEMBER' for an enum AnEnum(str, Enum) instead of just 'MEMBER'.
 

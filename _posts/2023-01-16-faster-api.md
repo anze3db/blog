@@ -10,19 +10,21 @@ Last year I needed to build a simple JSON API endpoint for a mobile app that I w
 
 ![Screenshot of the Surfcams app showing nested lists of surfcams available in my area](/assets/pics/surfcams.jpeg)
 
+Since I wanted to be able to change the contents and the look and feel of the list without reinstalling the mobile application<sup><a href="/faster-api#footnotes">[1]</a></sup> I needed a JSON API to serve the data to be displayed.
+
 # JSON API
 
 When I think about building a JSON API, I usually reach for Python with a framework like [Django](https://www.djangoproject.com/), [Flask](https://flask.palletsprojects.com/en/2.2.x/), or [FastAPI](https://fastapi.tiangolo.com/). Python then connects to a database ([PostgreSQL](https://www.postgresql.org/) or [SQLite](https://www.sqlite.org/index.html) most commonly) and responds to HTTP requests. But in this case, all of that seemed like overkill.
 
-My API doesn't have to change the response often. When it does need to change, I am the only one changing it. So a database isn't needed at all!
+My API doesn't have to change the response often. When it does need to change, I am the only one changing it. So a database isn't needed at all! ❌
 
-I also don't need dynamic routing that the above-mentioned frameworks provide. There is only one endpoint! 
+I also don't need dynamic routing that the above-mentioned frameworks provide. There is only one endpoint! So I don't really a web framework either! ❌
 
-The response doesn't have any dynamic elements that would need to be computed on every request so I had to begrudgingly accept the fact that I don't even need to use Python!
+The response also doesn't include any dynamic elements that would need to be computed on every request. I had to begrudgingly accept the fact that I don't even need to use Python to solve this problem! ❌
 
 # Static JSON file
 
-So the whole endpoint ended up being a static `cams.json` file hosted on [nginx](https://www.nginx.com/). Since I already had nginx running on my Raspberry Pi where the whole project is hosted, I only needed to add the `location /api/` path to my nginx site.conf:
+So the whole endpoint ended up being a static `cams.json` file hosted on [nginx](https://www.nginx.com/). Since I already had nginx running on my Raspberry Pi where the project is hosted, I only needed to add the `location /api/` path to my nginx site.conf:
 
 ```nginx
     location /api/ {
@@ -69,11 +71,11 @@ After that I added the following cams.json file into the `/home/pi/projects/cams
 }
 ```
 
-The actual `cam.json` file is almost 1000 lines long, but you get the gist.
+The *real* `cam.json` file is almost 1000 lines long, but you get the gist.
 
 And that was it! Going to the `/api/cams.json` endpoint returns the JSON response so it looks and feels like a proper API endpoint. Nginx even correctly sets the `content-type: application/json` header.
 
-The site has now been running for months and there were never any issues <sup><a href="/faster-api#footnotes">[1]</a></sup>. This is partially due to there being fewer moving parts so fewer things go wrong.
+The API endpoint has now been running for months and there were never any issues <sup><a href="/faster-api#footnotes">[2]</a></sup>. Fewer moving parts so fewer things go wrong.
 
 # Fin
 
@@ -83,4 +85,5 @@ As engineers, we often like to overengineer our solutions, especially when worki
 
 ### Footnotes 
 
+1. I used [Flutter](https://flutter.dev/) for the mobile application, source code [here](https://github.com/anze3db/surfcams).
 1. I did have a week of downtime [that one time](https://twitter.com/anze3db/status/1548736490326343688) when my ISP changed my IP address while I was on vacation 😅. I was only able to get the new IP address once I returned home. I ended up solving this problem with some [Golang code](https://github.com/anze3db/ipster), but that's a whole separate blog post.

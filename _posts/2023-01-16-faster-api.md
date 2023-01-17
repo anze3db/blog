@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "The Fastest Way to Build a Simple JSON API"
-description: "This is a short story on how I've built a simple JSON API for a mobile app."
+title: "The Fastest Way to Build a Read-only JSON API"
+description: "A short story on how I managed to not overengineer a read-only JSON API."
 date: 2023-01-16 1:00:00 +0000
 # image: assets/pics/django32-query-perf.png
 ---
+
+This is a short story on how I managed to **not** overengineer a read-only JSON API. TLDR: Sometimes a static `.json` file served by nginx is the easiest and fastest way to create a read-only JSON API endpoint.
+
+# The Problem
 
 Last year I needed to build a simple JSON API endpoint for a mobile app that I was developing. The mobile app was a list view of webcams in my area. The final UI ended up looking like this:
 
@@ -16,13 +20,13 @@ Since I wanted to be able to change the contents and the look and feel of the li
 
 When I think about building a JSON API, I usually reach for Python with a framework like [Django](https://www.djangoproject.com/), [Flask](https://flask.palletsprojects.com/en/2.2.x/), or [FastAPI](https://fastapi.tiangolo.com/). Python then connects to a database ([PostgreSQL](https://www.postgresql.org/) or [SQLite](https://www.sqlite.org/index.html) most commonly) and responds to HTTP requests. But in this case, all of that seemed like overkill.
 
-My API doesn't have to change the response often. When it does need to change, I am the only one changing it. So a database isn't needed at all! ❌
+My API doesn't have to change the response often. When it does need to change, I am the only one changing it. A database isn't needed at all! ❌
 
-I also don't need dynamic routing that the above-mentioned frameworks provide. There is only one endpoint! So I don't really a web framework either! ❌
+I also don't need dynamic routing that the above-mentioned frameworks provide. There is only one endpoint! I don't really a web framework either! ❌
 
 The response also doesn't include any dynamic elements that would need to be computed on every request. I had to begrudgingly accept the fact that I don't even need to use Python to solve this problem! ❌
 
-# Static JSON file
+# A Static JSON file
 
 So the whole endpoint ended up being a static `cams.json` file hosted on [nginx](https://www.nginx.com/). Since I already had nginx running on my Raspberry Pi where the project is hosted, I only needed to add the `location /api/` path to my nginx site.conf:
 

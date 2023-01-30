@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Selenium Testing Library"
-description: "Intro to using the Testing Library with Selenium."
+description: "Using the Testing Library with Selenium."
 date: 2023-01-30 1:00:00 +0000
 # image: assets/pics/django32-query-perf.png
 ---

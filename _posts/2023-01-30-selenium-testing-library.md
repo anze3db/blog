@@ -93,7 +93,9 @@ driver.execute_script("findByLabelText(document, 'My Element") # findBy query wi
 
 I'd argue that using `execute_script` is already an improvement over Selenium's API. We can even locate the input element using its label text, something that is not easily done with Selenium. 
 
-However, injecting the Testing Library into the DOM and then writing JavaScript is not how we should write our tests. This is why I created a [PyPI package](https://github.com/anze3db/selenium-testing-library) that does all of this for you and exposes a nice 100% type annotated API. First example rewritten using the package:
+# Selenium Testing Library
+
+However, injecting the Testing Library into the DOM manually and then writing JavaScript is not the best user experience for writing tests. This is why I created a PyPI package [Selenium Testing Library](https://github.com/anze3db/selenium-testing-library) that takes care of this plumbing and exposes a nice 100% type annotated API. First example rewritten using the Selenium Testing Library:
 
 ```python
 # Assert that only one element is found on the page
@@ -113,7 +115,9 @@ screen = Screen(webdriver.Firefox())
 screen.find_by_label_text("My Element")
 ```
 
-The [`Screen` class](https://github.com/anze3db/selenium-testing-library#testing-library-selectors) exposes all the `get...`, `query...` and `find...` methods as well as all the Testing Library locators (Role, Label Test, TestId, and others) as well as the Selenium ones (XPath, CSS, and others) if you really need them.
+The [`Screen` class](https://github.com/anze3db/selenium-testing-library#testing-library-selectors) exposes all the `get_by...`, `query_by...` and `find_by...` methods as well as all the Testing Library locators (Role, Label Test, TestId, and others). I even added the Selenium locators including XPath, CSS, and others so that it's easier to transition.
+
+The Selenium Testing Library has been used by my company for more than 1 year now and it powers more than 600 end-to-end tests. The API has been stable and I am not planning on making any backwards incompatible changes. Hopefully, DOM Testing Library doesn't make them either 🤞
 
 # Fin
 

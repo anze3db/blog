@@ -6,7 +6,7 @@ date: 2023-01-30 1:00:00 +0000
 # image: assets/pics/django32-query-perf.png
 ---
 
-The [Testing Library](https://testing-library.com/) has become one of the most popular testing tools for writing tests and it currently supports numerous front-end frameworks (React, Reason, Native, Vue, Marko, Angular, Preact, Svelte, Cypress, and more). The Testing Library query API has even been adopted by Playwright in [their recent release](https://github.com/microsoft/playwright/releases/tag/v1.27.0).
+The [Testing Library](https://testing-library.com/) has become one of the most popular testing tools for writing tests and it currently supports numerous front-end frameworks (React, Vue, Angular, Cypress, and more). The Testing Library query API has even been adopted by Playwright in [their recent release](https://github.com/microsoft/playwright/releases/tag/v1.27.0).
 
 The popularity of the Testing Library probably boils down to the following two reasons:
 

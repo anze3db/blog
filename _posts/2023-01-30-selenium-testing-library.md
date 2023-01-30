@@ -17,9 +17,9 @@ The popularity of the Testing Library probably boils down to the following two r
 
 On first look, the Testing Library Query API looks complex. There are 3 types of queries:
 
-1. `getBy...` Returns the matching node and throws an error if nothing is matched.
-2. `queryBy...` Same as `getBy...` but returns `null` instead of an error if nothing matched. 
-3. `findBy...` Returns a promise that is rejected if the element was not found in `1s` (or based on the `timeout` parameter).
+1. `getBy...` returns the matching node and throws an error if nothing is matched.
+2. `queryBy...` works the same as `getBy...` but returns `null` instead of an error if nothing matched. 
+3. `findBy...` returns a promise that is rejected if the element was not found in `1s` (or based on the `timeout` parameter).
 
 You mainly use the `get` queries since they are the fastest. You use `query` when you need to assert that something shouldn't be in the DOM. You use `find` to find elements that might not be in the DOM just yet.
 

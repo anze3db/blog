@@ -47,7 +47,7 @@ driver = webdriver.Firefox()
 assert len(driver.find_elements(By.Name, "my-element")) == 1
 ```
 
-Note, that we can't use `find_elment` for this because it doesn't catch the case when there is more than one element with the name `my-element` on the page. In that case the function returns the first element found an ingores all the other instances. Second example:
+Note, that we can't use `find_elment` for this because it doesn't catch the case when there is more than one element with the name `my-element` on the page. In that case, the function returns the first element found and ignores all the other instances. Second example:
 
 ```python
 # Wait until the element is visible on the page
@@ -61,15 +61,14 @@ element = WebDriverWait(driver, 1).until(
     EC.presence_of_element_located((By.Name, "my-element"))
 )
 ```
-Waiting for the element to appear on the page is even more verbose and it requires 4 different import statements. I see teams create their own wait abstractions to get around this which isn't ideal. You could use [implicit waits](https://www.selenium.dev/documentation/webdriver/waits/#implicit-wait) instead, but that's usually not recommended.
+Waiting for the element to appear on the page is even more verbose and it requires 4 different import statements. I see teams create their own wait abstractions to get around this which isn't ideal. You could use [implicit waits](https://www.selenium.dev/documentation/webdriver/waits/#implicit-wait) instead, but they usually aren't recommended.
 
 
 ## Accessibility
 
-There are some recently added Selenium features that focused on accessibility ([Relative Locators](https://www.selenium.dev/documentation/webdriver/elements/locators/#relative-locators) added in 4.0), but in general, the preferred locators for finding elements in Selenium continue to be CSS or XPath expressions. Users generally don't see your CSS classes or XPath expressions and even worse, developers like to change those from time to time making your end-to-end tests brittle.
+Some recently added Selenium features have focused on accessibility ([relative Locators](https://www.selenium.dev/documentation/webdriver/elements/locators/#relative-locators) added in 4.0), but in general, the preferred locators for finding elements in Selenium continue to be CSS or XPath expressions. Users generally don't see your CSS classes or XPath expressions so they should not be your default choice. Even worse, developers like to change those, and that makes your end-to-end tests brittle.
 
-Even though Selenium has a `By.Role` locator it only finds the element with an explicit `role` attribute so you can't use it for finding implicit role names in the DOM the same way that you can with the Testing Library's `getByRole`.
-
+Selenium also doesn't offer the primary locator recommended by the Testing Library - By Role. This is very unfortunate since it's extremely difficult to write your own. I've tried, but implementing [this table of HTML elements and their roles](https://www.w3.org/TR/html-aria/#docconformance) goes beyond a weekend project 😓 
 
 # The Solution
 
@@ -117,7 +116,7 @@ screen.find_by_label_text("My Element")
 
 The [`Screen` class](https://github.com/anze3db/selenium-testing-library#testing-library-selectors) exposes all the `get_by...`, `query_by...` and `find_by...` methods as well as all the Testing Library locators (Role, Label Test, TestId, and others). I even added the Selenium locators including XPath, CSS, and others so that it's easier to transition.
 
-The Selenium Testing Library has been used by my company for more than 1 year now and it powers more than 600 end-to-end tests. The API has been stable and I am not planning on making any backwards incompatible changes. Hopefully, DOM Testing Library doesn't make them either 🤞
+The Selenium Testing Library has been used by my company for more than 1 year now and it powers more than 600 end-to-end tests. The API has been stable and I am not planning on making any backward incompatible changes. Hopefully, DOM Testing Library doesn't make them either 🤞
 
 # Fin
 

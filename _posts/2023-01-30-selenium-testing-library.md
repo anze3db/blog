@@ -36,7 +36,9 @@ In [Selenium with Python](https://selenium-python.readthedocs.io/index.html) we,
 
 ## Query API
 
-The Query API consists of [two functions to query elements](https://selenium-python.readthedocs.io/locating-elements.html). `find_element` and `find_elements`. This seems simpler, but unfortunately, it makes test code much more verbose. First example:
+The Query API consists of [two functions to query elements](https://selenium-python.readthedocs.io/locating-elements.html). `find_element` and `find_elements`. This seems simpler, but unfortunately, it makes test code much more verbose. 
+
+First example:
 
 ```python
 # Assert that only one element is found in the DOM
@@ -47,7 +49,9 @@ driver = webdriver.Firefox()
 assert len(driver.find_elements(By.Name, "my-element")) == 1
 ```
 
-Note, that we can't use `find_elment` for this because it doesn't catch the case when there is more than one element with the name `my-element` on the page. In that case, the function returns the first element found and ignores all the other instances. Second example:
+Note, that we can't use `find_elment` for this because it doesn't catch the case when there is more than one element with the name `my-element` on the page. In that case, the function returns the first element found and ignores all the other instances. 
+
+Second example:
 
 ```python
 # Wait until the element is visible on the page
@@ -72,7 +76,9 @@ Selenium also doesn't offer the primary locator recommended by the Testing Libra
 
 # The Solution
 
-The good news is that it's fairly easy to use the Testing Library from Selenium. Since the [dom-testing-library](https://github.com/testing-library/dom-testing-library) is written in JavaScript you can add it to your webpage and then use its API within your tests. Unfortunately, this looks a little gross in Python. First example rewritten using this approach:
+The good news is that it's fairly easy to use the Testing Library from Selenium. Since the [dom-testing-library](https://github.com/testing-library/dom-testing-library) is written in JavaScript you can add it to your webpage and then use its API within your tests. Unfortunately, this looks a little gross in Python.
+
+First example rewritten using this approach:
 
 ```python
 # Assert that only one element is found on the page
@@ -81,7 +87,9 @@ from selenium import webdriver
 driver = webdriver.Firefox()
 driver.execute_script("getByLabelText(document, 'My Element") # getBy query raises an exception if more than one element is found
 ```
+
 Second example:
+
 ```python
 # Wait until the element is visible on the page
 from selenium import webdriver
@@ -94,7 +102,9 @@ I'd argue that using `execute_script` is already an improvement over Selenium's 
 
 # Selenium Testing Library
 
-However, injecting the Testing Library into the DOM manually and then writing JavaScript is not the best user experience for writing tests. This is why I created a PyPI package [Selenium Testing Library](https://github.com/anze3db/selenium-testing-library) that takes care of this plumbing and exposes a nice 100% type annotated API. First example rewritten using the Selenium Testing Library:
+However, injecting the Testing Library into the DOM manually and then writing JavaScript is not the best user experience for writing tests. This is why I created a PyPI package [Selenium Testing Library](https://github.com/anze3db/selenium-testing-library) that takes care of this plumbing and exposes a nice 100% type annotated API. 
+
+First example rewritten using the Selenium Testing Library:
 
 ```python
 # Assert that only one element is found on the page
@@ -104,7 +114,9 @@ from selenium_testing_library import Screen
 screen = Screen(webdriver.Firefox())
 screen.get_by_label_text("My Element")
 ```
+
 Second example:
+
 ```python
 # Wait until the element is visible on the page
 from selenium import webdriver

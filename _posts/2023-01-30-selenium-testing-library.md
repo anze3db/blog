@@ -32,7 +32,7 @@ This shows itself the most in the [priority](https://testing-library.com/docs/qu
 
 # Selenium with Python
 
-With [Selenium with Python](https://selenium-python.readthedocs.io/index.html) we, unfortunately, don't get a good Query API or accessibility features out of the box.
+In [Selenium with Python](https://selenium-python.readthedocs.io/index.html) we, unfortunately, don't get a good Query API or accessibility features out of the box.
 
 ## Query API
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Selenium Testing Library"
-description: "Using the Testing Library with Selenium in Python."
+title: "Using Testing Library with Selenium in Python"
+description: "Why and how to use the Testing Library with Selenium in Python."
 date: 2023-01-30 1:00:00 +0000
 # image: assets/pics/django32-query-perf.png
 ---

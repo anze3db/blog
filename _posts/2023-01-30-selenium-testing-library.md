@@ -21,7 +21,7 @@ On first look, the Testing Library Query API looks complex. There are 3 types of
 2. `queryBy...` Same as `getBy...` but returns `null` instead of an error if nothing matched. 
 3. `findBy...` Returns a promise that is rejected if the element was not found in `1s` (or based on the `timeout` parameter).
 
-You mainly use the `get` queries since they are the fastest. You primarily use `query` when you need to assert that something shouldn't be in the DOM. You use `find` to find elements that might not be in the DOM just yet.
+You mainly use the `get` queries since they are the fastest. You use `query` when you need to assert that something shouldn't be in the DOM. You use `find` to find elements that might not be in the DOM just yet.
 
 
 # Accessibility
@@ -47,7 +47,7 @@ driver = webdriver.Firefox()
 assert len(driver.find_elements(By.Name, "my-element")) == 1
 ```
 
-Note, that we can't use `find_elment` for this because if there is more than one element with the name `my-element` on the page the function will return the first one and ignore the others. Second example:
+Note, that we can't use `find_elment` for this because it doesn't catch the case when there is more than one element with the name `my-element` on the page. In that case the function returns the first element found an ingores all the other instances. Second example:
 
 ```python
 # Wait until the element is visible on the page
@@ -61,7 +61,7 @@ element = WebDriverWait(driver, 1).until(
     EC.presence_of_element_located((By.Name, "my-element"))
 )
 ```
-Waiting for the element to appear on the page (a very common operation when writing tests!) is even more verbose and it requires 4 different import statements.
+Waiting for the element to appear on the page is even more verbose and it requires 4 different import statements. I see teams create their own wait abstractions to get around this which isn't ideal. You could use [implicit waits](https://www.selenium.dev/documentation/webdriver/waits/#implicit-wait) instead, but that's usually not recommended.
 
 
 ## Accessibility
@@ -73,7 +73,7 @@ Even though Selenium has a `By.Role` locator it only finds the element with an e
 
 # The Solution
 
-The good news is that it's fairly easy to use the Testing Library from Selenium. Since the [dom-testing-library](https://github.com/testing-library/dom-testing-library) is written in JavaScript you can add it to your webpage and then use its API from within your tests. Unfortunately, this looks a little gross from within Python. First example rewritten using this approach:
+The good news is that it's fairly easy to use the Testing Library from Selenium. Since the [dom-testing-library](https://github.com/testing-library/dom-testing-library) is written in JavaScript you can add it to your webpage and then use its API within your tests. Unfortunately, this looks a little gross in Python. First example rewritten using this approach:
 
 ```python
 # Assert that only one element is found on the page
@@ -91,7 +91,7 @@ driver = webdriver.Firefox()
 driver.execute_script("findByLabelText(document, 'My Element") # findBy query will wait for 1s before throwing an error
 ```
 
-I'd argue that using `execute_script` is already an improvement over Selenium's API. We can even locate the input element using its label text, something that is again not easily done with Selenium. 
+I'd argue that using `execute_script` is already an improvement over Selenium's API. We can even locate the input element using its label text, something that is not easily done with Selenium. 
 
 However, injecting the Testing Library into the DOM and then writing JavaScript is not how we should write our tests. This is why I created a [PyPI package](https://github.com/anze3db/selenium-testing-library) that does all of this for you and exposes a nice 100% type annotated API. First example rewritten using the package:
 

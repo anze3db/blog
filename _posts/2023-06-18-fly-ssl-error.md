@@ -25,7 +25,7 @@ Surprisingly, I had to delete the existing certificate before creating a new one
 Error: Hostname already exists on app
 ```
 
-I have found a [forum thread](https://community.fly.io/t/ssl-certificate-did-not-renew-automatically/4924) with others experiencing this same issue. According to a fly.io [employee post](https://community.fly.io/t/ssl-certificate-did-not-renew-automatically/4924/6) the certificates should auto-renew 30 days before expiration.
+I have found a [forum thread](https://community.fly.io/t/ssl-certificate-did-not-renew-automatically/4924) with others experiencing this same issue. According to a fly.io [employee post](https://community.fly.io/t/ssl-certificate-did-not-renew-automatically/4924/6) the certificates should auto-renew 30 days before expiration, but they did have [a bug](https://community.fly.io/t/ssl-certificate-did-not-renew-automatically/4924/13) that prevented certificates from renewing. Did this bug regress?
 
 Despite having the `A`/`AAAA` records correctly set, my site didn't auto-renew. I've now added the `CNAME` record to my DNS settings hoping that this will fix the problem, but I'll have to wait until September to know for sure. 🤞
 

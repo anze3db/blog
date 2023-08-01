@@ -24,7 +24,7 @@ However, this only works for changes in CSS files. If you make changes to your P
 
 # Python Reloading
 
-Fortunately, there are existing tools to help you restart your application when code changes occur. I like [`pytest-watch`](https://pypi.org/project/pytest-watch/), a plugin for [`pytest`](https://pypi.org/project/pytest/) that re-runs your test suite when you modify your Python files.
+Fortunately, there are existing tools to help you restart your application when code changes occur. There is probably a better way, but I like [`pytest-watch`](https://pypi.org/project/pytest-watch/), a plugin for [`pytest`](https://pypi.org/project/pytest/) that re-runs your test suite when you modify your Python files.
 
 `pytest-watch` isn't limited to running tests. You can use the `--runner` flag to run arbitrary commands when file changes are detected. In our case, we want to use pytest-watch to run the textual run command:
 

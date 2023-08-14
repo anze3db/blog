@@ -15,3 +15,5 @@ gem "kramdown-parser-gfm"
 gem "jekyll-watch"
 
 gem 'jekyll-feed'
+
+gem 'jekyll-sitemap'

@@ -17,6 +17,7 @@ author:
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 feed:
   posts_limit: 50
@@ -30,3 +31,4 @@ feed:
 #
 
 production_url: https://blog.pecar.me
+url: "https://blog.pecar.me"

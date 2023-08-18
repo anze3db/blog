@@ -6,7 +6,7 @@ date: 2023-08-18 0:00:00 +0000
 image: assets/pics/words-tui.png
 ---
 
-I have automated publishing my [words-tui project](https://pypi.org/project/words-tui/) to PyPI with GitHub Actions. This is the workflow file:
+I have automated publishing my [words-tui project](https://pypi.org/project/words-tui/) to PyPI with GitHub Actions. This is the workflow file, saved at `.github/workflows/publish.yml`:
 
 ```yaml
 {% raw %}
@@ -37,6 +37,8 @@ jobs:
         pip install hatch
     - name: Build package
       run: hatch build
+    - name: Test package
+      run: hatch run test
     - name: Publish package
       env: 
         HATCH_INDEX_AUTH: ${{ secrets.HATCH_INDEX_AUTH }}
@@ -48,7 +50,9 @@ You can also see it live [on GitHub](https://github.com/anze3db/words-tui/blob/m
 
 ## How it works
 
-The workflow is triggered when I publish a new release through the GitHub UI (this step is still manual, but I am already considering automating it). It sets up Python, installs the dependencies, builds the package using [hatch](https://hatch.pypa.io/latest/), and finally runs the `hatch publish` command to publish it to PyPI.
+The workflow is triggered when I publish a new release through the GitHub UI (this step is still manual, but I am already considering automating it).
+
+It sets up Python, installs the dependencies, builds the package using [hatch](https://hatch.pypa.io/latest/), runs the tests, and finally runs the `hatch publish` command to publish it to PyPI.
 
 ## Authentication
 
@@ -66,4 +70,6 @@ env:
 {% endraw %}
 ```
 
-I should have also added a step to run the tests before publishing, but the project has no tests yet 🙈. I'll add them soon, I promise.
+## Conclusion
+
+The best thing about this automation is that I don't have to have access to PyPI on the machine I am using. It makes it less likely that I'll accidentally publish my PyPI token, which may or may not have happened in the past 🙈.

@@ -70,6 +70,8 @@ When setting up Trusted Publishers make sure you add the following lines to your
       id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
 ```
 
+The PyPI Action publishes all the build artifacts in the `dist/` folder. This folder is populated by the previous step's `hatch build` command. Running both `build` and `publish` in the same job is not recommended because a malicious script inside the build step could elevate privileges, but for this toy project, I think the seperation isn't necessary. 
+
 ## Token-Based Authentication
 
 > ⚠️ WARNING ⚠️

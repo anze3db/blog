@@ -8,7 +8,7 @@ image: /assets/pics/fedidevs-posts.png
 
 I've just launched [Fedidevs Posts](https://fedidevs.com/posts), a page that curates the most popular posts by developers on the Fediverse.
 
-<a href="https://fedidevs.com/posts>">![fedidevs-messages screenshot](/assets/pics/fedidevs-posts.png)</a>
+<a href="https://fedidevs.com/posts">![fedidevs-messages screenshot](/assets/pics/fedidevs-posts.png)</a>
 
 
 

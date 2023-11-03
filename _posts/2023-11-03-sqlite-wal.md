@@ -38,5 +38,5 @@ The article [SQLite: Vacuuming the WALs](https://www.theunterminatedstring.com/s
 
 ## Conclusion
 
-With WAL enabled and the VACUUM command removed, [fedidevs.com](https:/fedidevs.com) is chugging along nicely. It only gets a little traffic and is almost free to run since it's hosted on my Raspberry Pi. I have to write a post about this setup in the future.
+With WAL enabled and the VACUUM command removed, [fedidevs.com](https:/fedidevs.com) is chugging along nicely. It only gets a little traffic and is almost free to run since it's hosted on my Raspberry Pi. I'll write a post about this setup in the future.
 

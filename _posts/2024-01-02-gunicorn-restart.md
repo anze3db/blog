@@ -8,7 +8,7 @@ date: 2024-01-02 0:00:00 +0000
 
 ## The HUP Signal
 
-Gunicorn supports the [HUP signal](https://docs.gunicorn.org/en/stable/signals.html#reload-the-configuration) that will reload your application without downtime, so, in most cases, you can use the following line for 0-downtime restarts:
+Gunicorn uses the [HUP signal](https://docs.gunicorn.org/en/stable/signals.html#reload-the-configuration) that will reload your application without downtime, so, in most cases, you can use the following line for 0-downtime restarts:
 
 ```bash
 kill -HUP $(cat gunicorn.pid)

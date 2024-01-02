@@ -8,25 +8,19 @@ date: 2024-01-02 0:00:00 +0000
 
 ## The HUP Signal
 
-Gunicorn supports the [HUP signal](https://docs.gunicorn.org/en/stable/signals.html#reload-the-configuration) that will reload the application without downtime, so, in most cases, you can use the following line to accomplihs 0-downtime restarts:
-
-```bash
-kill -HUP <gunicorn_pid>
-```
-
-The easiest way to get the PID without grepping the `ps` command is to configure Gunicorn to create a `pid` file when it starts. You can do that by adding the `pidfile` parameter with the path to the file in `gunicorn.conf.py`:
-
-```python
-pidfile = "gunicorn.pid"
-```
-
-Now, all you need is read the `pidfile` inside the `kill` command:
+Gunicorn supports the [HUP signal](https://docs.gunicorn.org/en/stable/signals.html#reload-the-configuration) that will reload your application without downtime, so, in most cases, you can use the following line for 0-downtime restarts:
 
 ```bash
 kill -HUP $(cat gunicorn.pid)
 ```
 
-Your Gunicorn workers will restart without losing any requests:
+Gunicorn doesn't create the `gunicorn.pid` file by default, so you'll have to add the `pidfile` parameter to your `gunicorn.conf.py` config file:
+
+```python
+pidfile = "gunicorn.pid"
+```
+
+Your Gunicorn workers will restart without dropping any requests:
 
 ```log
 [2024-01-02 17:29:43 +0000] [22791] [INFO] Handling signal: hup
@@ -45,7 +39,7 @@ Your Gunicorn workers will restart without losing any requests:
 
 ## Upgrading Gunicorn itself
 
-The above method never closes the master Gunicorn process, so it will never get upgraded. This isn't a big deal since Gunicorn updates are rare (there were almost two years between 20.0.4 and 21.0.0 releases). But if you need to upgrade Gunicorn itself and still don't want to risk downtime, you have to do the following:
+The above method upgrades your application and its dependencies (unless you are [preload your app](https://docs.gunicorn.org/en/stable/settings.html#preload-app)!), but never closes the master Gunicorn process, so it will never get upgraded. This isn't a big deal since Gunicorn updates are rare (there were almost two years between 20.0.4 and 21.0.0 releases). But if you need to upgrade Gunicorn itself and still don't want to risk downtime, you have to do the following:
 
 ```bash
 kill -USR2 $(cat gunicorn.pid) # Start the new master process alongside the old one
@@ -57,9 +51,9 @@ More info about this is available in the [official Gunicorn docs](https://docs.g
 
 ## Uvicorn
 
-`uvicorn` only runs a single process and isn't recommended for production alone! The [official Uvicorn docs](https://www.uvicorn.org/deployment/#gunicorn) recommend using a process manager like `gunicorn` to overcome this limitation. This is great, because we already know how to restart `gunicorn` without downtime!
+Uvicorn only runs a single process and isn't recommended for production alone! The [official Uvicorn docs](https://www.uvicorn.org/deployment/#gunicorn) recommend using a process manager like Gunicorn to overcome this limitation. This is great, because we already know how to restart Gunicorn without downtime!
 
-To get `gunicorn` to run your `uvicorn` processes, you only need to define the `worker_class` variable in the config file, and you should be all set:
+To get Gunicorn to run your Uvicorn processes, you only need to define the `worker_class` variable in the config file, and you should be all set:
 
 ```python
 worker_class = "uvicorn.workers.UvicornWorker"

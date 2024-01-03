@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "No Downtime Restarts with Gunicorn"
-description: "Using the HUP signal to restart your Gunicorn process without dropping requests."
+title: "No Downtime Deployments with Gunicorn"
+description: "This article shows how to achieve zero-downtime deploys of your Django, Flaks, or FastAPI app using only Gunicorn. It explains how to reload the Gunicorn process with the -HUP signal using systemd or the kill command directly making sure no requests are dropped during the upgrade."
 date: 2024-01-02 0:00:00 +0000
 # image: /assets/pics/pytest-plugin-og.png
 ---

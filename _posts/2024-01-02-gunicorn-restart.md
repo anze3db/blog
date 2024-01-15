@@ -1,9 +1,8 @@
 ---
-layout: post
 title: "No Downtime Deployments with Gunicorn"
 description: "This article shows how to achieve zero-downtime deploys of your Django, Flaks, or FastAPI app using only Gunicorn. It explains how to reload the Gunicorn process with the -HUP signal using systemd or the kill command directly making sure no requests are dropped during the upgrade."
 date: 2024-01-02 0:00:00 +0000
-# image: /assets/pics/pytest-plugin-og.png
+image: assets/cards/2024-01-02-gunicorn-restart.png
 ---
 
 Suppose you're hosting your Django, Flask, or FastAPI application on your server instead of using a platform like Heroku or Fly. You want to continue serving requests while your Gunicorn process restarts to load your application code updates, and you want to avoid setting up a complicated code deployment process. Gunicorn supports this workflow out of the box with the [HUP signal](https://docs.gunicorn.org/en/stable/signals.html#reload-the-configuration).

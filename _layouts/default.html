@@ -9,29 +9,37 @@ name: twitter
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <!-- Primary Meta Tags -->
   <title>{{ page.title }}</title>
+  <meta name="title" content="{{ page.title }}">
   <meta name="description" content="{{ page.description }}" />
-
-  <meta name="twitter:creator" content="@anze3db" />
-  <meta name="twitter:title" content="{{ page.title }}" />
-
+  <meta name="author" content="{{ site.author.name }}" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
   <meta property="og:url" content="{{site.url }}{{ page.url }}" />
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.description }}" />
   {% if page.image %}
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="{{site.url }}/{{ page.image }}" />
   <meta property="og:image" content="{{site.url }}/{{ page.image }}" />
   {% else %}
-  <meta name="twitter:card" content="summary" />
   <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
   {% endif %}
-  <meta name="author" content="{{ site.author.name }}" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@anze3db" />
+  <meta name="twitter:title" content="{{ page.title }}" />
+  {% if page.image %}
+  <meta name="twitter:image" content="{{site.url }}/{{ page.image }}" />
+  {% else %}
+  <meta name="twitter:card" content="summary" />
+  {% endif %}
+  <!-- RSS Link -->
   <link rel="alternate" type="application/rss+xml" href="{{ production_url }}/feed.xml" title="{{ site.title }}" />
+  <!-- CSS -->
   <link href="/assets/css/vim.css?v=2" rel="stylesheet" />
   <link href="/assets/css/pico.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 </head>
 
 <body>

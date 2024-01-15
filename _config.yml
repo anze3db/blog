@@ -8,7 +8,7 @@ exclude: [".rbenv-version", "README.md", "Rakefile"]
 # so be sure to set them if your theme uses them.
 #
 title: Anže's Blog
-tagline: Python, webdev, and surfing
+tagline: Python, Django, and the Web
 author:
   name: Anže
   email: anze@pecar.me
@@ -18,6 +18,23 @@ author:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+
+collections:
+  cards:
+    output: true
+    layout: card
+    permalink: /:collection/:title
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+  - scope:
+      path: "_cards"
+    values:
+      layout: card
 
 feed:
   posts_limit: 50

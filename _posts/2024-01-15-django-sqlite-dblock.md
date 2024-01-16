@@ -183,7 +183,7 @@ This would work but it isn't production-ready code because we don't handle error
 
 Another option would be to monkey patch `transaction.atomic` like it was done [here](https://code.djangoproject.com/ticket/29280#comment:5). Although, the code no longer works on Django 5.0.
 
-*Any other workarounds that I haven't listed? Please <a href="mailto: anze@pecar.me">let me know</a>*!
+*Any other workarounds that I haven't listed? Please <a href="mailto: anze@pecar.me">let me know</a> and a I'll update the post!*
 
 # Proper solution
 

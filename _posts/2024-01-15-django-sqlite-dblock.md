@@ -113,7 +113,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
         "OPTIONS": {
-            "timeout": 20,  # <-- 5 seconds is the default, but we can increase it to, e.g., 20s
+            "timeout": 20,  # 5 seconds is the default, but we can increase it to, e.g., 20s
         },
     }
 }
@@ -147,10 +147,10 @@ The bolded part explains why the request failed even though we weren't near the 
 Let's look at the view in my example and see what's going on step by step:
 
 ```python
-@transaction.atomic()  # <-- Start a deferred transaction; no db lock yet
+@transaction.atomic()  # Start a deferred transaction; no db lock yet
 def read_write_transaction(_):
-    read_from_db()  # <-- Read from the db here; no lock yet
-    write_to_db()  # <-- Try to acquire a lock in the middle of the transaction, but if the db is already locked, SQLite cannot retry because that might break the serializable isolation guarantees.
+    read_from_db()  # Read from the db here; no lock yet
+    write_to_db()  # Try to acquire a lock in the middle of the transaction, but if the db is already locked, SQLite cannot retry because that might break the serializable isolation guarantees.
     return HttpResponse("OK")
 ```
 
@@ -159,10 +159,10 @@ def read_write_transaction(_):
 One obvious workaround (but not very practical!) is always to make sure you do a write request at the start of every transaction:
 
 ```python
-@transaction.atomic()  # <-- Start a deferred transaction, no lock yet
+@transaction.atomic()  # Start a deferred transaction, no lock yet
 def write_read_transaction(_):
-    write_to_db()  # <-- Try to acquire a lock; if the db is already locked, SQLite will retry. There were no read queries in this transaction, so there is no way to break serializable isolation guarantees.
-    read_from_db()  # <-- Read from the db here; the db is already locked
+    write_to_db()  # Try to acquire a lock; if the db is already locked, SQLite will retry. There were no read queries in this transaction, so there is no way to break serializable isolation guarantees.
+    read_from_db()  # Read from the db here; the db is already locked
     return HttpResponse("OK")
 ```
 
@@ -172,9 +172,9 @@ Luckily, SQLite can acquire a lock immediately when starting a transaction. [`BE
 
 ```python
 def read_write_transaction_immediate(_):
-    connection.cursor().execute("BEGIN IMMEDIATE")  # <-- Acquire the db lock, retry when db is already locked, can still raise, but only if we wait for more than `timeout`.
-    read_from_db()  # <-- Read from the db, db is already locked, no problems
-    write_to_db()  # <-- Write to the db, db is already locked, no problems
+    connection.cursor().execute("BEGIN IMMEDIATE")  # Acquire the db lock, retry when db is already locked, can still raise, but only if we wait for more than `timeout`.
+    read_from_db()  # Read from the db, db is already locked, no problems
+    write_to_db()  # Write to the db, db is already locked, no problems
     connection.cursor().execute("COMMIT")
     return HttpResponse("OK")
 ```

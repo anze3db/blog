@@ -166,7 +166,7 @@ def write_read_transaction(_):
     return HttpResponse("OK")
 ```
 
-This is very awkward and even impossible in most views where the first thing to do is usually fetching the user of the current request.
+This is very awkward and even impossible in most views where the first thing to do is to fetch the user of the current request.
 
 Luckily, SQLite can acquire a lock immediately when starting a transaction. [`BEGIN IMMEDIATE`](https://www.sqlite.org/lang_transaction.html#deferred_immediate_and_exclusive_transactions). We can use this in our view like this:
 

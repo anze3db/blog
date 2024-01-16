@@ -5,8 +5,6 @@ date: 2024-01-16 0:00:00 +0000
 image: /assets/cards/2024-01-16-django-sqlite-dblock.png
 ---
 
-SQLite does not allow concurrent writes, but that doesn't mean it can't [process thousands of writes per second](https://fractaledmind.github.io/2023/12/05/sqlite-myths-linear-writes-do-not-scale/).
-
 Django developers wanting to use SQLite in production need to be aware of the `database is locked` error and how to correctly handle it.
 
 # The Database is Locked Error

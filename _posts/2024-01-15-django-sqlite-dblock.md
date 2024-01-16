@@ -124,7 +124,7 @@ Correct again, but I have to point out that even with 5 seconds of waiting, you 
 
 The Django docs, however, don't mention that there is another reason for the `database is locked` errors that have nothing to do with how you've set your `timeout.`
 
-## Cause 2: Retrying in the middle of a transaction could break the serializable isolation
+## Cause 2: Retrying in the middle of a transaction could break the serializable isolation guarantee
 
 Sometimes, however, you will see the `database is locked` exception on requests that finished in less than 5 seconds (or whatever your `timeout` was set to).
 
@@ -138,7 +138,7 @@ GET      /read_write_transaction/                                               
 
 We can see that the maximum request time during this test was 123 ms, way below the 5-second limit, but we still had a 28.27% failure rate! All those exceptions were `database is locked` errors.
 
-I was baffled by this problem when I first saw it and couldn't figure out the cause until Stephen linked his [blog post](https://fractaledmind.github.io/2023/12/11/sqlite-on-rails-improving-concurrency/) about how he solved it in Ruby. Here is the relevant part:
+I was baffled by this problem when I first saw it and couldn't figure out the cause until Stephen linked his [blog post](https://fractaledmind.github.io/2023/12/11/sqlite-on-rails-improving-concurrency/) about how he solved it in Rails. Here is the relevant part:
 
 > The issue is that when SQLite attempts to acquire a lock in the middle of a transaction and there is another connection with a lock, SQLite cannot retry the transaction. Retrying in the middle of a transaction could break the serializable isolation that SQLite guarantees. Thus, when SQLite hits a busy exception when trying to upgrade a transaction, it **doesn’t fallback to the busy_handler, it immediately throws the error and halts that transaction**.
 
@@ -154,7 +154,9 @@ def read_write_transaction(_):
     return HttpResponse("OK")
 ```
 
-# Workarounds
+# Possible solutins and workarounds
+
+(I am still searching for the best way to solve this issue and I will update the blog post when new solutions pop up)
 
 One obvious workaround (but not very practical!) is always to make sure you do a write request at the start of every transaction:
 
@@ -183,10 +185,29 @@ This would work but it isn't production-ready code because we don't handle error
 
 Another option would be to monkey patch `transaction.atomic` like it was done [here](https://code.djangoproject.com/ticket/29280#comment:5). Although, the code no longer works on Django 5.0.
 
-*Any other workarounds that I haven't listed? Please <a href="mailto: anze@pecar.me">let me know</a> and a I'll update the post!*
+The [most promising solution right now comes from charettes](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/26994/2) and proposes to add a `begin_immediate` key to `OPTIONS`:
 
-# Proper solution
+```diff
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index 08de0bad5a..ce9eab8d9d 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -297,7 +297,12 @@ def _start_transaction_under_autocommit(self):
+         Staying in autocommit mode works around a bug of sqlite3 that breaks
+         savepoints when autocommit is disabled.
+         """
+-        self.cursor().execute("BEGIN")
++        sql = (
++            "BEGIN IMMEDIATE"
++            if self.settings_dict["OPTIONS"].get("begin_immediate")
++            else "BEGIN"
++        )
++        self.cursor().execute(sql)
 
-Ideally, Django should ensure that `@transaction.atomic()` acquires a write lock immediately (using `BEGIN IMMEDIATE` instead of `BEGIN`) because hard-to-debug errors are worse than a slowdown! Having `BEGIN IMMEDIATE` be available as an option (e.g., `transaction.atomic(immediate=True)`) would be an improvement, but at the very least, we should update the docs to make people aware that SQLite might raise `db is locked` before the timeout is reached.
+     def is_in_memory_db(self):
+         return self.creation.is_in_memory_db(self.settings_dict["NAME"])
+```
 
-My next step is to open a discussion on Django forums to see if we can revive this old [ticket #29280](https://code.djangoproject.com/ticket/29280) and make SQLite easier to use with Django in production.
+*Any other potential solutions or workarounds that I haven't listed? Please joind the discussion on the [Django forum](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/26994). I'll update the post as new ideas come through!*
+
+I think ideally, Django should ensure that `@transaction.atomic()` acquires a write lock immediately (using `BEGIN IMMEDIATE` instead of `BEGIN`). But since there might be a lot of existing code out there relying on deferred transactions, Django can't easily switch the default. This is why [ticket #29280](https://code.djangoproject.com/ticket/29280) was closed 5 years ago, but since it feels like SQLite is gaining traction for the web application use cases it might be worth figuring out how to improve the experience using it in Django.

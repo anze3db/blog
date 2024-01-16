@@ -187,6 +187,6 @@ Another option would be to monkey patch `transaction.atomic` like it was done [h
 
 # Proper solution
 
-Ideally, Django should ensure that `@transaction.atomic()` acquires a write lock immediately (using `BEGIN IMMEDIATE` instead of `BEGIN`) because hard-to-debug errors are worse than a slowdown! Having `BEGIN IMMEDIATE` be available as an option (e.g., `transaction.atomic(immediate=True)`) would be an improvement, but at the very least, what should update the docs to make people aware that SQLite might raise `db is locked` before the timeout is reached.
+Ideally, Django should ensure that `@transaction.atomic()` acquires a write lock immediately (using `BEGIN IMMEDIATE` instead of `BEGIN`) because hard-to-debug errors are worse than a slowdown! Having `BEGIN IMMEDIATE` be available as an option (e.g., `transaction.atomic(immediate=True)`) would be an improvement, but at the very least, we should update the docs to make people aware that SQLite might raise `db is locked` before the timeout is reached.
 
 My next step is to open a discussion on Django forums to see if we can revive this old [ticket #29280](https://code.djangoproject.com/ticket/29280) and make SQLite easier to use with Django in production.

@@ -235,4 +235,4 @@ This is essentially the same as Alex's solution above, but doesn't require you t
 
 I think ideally, Django should ensure that `@transaction.atomic()` acquires a write lock immediately (using `BEGIN IMMEDIATE` instead of `BEGIN`). But since there is a lot of existing code out there relying on deferred transactions not to mention code with `ATOMIC_REQUESTS=True`, Django can't easily switch the default. This is why [ticket #29280](https://code.djangoproject.com/ticket/29280) was closed 5 years ago, but since it feels like SQLite is gaining traction for the web application use cases it might be worth figuring out how to improve the experience using it in Django.
 
-*Any other potential solutions or workarounds that I haven't listed? Please joind the discussion on the [Django forum](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/26994). I'll update this post as new ideas come through!*
+*Any other potential solutions or workarounds that I haven't listed? Please join the discussion on the [Django forum](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/26994). I'll update this post as new ideas come through!*

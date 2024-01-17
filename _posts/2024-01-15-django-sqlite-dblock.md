@@ -5,7 +5,7 @@ date: 2024-01-16 0:00:00 +0000
 image: /assets/cards/2024-01-16-django-sqlite-dblock.png
 ---
 
-SQLite is gainig traction as a viable option for web applications in production environments. Django developers wanting to use SQLite in production need to be aware of the `database is locked` error, because it might cause confusion in certain cases.
+SQLite is gaining traction as a viable option for web applications in production environments. Unfortunately, Django developers wanting to use SQLite in production need to be aware of the `database is locked` error. This blog post explains the two cases on why this error can happen and how to solve it.
 
 # The Database is Locked Error
 

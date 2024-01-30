@@ -164,7 +164,21 @@ def write_read_transaction(_):
 
 Instead of using the default deferred transaction mode, we can use the [IMMEDIATE transaction mode](https://www.sqlite.org/lang_transaction.html#deferred_immediate_and_exclusive_transactions).
 
-Unfortunately, Django does not support setting the transaction mode out of the box, but we can accomplish this manually like this:
+In Django 5.1 and newer we will be able to set the `IMMEDIATE` transaction mode in the database options:
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "OPTIONS": {
+            "transaction_mode": "IMMEDIATE",  # <-- Set the transaction mode to IMMEDIATE
+        },
+    }
+}
+```
+
+Django versions before 5.1 do not support setting the transaction mode out of the box, but we can accomplish this manually like this:
 
 ```python
 # <-- Note that we are no longer using the @transaction.atomic() decorator
@@ -205,6 +219,8 @@ This is the cleanest solution I've seen so far, but do note that it doesn't play
 
 ### Solutions in Django itself
 
+<b>Update 30 Jan 2024:</b> The change was accepted and merged into Django 5.1. See [ticket #29280](https://code.djangoproject.com/ticket/29280) for more details. 🎉
+
 I have started a discussion on the [Django forum](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/) to see if we can improve the experience of using SQLite in Django itself.
 
 [Charettes proposed](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/26994/2) to add a `begin_immediate` key to `OPTIONS`:
@@ -234,5 +250,3 @@ This is essentially the same as Alex's solution above, but doesn't require you t
 [Carlton Gibson mentioned](https://fosstodon.org/@carlton/111765763646205620) GRDB, a Swift library that uses SQLite as a backend, and this library allows you to [change the transaction mode](https://swiftpackageindex.com/groue/grdb.swift/v6.24.1/documentation/grdb/transactions#Transaction-Kinds). Maybe we can do something similar in Django in the future?
 
 I think ideally, Django should ensure that `@transaction.atomic()` acquires a write lock immediately (using `BEGIN IMMEDIATE` instead of `BEGIN`). But since there is a lot of existing code out there relying on deferred transactions not to mention code with `ATOMIC_REQUESTS=True`, Django can't easily switch the default. This is why [ticket #29280](https://code.djangoproject.com/ticket/29280) was closed 5 years ago, but since it feels like SQLite is gaining traction for the web application use cases it might be worth figuring out how to improve the experience using it in Django.
-
-*Any other potential solutions or workarounds that I haven't listed? Please join the discussion on the [Django forum](https://forum.djangoproject.com/t/sqlite-and-database-is-locked-error/26994). I'll update this post as new ideas come through!*

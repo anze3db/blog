@@ -2,7 +2,7 @@
 title: "Django SQLite Benchmark"
 description: "How to configure SQLite for better throughput with Django."
 date: 2024-02-06 0:00:00 +0000
-image: /assets/cards/2024-02-06-django-sqlite-benchmark.png
+image: assets/cards/2024-02-06-django-sqlite-benchmark.png
 ---
 
 SQLite is an excellent database for web applications, but its default configuration is targeted at embedded systems and isn't optimized for reads and writes from multiple processes and threads concurrently. Because of this, it needs tweaking to improve throughput and performance and reduce the number of errors you might see.
@@ -20,7 +20,10 @@ While this benchmark was done with Django, most ideas can be applied to other we
 
 # TL;DR
 
-Enable WAL mode and use immediate transactions to prevent Database is Locked errors. Synchronous = NORMAL and Memory-Mapped I/O had little impact on throughput. PostgreSQL has slower reads but more consistent writes.
+1. Enable `WAL` mode.
+2. Use `IMMEDIATE` transactions to prevent Database is Locked errors. 
+3. `synchronous=NORMAL` and Memory-Mapped I/O had only a small impact on throughput.
+4. PostgreSQL has slower reads but more consistent writes.
 
 ![Tablet screenshot](/assets/pics/sqlite-django-benchmark.png)
 
@@ -47,13 +50,13 @@ The failures were due to the Database is Locked error. I've written an article a
 
 I have written about [WAL mode before](/sqlite-wal). By default, SQLite uses rollback journal mode, meaning any write to the database will block ALL reads. This is fine for single-thread apps, but for web applications, it can severely limit the concurrency of your requests.
 
-This is where WAL mode comes in. With WAL, reads are no longer blocked by writes and can be executed concurrently. We can enable WAL mode with the following PRAGMA command:
+This is where `WAL` mode comes in. With `WAL`, reads are no longer blocked by writes and can be executed concurrently. We can enable `WAL` mode with the following PRAGMA command:
 
 ```bash
 sqlite3 db.sqlite3 'PRAGMA journal_mode=WAL;'
 ```
 
-(There is currently no way to enable WAL mode in Django's settings file, but there is [a PR](https://github.com/django/django/pull/14824) and [Ticket#24018](https://code.djangoproject.com/ticket/24018) open to add this feature.)
+(There is currently no way to enable `WAL` mode in Django's settings file, but there is [a PR](https://github.com/django/django/pull/14824) and [Ticket#24018](https://code.djangoproject.com/ticket/24018) open to add this feature.)
 
 ## Results
 
@@ -80,7 +83,7 @@ As expected, the number of errors has decreased significantly. There was precise
 
 It is surprising that the throughput also increased during this. I think this is because we no longer do rollbacks since there are fewer failures. 
 
-This change did make one of our read endpoints slower! The `/read_transaction` endpoint must now acquire a write lock even though it only executes a single SELECT statement. In DEFERRED mode, the write lock was never acquired. The logs show that the response time increased from 31ms to 118ms. This is why it is recommended *not to* use `ATOMIC_REQUESTS` in Django with IMMEDIATE transactions.
+This change did make one of our read endpoints slower! The `/read_transaction` endpoint must now acquire a write lock even though it only executes a single SELECT statement. In DEFERRED mode, the write lock was never acquired. The logs show that the response time increased from 31ms to 118ms. This is why it is recommended *not to* use `ATOMIC_REQUESTS` in Django with `IMMEDIATE` transactions.
 
 # Synchronous NORMAL
 

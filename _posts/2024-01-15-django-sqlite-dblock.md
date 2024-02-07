@@ -253,6 +253,22 @@ I think ideally, Django should ensure that `@transaction.atomic()` acquires a wr
 
 ## Cause 3: Using a Network File System
 
+This issue is not specific to Django but is worth mentioning since it's a common problem with Django (and other SQLite apps) deployments on Azure.
+
+SQLite doesn't support some network file systems, including NFS, SMB, CIFS, and others. If you use SQLite on one of those, you will likely run into `database is locked` or other types of `disk I/O` errors.
+
+This is because these file systems don't implement locking correctly, as described in SQLite's [How to Corrupt Your Database File doc](https://www.sqlite.org/howtocorrupt.html#_filesystems_with_broken_or_missing_lock_implementations).
+
+Martin sent me an email about how frustrating it was when he encountered the problem with his app running on Azure App Services ([azure-docs/issues/47130](https://github.com/MicrosoftDocs/azure-docs/issues/47130)). Be careful since the issue might only surface with concurrent users, who are most likely only in production!
+
+### Solutions
+
+A [kubernetes issue](https://github.com/kubernetes/kubernetes/issues/61767) points at the `nobrl` mount option flag as the solution, and the Azure Storage docs also mention `nobrl` as a way to solve the db is locked erorrs [here](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/mountoptions-settings-azure-files#other-useful-settings), but I haven't tested it myself so I'm not sure if it's foolproof.
+
+Because of this, my suggestion is to avoid using SQLite over network file systems, unless they were implemented with SQLite in mind (like [litefs](https://fly.io/docs/litefs/)).
+
+
+
 SQLite doesn't support some network file systems. This includes NFS, SMB, CIFS, and others. If you are using SQLite on one of those, you are likely to run into `database is locked` or other types of `disk I/O` errors.
 
 The reason for this is that these file systems don't implement locking correctly as described in SQLite's [How to Corrupt Your Database File doc](https://www.sqlite.org/howtocorrupt.html#_filesystems_with_broken_or_missing_lock_implementations).
@@ -261,7 +277,7 @@ Martin sent me an email about how frustrating this was when he encountered the p
 
 ### Solutions
 
-A [kubernetes issue](https://github.com/kubernetes/kubernetes/issues/61767) points at the `nobrl` mount option flag as the solution, and the Azure Storage docs also mention `nobrl` as a way to solve the db is locked erorrs [here](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/mountoptions-settings-azure-files#other-useful-settings), but I haven't tested it myself so I'm not sure if it's foolproof.
+A [kubernetes issue](https://github.com/kubernetes/kubernetes/issues/61767) points at the `nobrl` mount option flag as the solution, and the Azure Storage docs also mention `nobrl` as a way to solve the DB is locked errors [here](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-kubernetes/mountoptions-settings-azure-files#other-useful-settings), but I haven't tested it myself so I'm not sure if it's foolproof.
 
-Because of this, my suggestion is to avoid using SQLite over network file systems, unless they were implemented with SQLite in mind (like [litefs](https://fly.io/docs/litefs/)).
+Because of this, my suggestion is to avoid using SQLite over network file systems unless they are implemented with SQLite in mind (like [litefs](https://fly.io/docs/litefs/)).
 

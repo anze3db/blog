@@ -15,4 +15,4 @@ I recently got asked about my opinion on code reviews. This was my answer.
 
 I've written longer posts on the topic ([here](/code-reviews-and-your-company-goal), [here](/the-code-review-bottleneck), and [here](/batch-size)).
 
-The question reminded me of the time when I was trying to build a tool for helping make code reviews efficient. The tool never took off and I abandoned it after a year or so, but I still think that there is value in the idea. I might revisit it in the future.
+The question reminded me of the time when I was trying to build a tool to help make code reviews efficient. The tool never took off, and I abandoned it after a year or so, but I still think that there is value in the idea. I might revisit it in the future.

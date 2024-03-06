@@ -4,7 +4,7 @@ title: "The Code Review Bottleneck"
 date: 2019-07-15 8:00:00 +0000
 ---
 
-Code reviews are [insanely useful](https://blog.codereview.chat/2019/06/27/code-reviews-and-your-company-goal.html). The only problem is that they have the nasty habit of making your cool new feature stuck in the queue waiting for reviewers. Let's take a look at how to make sure code reviews are done as efficiently as possible. Let's see how we can do quality code reviews without impeding feature velocity.
+Code reviews are [insanely useful](/code-reviews-and-your-company-goal). The only problem is that they have the nasty habit of making your cool new feature stuck in the queue waiting for reviewers. Let's take a look at how to make sure code reviews are done as efficiently as possible. Let's see how we can do quality code reviews without impeding feature velocity.
 
 ## The Bottleneck
 

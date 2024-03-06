@@ -4,7 +4,7 @@ title: "The Code Review Batch Size"
 date: 2019-08-13 8:00:00 +0000
 ---
 
-In the [last article](https://blog.codereview.chat/2019/07/15/the-code-review-bottleneck.html) we learned how important it is to reduce the friction in code reviews, by making code reviews your top priority. Based on the [theory of constraints](https://en.wikipedia.org/wiki/Theory_of_constraints), not working on the bottleneck is counterproductive. If your code review queue is backed up, writing more code will not make you deploy features any faster!
+In the [last article](/the-code-review-bottleneck) we learned how important it is to reduce the friction in code reviews, by making code reviews your top priority. Based on the [theory of constraints](https://en.wikipedia.org/wiki/Theory_of_constraints), not working on the bottleneck is counterproductive. If your code review queue is backed up, writing more code will not make you deploy features any faster!
 
 The theory of constraints doesn't only help us figure out what to focus on, but it also has a solution for increasing throughput: Decrease your batch size as much as possible. For us developers, the batch size is the number of code changes that go into each release.
 

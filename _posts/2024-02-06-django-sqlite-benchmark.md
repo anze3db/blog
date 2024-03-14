@@ -56,7 +56,21 @@ This is where `WAL` mode comes in. With `WAL`, reads are no longer blocked by wr
 sqlite3 db.sqlite3 'PRAGMA journal_mode=WAL;'
 ```
 
-(There is currently no way to enable `WAL` mode in Django's settings file, but there is [a PR](https://github.com/django/django/pull/14824) and [Ticket#24018](https://code.djangoproject.com/ticket/24018) open to add this feature.)
+Prior to Django 5.1 there was no way to enable `WAL` mode in Django's settings file. You have to remember to run the PRAGMA command manually but the `PRAGMA` command has to be only ran once per database!
+
+Django 5.1 made it possible ([PR](https://github.com/django/django/pull/14824), [Ticket#24018](https://code.djangoproject.com/ticket/24018)) to configure `PRAGMA` commands when a new connection is established with the `init_command` option. You can use this to enable `WAL` mode in the settings file:
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "OPTIONS": {
+            "init_command": "PRAGMA journal_mode=WAL;",  # <- Only works in Django 5.1+
+        },
+    }
+}
+```
 
 ## Results
 
@@ -71,7 +85,20 @@ We can see that the throughput has increased, but we are also getting more error
 
 By default, SQLite uses `DEFFERED` transactions and only promotes a read lock to a write lock when a write query is executed. This is the primary cause for the failures we've been seeing in the benchmark thus far, and using `IMMEDIATE` transactions fixes the problem. (Again, refer to [Database is Locked blog post](/django-sqlite-dblock) for more details about this).
 
-Django 5.1 will allow you to configure the transaction mode in the settings file. For earlier versions, you'll need to override the `DatabaseWrapper` class to achieve this ([example here](/django-sqlite-dblock#solutions-1)).
+Django 5.1 allows you to configure the transaction mode in the settings file:
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "OPTIONS": {
+            "transaction_mode": "IMMEDIATE",  # <- Only works in Django 5.1+
+        },
+    }
+}
+```
+
+ For earlier versions, you'll need to override the `DatabaseWrapper` class to achieve this ([example here](/django-sqlite-dblock#solutions-1)).
 
 ## Results
 ```
@@ -93,7 +120,9 @@ According to the [SQLite pragma docs](https://www.sqlite.org/pragma.html#pragma_
 PRAGMA schema.synchronous = NORMAL;
 ```
 
-But unlike WAL mode, it's a per-connection setting, so you'll need to run this command every time you open a new connection. In Django, this is currently not possible without subclassing the `DatabaseWrapper` class and overriding the `get_new_connection` method, but hopefully, this will be resolved in a future release ([Ticket#24018](https://code.djangoproject.com/ticket/24018)).
+But unlike WAL mode, it's a per-connection setting, so you'll need to run this command every time you open a new connection. In Django prior to 5.1, this is currently not possible without subclassing the `DatabaseWrapper` class and overriding the `get_new_connection` method.
+
+In Django 5.1 or newer you can set the PRAGMA command in the `init_command` in your `DATABASE` settings.
 
 ## Results
 

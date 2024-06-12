@@ -12,7 +12,7 @@ I've been working with SQLite lately. It has become my go-to database for all pr
 
 One problem I encountered was that, by default, it uses [rollback journal](https://www.sqlite.org/lockingv3.html#rollback), where any write to the database will also block all reads. Because of this, my [fedidevs.com](https://fedidevs.com) site became unresponsive for about an hour every night while the nightly job inserted fresh data.
 
-The solution was to enable [Write-Ahead Logging](https://www.sqlite.org/wal.html). WAL allows multiple readers to access the database simultaneously, even if the table is being written to simultaneously. The link above has a few disadvantages listed, but for most web-server use cases, WAL is the better option.
+The solution was to enable [Write-Ahead Logging](https://www.sqlite.org/wal.html). WAL allows multiple readers to access the database, even if the table is being written to simultaneously. The link above has a few disadvantages listed, but for most web-server use cases, WAL is the better option.
 
 ## Enabling WAL
 

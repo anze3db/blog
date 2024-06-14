@@ -5,7 +5,7 @@ date: 2024-06-14 0:00:00 +0000
 image: assets/cards/2024-06-12-sqlite-django-config.png
 ---
 
-The default SQLite configuration in Django is not ideal for running your application in production. SQLite comes optimized for embededd low concurrency systems out of the box, which is the exact opposite of what your Django application is supposed to do.
+The default SQLite configuration in Django is not ideal for running your application in production. SQLite is optimized for embedded low-concurrency systems out of the box, which is the exact opposite of what your Django application is supposed to do.
 
 Luckily, you can improve concurrency by tweaking a few settings. See how to do it based on the version of Django that you are currently running:
 
@@ -40,7 +40,7 @@ Luckily, you can improve concurrency by tweaking a few settings. See how to do i
 
 ### 1. Enable WAL journal mode
 
-The most impactful change that you can make is to enable `WAL` `journal_mode`. Without `WAL`, every write request blocks reads and vice versa, which can kill your throughput.
+The most impactful change you can make is to enable `WAL` `journal_mode`. Without `WAL`, every write request blocks reads and vice versa, which can kill your throughput.
 
 Enabling `WAL` mode has no real downsides and can be achieved by running the following command on your database:
 
@@ -48,15 +48,15 @@ Enabling `WAL` mode has no real downsides and can be achieved by running the fol
 sqlite3 db.sqlite3 'PRAGMA journal_mode=WAL;'
 ```
 
-You only have to run this command **once** per database and the setting will perssist.
+You only have to run this command **once** per database, and the setting will persist.
 
 ### 2. Use IMMEDIATE transactions
 
-This isn't exactly a performance improvement. It will decrease your performance when running transactions, but it will avoid unexpected [database is locked errors](/django-sqlite-dblock#cause-2-writes-after-reads-in-transactions) so I think it's worth enabling.
+Using immediate transactions isn't a performance improvement. It will decrease your performance when running transactions, but it will avoid unexpected [database is locked errors](/django-sqlite-dblock#cause-2-writes-after-reads-in-transactions), so it's worth enabling.
 
-To enable IMMEDIATE transactions you are going to have to create your own database engine:
+To enable IMMEDIATE transactions, you are going to have to create your database engine:
 
-1. Create `yourproject/sqlite3/base.py` file with a `DatabaseWrapper` class:
+1. Create a `yourproject/sqlite3/base.py` file with a `DatabaseWrapper` class:
 
     ```python
     # yourproject/sqlite3/base.py
@@ -84,7 +84,7 @@ To enable IMMEDIATE transactions you are going to have to create your own databa
 
 # 3. Fine-tune your SQLite settings
 
-There are a few SQLite settings that can improve the performance of your application by a few additional percentage points. The magic values below are now also the default in Rails 7.1 and should give you a good starting point, but feel free to tweak `mmap_size`, `journal_size_limit`, and `cache_size` to best suite your application:
+A few SQLite settings can improve your application's performance by a few additional percentage points. The magic values below are now also the default in Rails 7.1 and should give you a good starting point, but feel free to tweak `mmap_size`, `journal_size_limit`, and `cache_size` to best suit your application:
 
 ```python
 # yourproject/sqlite3/base.py
@@ -124,7 +124,7 @@ class DatabaseWrapper(base.DatabaseWrapper):
 
 <mark>Django 5.1 is currently in <strong>development</strong> and is expected to be released in August 2024</mark>
 
-In Django 5.1 you will be able to tweak all the necessary changes in your `settings.py`:
+In Django 5.1, you will be able to tweak all the necessary changes in your `settings.py`:
 
 ```python
 # yourproject/settings.py
@@ -147,4 +147,4 @@ DATABASES = {
 
 # Fin
 
-That's it, with these settings your SQLite database is going to be handle load that most small to medium sized websites typically get, as long as your use case isn't write heavy!
+That's it; with these settings, your SQLite database is going to handle the load that most small to medium-sized websites typically get, as long as your use case isn't write-heavy!

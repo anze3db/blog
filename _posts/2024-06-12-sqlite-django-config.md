@@ -1,7 +1,7 @@
 ---
 title: "Django SQLite Production Config"
-description: "Configure your Django app to use SQLite in production."
-date: 2024-06-12 0:00:00 +0000
+description: "Optimize your Django SQLite configuration for production."
+date: 2024-06-14 0:00:00 +0000
 image: assets/cards/2024-06-12-sqlite-django-config.png
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Fedidevs dev update #2"
 description: "June update for fedidevs.com!"
-date: 2024-06-17 0:00:00 +0000
+date: 2024-06-16 0:00:00 +0000
 image: assets/cards/2024-06-16-fedidevs-update-2.png
 ---
 

@@ -39,11 +39,11 @@ Thanks to my good friend [HyperNURB](https://fosstodon.org/@hypernurb), the site
 
 The idea behind Fedidevs was always to make finding and following new people on Mastodon easy. But until recently, following people was a bit awkward because of the "take me home" dance:
 
-![Follow Dance](/assets/pics/fedidevs-follow-dance.jpg)
+![Follow Dance](/assets/pics/fedidevs-follow-dance.png)
 
 This is now fixed, and you can follow accounts without leaving fedidevs.com!
 
-![Fedidevs follow](/assets/pics/fedidevs-follow.jpg)
+![Fedidevs follow](/assets/pics/fedidevs-follow.png)
 <small style="text-align: center; display: block; margin-top: 10px;">Pssst: Follow [my friend Paulo](https://fosstodon.org/@paulox), his selfies from conferences are awesome!</small>
 
 Since launching this feature, over 40 people have joined and followed over **758 accounts**, which means that every person who signed up found an average of **19 new friends**! 🎉 

@@ -15,7 +15,9 @@ This feature was not a complete failure because it led me to implement the confe
 
 ## Conferences
 
-Adding the [conferences page](https://fedidevs.com/conferences) was inspired by a blog post by Sean Boots <a href="https://sboots.ca/2023/10/27/twitter-is-dead-lets-start-live-tweeting-conferences-on-mastodon-instead/">Twitter is dead. Let's start live-tweeting conferences on Mastodon instead</a>. I wanted to showcase all the conversations around conferences on Mastodon, highlighting top posters and seeing the most starred posts across multiple hashtags. I hoped this would encourage more people to post on Mastodon in favor of X Twitter.
+Adding the [conferences page](https://fedidevs.com/conferences) was inspired by a blog post by Sean Boots <a href="https://sboots.ca/2023/10/27/twitter-is-dead-lets-start-live-tweeting-conferences-on-mastodon-instead/">Twitter is dead. Let's start live-tweeting conferences on Mastodon instead</a>. 
+
+I wanted to showcase all the conversations around conferences on Mastodon, highlighting top posters and seeing the most starred posts across multiple hashtags. I hoped this would encourage more people to post on Mastodon in favor of X Twitter.
 
 ![Conference page](/assets/pics/fedidevs-conference.jpg)
 
@@ -50,7 +52,7 @@ Since launching this feature, over 40 people have joined and followed over **758
 
 ## Struggles
 
-I'm still struggling with the number one issue with all side projects: distribution. How do I get people to try out what I've built?
+I'm still struggling with the number one issue with all side projects: **distribution**. How do I get people to try out what I've built?
 
 Adding conference features worked great with this since it allows me to naturally mention fedidevs during conferences, which has helped a lot with reaching new people.
 
@@ -60,7 +62,7 @@ I also struggle with writing update posts like this one! It took me more than 8 
 
 ## Costs 
 
-It costs me 1,83 euros per month to keep the site running. I run it from a Raspberry Pi at home, so the hosting costs are essentially 0. The only actual expense is the .com domain renewal. This means I can easily keep the site running indefinitely without it making a dent in my savings!
+It costs me **1,83 Euros** per month to keep the site running. I run it from a Raspberry Pi at home, so the hosting costs are essentially 0. The only actual expense is the .com domain renewal. This means I can easily keep the site running indefinitely without it making a dent in my savings!
 
 ## The future
 

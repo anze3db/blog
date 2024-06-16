@@ -19,17 +19,19 @@ Adding the [conferences page](https://fedidevs.com/conferences) was inspired by 
 
 I wanted to showcase all the conversations around conferences on Mastodon, highlighting top posters and seeing the most starred posts across multiple hashtags. I hoped this would encourage more people to post on Mastodon in favor of X Twitter.
 
-![Conference page](/assets/pics/fedidevs-conference.jpg)
+<a href="https://fedidevs.com/conferences" target="_blank">![Conference page](/assets/pics/fedidevs-conference.png)
+</a>
+<small style="text-align: center; display: block; margin-top: 10px;">I must give a BIG shoutout to [my fantastic partner Ana](https://x.com/anasofia_fm), who painstakingly found and added most of the currently listed conferences!</small>
 
 I also started tracking and posting conference post statistics with my [Fedidevs Mastodon](https://fosstodon.org/@fedidevs) account. One of these posts even got a shoutout on the big stage at PyCon US!
 
 ![Shoutout on PyCon US](/assets/pics/fedidevs-pycon-shoutout.jpg)
 
-<small style="text-align: center; display: block; margin-top: -20px;">Source: [Hynek's post on Mastodon.social](https://mastodon.social/@hynek/112462249781379295)</small>
+<small style="text-align: center; display: block; margin-top: -20px;">Source: [Hynek's post](https://mastodon.social/@hynek/112462249781379295)</small>
 
 The feedback on the conference features has been very positive, so I will continue to work on and improve them. The next thing on my TODO list is to allow people to interact with the posts on the conference page (star, repost, follow author, etc.).
 
-I must give a BIG shoutout to [my fantastic partner Ana](https://x.com/anasofia_fm), who painstakingly found and added most of the currently listed conferences!
+
 
 ## Redesign
 

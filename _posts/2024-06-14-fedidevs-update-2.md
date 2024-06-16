@@ -5,7 +5,7 @@ date: 2024-06-16 0:00:00 +0000
 image: assets/cards/2024-06-16-fedidevs-update-2.png
 ---
 
-[Fedidevs.com](https://fedidevs.com) had an exciting couple of months, so it's time for an update post!
+[Fedidevs.com](https://fedidevs.com?utm_source=blog&utm_campaign=update2) had an exciting couple of months, so it's time for an update post!
 
 ## Killing posts ☠️
 
@@ -15,11 +15,11 @@ This feature was not a complete failure because it led me to implement the confe
 
 ## Conferences
 
-Adding the [conferences page](https://fedidevs.com/conferences) was inspired by a blog post by Sean Boots <a href="https://sboots.ca/2023/10/27/twitter-is-dead-lets-start-live-tweeting-conferences-on-mastodon-instead/">Twitter is dead. Let's start live-tweeting conferences on Mastodon instead</a>. 
+Adding the [conferences page](https://fedidevs.com/conferences?utm_source=blog&utm_campaign=update2) was inspired by a blog post by Sean Boots <a href="https://sboots.ca/2023/10/27/twitter-is-dead-lets-start-live-tweeting-conferences-on-mastodon-instead/">Twitter is dead. Let's start live-tweeting conferences on Mastodon instead</a>. 
 
 I wanted to showcase all the conversations around conferences on Mastodon, highlighting top posters and seeing the most starred posts across multiple hashtags. I hoped this would encourage more people to post on Mastodon in favor of X Twitter.
 
-<a href="https://fedidevs.com/conferences" target="_blank">![Conference page](/assets/pics/fedidevs-conference.png)
+<a href="https://fedidevs.com/conferences?utm_source=blog&utm_campaign=update2" target="_blank">![Conference page](/assets/pics/fedidevs-conference.png)
 </a>
 <small style="text-align: center; display: block; margin-top: 10px;">I must give a BIG shoutout to [my fantastic partner Ana](https://x.com/anasofia_fm), who painstakingly found and added most of the currently listed conferences!</small>
 
@@ -45,7 +45,7 @@ The idea behind Fedidevs was always to make finding and following new people on 
 
 ![Follow Dance](/assets/pics/fedidevs-follow-dance.png)
 
-This is now fixed, and you can follow accounts without leaving fedidevs.com!
+This is now fixed, and you can follow accounts without leaving [fedidevs.com](https://fedidevs.com?utm_source=blog&utm_campaign=update2)!
 
 ![Fedidevs follow](/assets/pics/fedidevs-follow.png)
 <small style="text-align: center; display: block; margin-top: 10px;">Pssst: Follow [my friend Paulo](https://fosstodon.org/@paulox), his selfies from conferences are awesome!</small>

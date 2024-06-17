@@ -1,7 +1,7 @@
 ---
 title: "Fedidevs dev update #2"
 description: "June update for fedidevs.com!"
-date: 2024-06-16 0:00:00 +0000
+date: 2024-06-17 0:00:00 +0000
 image: assets/cards/2024-06-16-fedidevs-update-2.png
 ---
 
@@ -70,4 +70,9 @@ It costs me **1,83 Euros** per month to keep the site running. I run it from a R
 
 One thing that I want to add to the site is more statistics. I want to see how many followers/posts/starts my account received over the last few days/weeks/months. Would you also find this helpful?
 
-Getting feedback keeps me motivated to improve the site. So, if you have any feedback, please let me know [on Mastodon](https://fosstodon.org/@anze3db) or [through email](mailto:hello@fedidevs.com)!
+## Feedback
+
+Getting feedback like the one below gets me motivated to improve the site. So, if you have any feedback (good or bad!), please let me know [on Mastodon](https://fosstodon.org/@anze3db) or [through email](mailto:hello@fedidevs.com)!
+<a href="https://mastodon.social/@gabrielrmunoz/112630464945591987" style="text-align:center; display: block; padding:10px;">
+![Feedback](/assets/pics/fedidevs-feedback.png)
+</a>

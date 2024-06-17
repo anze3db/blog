@@ -48,7 +48,7 @@ The idea behind Fedidevs was always to make finding and following new people on 
 This is now fixed, and you can follow accounts without leaving [fedidevs.com](https://fedidevs.com?utm_source=blog&utm_campaign=update2)!
 
 ![Fedidevs follow](/assets/pics/fedidevs-follow.png)
-<small style="text-align: center; display: block; margin-top: 10px;">Pssst: Follow [my friend Paulo](https://fosstodon.org/@paulox), his selfies from conferences are awesome!</small>
+<small style="text-align: center; display: block; margin-top: 10px;">Pssst: Follow [my friend Paulo](https://fosstodon.org/@paulox), his [selfies from conferences](https://fosstodon.org/@paulox/112574346768773744) are awesome!</small>
 
 Since launching this feature, over 40 people have joined and followed over **758 accounts**, which means that every person who signed up found an average of **19 new friends**! 🎉 
 

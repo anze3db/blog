@@ -21,7 +21,7 @@ I wanted to showcase all the conversations around conferences on Mastodon, highl
 
 <a href="https://fedidevs.com/conferences?utm_source=blog&utm_campaign=update2" target="_blank">![Conference page](/assets/pics/fedidevs-conference.png)
 </a>
-<small style="text-align: center; display: block; margin-top: 10px;">I must give a BIG shoutout to [my fantastic girlfriend Ana](https://x.com/anasofia_fm), who painstakingly found and added most of the currently listed conferences!</small>
+<small style="text-align: center; display: block; margin-top: 10px;">I must give a BIG shoutout to [my fantastic girlfriend Ana](https://www.instagram.com/anasofiafem/), who painstakingly found and added most of the currently listed conferences!</small>
 
 I also started tracking and posting conference post statistics with my [Fedidevs Mastodon](https://fosstodon.org/@fedidevs) account. One of these posts even got a shoutout on the big stage at PyCon US!
 

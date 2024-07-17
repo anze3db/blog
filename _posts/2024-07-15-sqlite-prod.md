@@ -1,8 +1,8 @@
 ---
 title: "Gotchas with SQLite in Production"
 description: "What you need to know before putting SQLite in production"
-date: 2024-07-15 0:00:00 +0000
-image: assets/cards/2024-02-06-django-sqlite-benchmark.png
+date: 2024-07-17 00:00:00 +0000
+image: assets/cards/2024-07-15-sqlite-prod.png
 ---
 
 SQLite has been getting much attention lately as a good database for production web applications. It's especially popular with those who strive to keep their web application stack as simple as possible ([See DHH's Twitter posts](https://x.com/dhh/status/1782033353606382011)).

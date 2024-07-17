@@ -71,6 +71,8 @@ If you have continuous writes, you might also encounter a WAL issue where the ch
 
 Transactions in SQLite are *serializable*, but for web applications, *read committed* is usually good enough and the default for many frameworks ([Django included](https://docs.djangoproject.com/en/5.0/ref/databases/#isolation-level)). You can choose your transaction isolation level in PostgreSQL and MySQL but are stuck with serializable in SQLite.
 
+<a href="https://en.wikipedia.org/wiki/Isolation_(database_systems)" style="text-align:center; display: block; padding:10px;"><img class="txt-img" src="/assets/pics/transaction-isolation.png"  width="500" alt="Transaction Isolation Levels" /></a>
+
 SQLite implements serializable transactions by using a write lock on the whole database for the duration of the transaction. This means that if you have a long-running transaction, you are blocking all other transactions and write operations for the duration of the transaction.
 
 DHH himself mentioned this issue in [an interview](https://youtu.be/0rlATWBNvMw?si=6sg2NGbMw06NnWRF&t=427) and had to optimize the transaction code in Rails to improve throughput. While transactions should be as short as possible in any application, this is even more critical in SQLite, so keep it in mind.

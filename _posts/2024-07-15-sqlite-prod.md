@@ -45,7 +45,7 @@ These days, you can vertically scale a single machine to 192 vCPUs and 768 GiB m
 
 Suppose your whole application is going to run on a single machine. In that case, you will have problems assuring high availability when applying OS updates and doing maintenance. You can still achieve [three nines](https://en.wikipedia.org/wiki/High_availability), which should be enough for most web apps, but for anything more than that, you will need to make sure your application runs on more machines, which makes SQLite a lot less appealing.
 
-In practice, the most annoying thing about this is that you can't easily connect to your production database with a GUI tool from your dev machine. Most clients like DataGrip [don't support connecting to SQLite via SSH](https://youtrack.jetbrains.com/issue/DBE-1436/SQLite-remote-tunneling#focus=Comments-27-6205323.0-0), but there are tools in development to solve this problem, [litexplore](https://github.com/litements/litexplore) in particular looks promising!
+In practice, the most annoying thing about this is that you can't easily connect to your production database with a GUI tool from your dev machine. Most clients like DataGrip [don't support connecting to SQLite via SSH](https://youtrack.jetbrains.com/issue/DBE-1436/SQLite-remote-tunneling#focus=Comments-27-6205323.0-0).
 
 There are also reimplementations of SQLite that try to remove the single machine limitation: [Turso](https://turso.tech/), [rqlite](https://rqlite.io/), and others. However, these projects quickly become more complex than Postgres or MySQL, so use them cautiously.
 

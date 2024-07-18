@@ -20,21 +20,12 @@ plugins:
   - jekyll-sitemap
 
 
-collections:
-  cards:
-    output: true
-    layout: card
-    permalink: /:collection/:title
 
 defaults:
   - scope:
       path: "_posts"
     values:
       layout: post
-  - scope:
-      path: "_cards"
-    values:
-      layout: card
 
 feed:
   posts_limit: 50

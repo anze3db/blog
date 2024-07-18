@@ -47,7 +47,7 @@ Suppose your whole application is going to run on a single machine. In that case
 
 In practice, the most annoying thing about this is that you can't easily connect to your production database with a GUI tool from your dev machine. Most clients like DataGrip [don't support connecting to SQLite via SSH](https://youtrack.jetbrains.com/issue/DBE-1436/SQLite-remote-tunneling#focus=Comments-27-6205323.0-0).
 
-There are also reimplementations of SQLite that try to remove the single machine limitation: [Turso](https://turso.tech/), [rqlite](https://rqlite.io/), and others. However, these projects quickly become more complex than Postgres or MySQL, so use them cautiously.
+There are also reimplementations of SQLite that try to remove the single machine limitation: [libSQL](https://github.com/tursodatabase/libsql), [rqlite](https://rqlite.io/), and others. However, these projects quickly become more complex than Postgres or MySQL, so use them cautiously.
 
 ## 3. Gotcha: Network and ephemeral file systems
 

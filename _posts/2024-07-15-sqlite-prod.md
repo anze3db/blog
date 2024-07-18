@@ -22,7 +22,7 @@ However, there are some gotchas specific to SQLite not related to database size.
 Out of the box, SQLite is **not** configured for multi-threaded access. You have to make sure to configure it properly. In most cases, this is as simple as running the following PRAGMAs:
 
 ```SQL
-PRAGMA foreign_keys = ON
+PRAGMA foreign_keys = ON;
 PRAGMA journal_mode=WAL;
 PRAGMA synchronous=NORMAL;
 PRAGMA mmap_size = 134217728;

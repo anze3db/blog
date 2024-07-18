@@ -77,6 +77,8 @@ SQLite implements serializable transactions by using a write lock on the whole d
 
 DHH himself mentioned this issue in [an interview](https://youtu.be/0rlATWBNvMw?si=6sg2NGbMw06NnWRF&t=427) and had to optimize the transaction code in Rails to improve throughput. While transactions should be as short as possible in any application, this is even more critical in SQLite, so keep it in mind.
 
+When working with transactions you should always use `BEGIN IMMEDIATE` instead of a regular `BEGIN`. The reason for this is that a read transaction cannot be upgraded to a write transaction, so you'll be seeing database is locked errors not retrying until the `BUSY_TIMEOUT` runs out. I've written a separate blog on [Database is Locked errors](/django-sqlite-dblock) where I cover this in more details.
+
 ## 6. Gotcha: Backups
 
 You might be tempted to copy/paste the SQLite file to create a backup, but this is a bad idea as it can corrupt the backup file. Instead, you should always use the `.backup` command to create a full backup.

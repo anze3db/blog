@@ -81,7 +81,7 @@ When working with transactions you should always use `BEGIN IMMEDIATE` instead o
 
 ## 6. Gotcha: Backups
 
-You might be tempted to copy/paste the SQLite file to create a backup, but this is a bad idea as it can corrupt the backup file. Instead, you should always use the `.backup` command to create a full backup.
+You might be tempted to copy/paste the SQLite file to create a backup, but this is a bad idea as it can corrupt the backup file. Instead, you should always use the `VACUUM INTO` command to create a full backup.
 
 For online backups, you must use a third-party tool like [LiteStream](https://litestream.io/) to copy changes to an S3 bucket every few seconds. [libSQL]() also provides great backup options, including S3.
 

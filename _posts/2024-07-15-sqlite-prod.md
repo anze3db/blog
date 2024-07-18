@@ -81,7 +81,9 @@ DHH himself mentioned this issue in [an interview](https://youtu.be/0rlATWBNvMw?
 
 You might be tempted to copy/paste the SQLite file to create a backup, but this is a bad idea as it can corrupt the backup file. Instead, you should always use the `.backup` command to create a full backup.
 
-For online backups, you must use a third-party tool like [LiteStream](https://litestream.io/) to copy changes to an S3 bucket every few seconds. If you need higher durability guarantees, there are projects that implement raft-based consensus in SQLite ([rqlite](https://rqlite.io/), [dqlite](https://dqlite.io/)). Postgres and MySQL provide more replication options like [synchronous replication](https://www.postgresql.org/docs/current/warm-standby.html#SYNCHRONOUS-REPLICATION), so achieving these guarantees is more straightforward than in SQLite.
+For online backups, you must use a third-party tool like [LiteStream](https://litestream.io/) to copy changes to an S3 bucket every few seconds. [libSQL]() also provides great backup options, including S3.
+
+If you need higher durability guarantees, there are projects that implement raft-based consensus in SQLite ([rqlite](https://rqlite.io/), [dqlite](https://dqlite.io/)). Postgres and MySQL provide more replication options like [synchronous replication](https://www.postgresql.org/docs/current/warm-standby.html#SYNCHRONOUS-REPLICATION), so achieving these guarantees is more straightforward than in SQLite.
 
 ## 7. Gotcha: Migrations
 

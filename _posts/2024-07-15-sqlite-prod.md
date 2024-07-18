@@ -87,7 +87,9 @@ If you need higher durability guarantees, there are projects that implement raft
 
 ## 7. Gotcha: Migrations
 
-SQLite has limited support for the ALTER statement, which relational schema migrations rely upon. This can make your database migrations more complicated. See the [Alembic guide on SQLite](https://alembic.sqlalchemy.org/en/latest/batch.html#running-batch-migrations-for-sqlite-and-other-databases) to see some of the challenges.
+SQLite has limited support for the ALTER statement, which relational schema migrations rely upon. Only adding and dropping columns and renaming tables are supported. This can make your database migrations more complicated. See the [Alembic guide on SQLite](https://alembic.sqlalchemy.org/en/latest/batch.html#running-batch-migrations-for-sqlite-and-other-databases) to see some of the challenges.
+
+Simon Willison's [sqlite-utils](https://sqlite-utils.datasette.io/) include a solution for this problem. Read more about it [in the transforming a table section in the docs](https://sqlite-utils.datasette.io/en/stable/python-api.html#transforming-a-table).
 
 ## Conclusion
 

@@ -73,11 +73,11 @@ Transactions in SQLite are *serializable*, but for web applications, *read commi
 
 <a href="https://en.wikipedia.org/wiki/Isolation_(database_systems)" style="text-align:center; display: block; padding:10px;"><img class="txt-img" src="/assets/pics/transaction-isolation.png"  width="500" alt="Transaction Isolation Levels" /></a>
 
-SQLite implements serializable transactions by using a write lock on the whole database for the duration of the transaction. This means that if you have a long-running transaction, you are blocking all other transactions and write operations for the duration of the transaction.
+SQLite implements serializable transactions by using read or read-write locks. With WAL mode, you can have multiple read transactions but only one read-write transaction at a time. Read transactions can run concurrently even when a read-write lock is in place. This means that as long as you are only reading inside a transaction, you won't have problems with high concurrency, but you'll run into throughput issues when you have multiple write transactions. There is a [`BEGIN CONCURRENT`](https://www.sqlite.org/cgi/src/doc/begin-concurrent/doc/begin_concurrent.md) mode in development that should improve this, but it's only available as an experimental branch. The only way to improve throughput problems with write transactions is to ensure your write transactions are as short as possible.
 
 DHH himself mentioned this issue in [an interview](https://youtu.be/0rlATWBNvMw?si=6sg2NGbMw06NnWRF&t=427) and had to optimize the transaction code in Rails to improve throughput. While transactions should be as short as possible in any application, this is even more critical in SQLite, so keep it in mind.
 
-When working with transactions you should always use `BEGIN IMMEDIATE` instead of a regular `BEGIN`. The reason for this is that a read transaction cannot be upgraded to a write transaction, so you'll be seeing database is locked errors not retrying until the `BUSY_TIMEOUT` runs out. I've written a separate blog on [Database is Locked errors](/django-sqlite-dblock) where I cover this in more details.
+When working with transactions in a web application context, you should only start a transaction when you need to write something. This will simulate the *read committed* behavior that web frameworks default to. When you start a write transaction, always use `BEGIN IMMEDIATE` instead of a regular `BEGIN.` This is because a read transaction cannot be upgraded to a write transaction, so you'll see database is locked errors not retrying until the `BUSY_TIMEOUT` runs out. I've written a separate blog on [Database is Locked errors](/django-sqlite-dblock), where I cover this in more detail.
 
 ## 6. Gotcha: Backups
 

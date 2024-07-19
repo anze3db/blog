@@ -21,16 +21,18 @@ However, there are some gotchas specific to SQLite not related to database size.
 
 Out of the box, SQLite is **not** configured for multi-threaded access. You have to make sure to configure it properly. In most cases, this is as simple as running the following PRAGMAs:
 
-```SQL
+```sql
 PRAGMA foreign_keys = ON;
 PRAGMA journal_mode=WAL;
-PRAGMA synchronous=NORMAL;
+PRAGMA synchronous=NORMAL; -- this might roll back a committed transaction following a power loss or system crash, use with caution
 PRAGMA mmap_size = 134217728;
 PRAGMA journal_size_limit = 27103364;
 PRAGMA cache_size=2000;
 ```
 
-In frameworks like Rails and Laravel, this is done by default. In Django, you currently have to do some of these PRAGMA's manually ([see my blog post about it](/sqlite-django-config)), but this might change in the future.
+In Rails, this is done by default. In Django, you currently have to do some of these PRAGMA's manually ([see my blog post about it](/sqlite-django-config)), but this might change in the future.
+
+
 
 ## 2. Gotcha: No connections over the network
 

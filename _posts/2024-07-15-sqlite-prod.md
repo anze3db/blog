@@ -91,7 +91,7 @@ If you need higher durability guarantees, there are projects that implement raft
 
 ## 7. Gotcha: Migrations
 
-SQLite has limited support for the ALTER statement, which relational schema migrations rely upon. Only adding and dropping columns and renaming tables are supported. This can make your database migrations more complicated. See the [Alembic guide on SQLite](https://alembic.sqlalchemy.org/en/latest/batch.html#running-batch-migrations-for-sqlite-and-other-databases) to see some of the challenges.
+SQLite has limited support for the ALTER TABLE statement, which relational schema migration tools rely upon. Only adding and dropping columns and renaming tables are supported. This can make your database migrations more complicated. See the [Alembic guide on SQLite](https://alembic.sqlalchemy.org/en/latest/batch.html#running-batch-migrations-for-sqlite-and-other-databases) to see some of the challenges.
 
 Simon Willison's [sqlite-utils](https://sqlite-utils.datasette.io/) include a solution for this problem. Read more about it [in the transforming a table section in the docs](https://sqlite-utils.datasette.io/en/stable/python-api.html#transforming-a-table).
 
@@ -99,6 +99,5 @@ Simon Willison's [sqlite-utils](https://sqlite-utils.datasette.io/) include a so
 
 The main benefit that you are getting with SQLite is lower operational complexity. If you want to get your application running on a single machine and forget about it there is no better choice.
 
-However, as soon as you need multiple machines, have a write-heavy workload, or long-running transactions, SQLite becomes less appealing, and you are better off using a more traditional database like MySQL or Postgres.
-
 > Psst: I have also talked about my experience of using SQLite at DjangoCon Europe 2024 [here's the 🎥 video](https://www.youtube.com/watch?v=GTDYwEXv-sE).
+As soon as you need multiple machines, have a write-heavy workload, or long-running transactions, SQLite becomes less appealing, and you are better off using a more traditional database like MySQL or Postgres. However, most web applications can run on a single machine, have read-heavy workloads, and can avoid long running transactions. For these, SQlite can be the perfect choice!

@@ -1,6 +1,6 @@
 ---
-title: "Golike error handling in JavaScript and Python"
-description: "Does it make sense to add syntax to Javascript and Python to allow for Golike error handling?"
+title: "Go-like Error Handling Makes no Sense in JavaScript or Python"
+description: "Adding special syntax to Javascript or Python to allow Go-like error handling feels like a good idea at first glance, but I think it doesn't improve the issues with error handling in these two languages."
 date: 2024-08-16 00:00:00 +0000
 image: assets/cards/2024-08-16-go-errors-in-python.png
 ---

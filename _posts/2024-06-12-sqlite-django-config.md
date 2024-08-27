@@ -122,8 +122,6 @@ class DatabaseWrapper(base.DatabaseWrapper):
 
 ## In Django 5.1 or newer
 
-<mark>Django 5.1 has been released on August 7 2024</mark>
-
 In Django 5.1, you can tweak all the necessary changes in your `settings.py`:
 
 ```python

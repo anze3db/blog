@@ -122,9 +122,9 @@ class DatabaseWrapper(base.DatabaseWrapper):
 
 ## In Django 5.1 or newer
 
-<mark>Django 5.1 is currently in <strong>development</strong> and is expected to be released in August 2024</mark>
+<mark>Django 5.1 has been released on August 7 2024</mark>
 
-In Django 5.1, you will be able to tweak all the necessary changes in your `settings.py`:
+In Django 5.1, you can tweak all the necessary changes in your `settings.py`:
 
 ```python
 # yourproject/settings.py
@@ -133,6 +133,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "OPTIONS": {
             "transaction_mode": "IMMEDIATE",
+            "timeout": 5,  # seconds
             "init_command": """
                 PRAGMA journal_mode=WAL;
                 PRAGMA synchronous=NORMAL;
@@ -144,6 +145,8 @@ DATABASES = {
     }
 }
 ```
+
+Note that you don't have to specify `PRAGMA foreign_keys = ON` because it is set by default by Django itself. You also don't need to use `PRAGMA busy_timeout` because you can achieve the same thing by setting the `timeout` database option.
 
 # Fin
 

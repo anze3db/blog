@@ -130,7 +130,7 @@ And now, you should be able to add your existing dependencies to the pyproject.t
 `uv` also supports installing development dependencies:
 
 ```bash
-❯ uv add pytest pytest-django
+❯ uv add --dev pytest pytest-django
 Resolved 11 packages in 8ms
 Prepared 5 packages in 0.91ms
 Installed 5 packages in 12ms

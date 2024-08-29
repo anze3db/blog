@@ -217,10 +217,10 @@ I learned about this trick from Jeff Triplett's blog [Python UV run with shebang
 
 ## Fin
 
-This is a really exciting time for Python and Python packaging! If you have any other tricks or ideas to simplify your Django workflows, [let me know](mailto:anze@pecar.me), and I'll add your suggestions to the blog post!
-
-If you want to learn more about `uv` check out the following links:
+This is a really exciting time for Python and Python packaging! If you want to learn more about `uv` check out the following links:
 
  * [The official documentation](https://docs.astral.sh/uv/)
  * Simon Willison wrote some [notes on uv](https://simonwillison.net/2024/Aug/20/uv-unified-python-packaging/)
  * Jeff Triplet also wrote about the [uv updates](https://micro.webology.dev/2024/08/21/uv-updates-and.html)
+
+If you have any other tricks or ideas to simplify your Django workflows, [let me know](mailto:anze@pecar.me), and I'll add your suggestions to the blog post!

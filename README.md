@@ -8,3 +8,8 @@ bundle exec jekyll serve
 bundle exec jekyll serve --drafts
 ```
 
+Update dependencies
+
+```sh
+bundle update
+```

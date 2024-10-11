@@ -42,11 +42,12 @@ name: twitter
   <!-- CSS -->
   <link href="/assets/css/vim.css?v=2" rel="stylesheet" />
   <link href="/assets/css/pico.min.css" rel="stylesheet" />
-  <link href="/assets/css/site.css" rel="stylesheet" />
+  <link href="/assets/css/site.css?v=2" rel="stylesheet" />
   <style>
-    blockquote > p {
+    blockquote>p {
       margin: 0;
     }
+
     blockquote {
       opacity: 0.7;
     }
@@ -64,13 +65,20 @@ name: twitter
   <main class="container">{{ content }}</main>
   <footer class="container" style="padding-top: 0;">
     <p>
-    Join the <a href="https://buttondown.com/anze3db" data-umami-event="newsletter" class="plausible-event-name=newsletter">💌 Newsletter</a> or subscribe through <a
-      href="{{ site.production_url }}/feed.xml" data-umami-event="rss" class="plausible-event-name=rss">RSS</a>.</p>
-    <p>Get in touch through <a href="mailto:{{ site.author.email }}" data-umami-event="email" class="plausible-event-name=email">Email</a>,
-    <a href="https://fosstodon.org/@anze3db" data-umami-event="mastodon" rel="me" class="plausible-event-name=mastodon">Mastodon</a>,
-    <a href="https://twitter.com/anze3db" data-umami-event="twitter" rel="me" class="plausible-event-name=twitter">Twitter</a>, or
-    <a href="https://www.linkedin.com/in/an%C5%BEe-pe%C4%8Dar-a98b4033/" data-umami-event="linkedin" rel="me" class="plausible-event-name=linkedin">LinkedIn</a>.</p>
-    This site is <a href="https://github.com/anze3db/blog" data-umami-event="github" rel="me" class="plausible-event-name=github">❤ open source</a>️!
+      Join the <a href="https://buttondown.com/anze3db" data-umami-event="newsletter"
+        class="plausible-event-name=newsletter">💌 Newsletter</a> or subscribe through <a
+        href="{{ site.production_url }}/feed.xml" data-umami-event="rss" class="plausible-event-name=rss">RSS</a>.</p>
+    <p>Get in touch through <a href="mailto:{{ site.author.email }}" data-umami-event="email"
+        class="plausible-event-name=email">Email</a>,
+      <a href="https://fosstodon.org/@anze3db" data-umami-event="mastodon" rel="me"
+        class="plausible-event-name=mastodon">Mastodon</a>,
+      <a href="https://twitter.com/anze3db" data-umami-event="twitter" rel="me"
+        class="plausible-event-name=twitter">Twitter</a>, or
+      <a href="https://www.linkedin.com/in/an%C5%BEe-pe%C4%8Dar-a98b4033/" data-umami-event="linkedin" rel="me"
+        class="plausible-event-name=linkedin">LinkedIn</a>.
+    </p>
+    This site is <a href="https://github.com/anze3db/blog" data-umami-event="github" rel="me"
+      class="plausible-event-name=github">❤ open source</a>️!
   </footer>
   <script data-goatcounter="https://blog-pecar.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

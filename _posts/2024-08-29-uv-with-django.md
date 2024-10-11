@@ -48,7 +48,7 @@ name = "hello-django"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = []
 ```
 
@@ -58,7 +58,7 @@ Speaking of project dependencies. It's about time we install Django with `uv add
 
 ```bash
 ❯ uv add django
-Using Python 3.12.5
+Using Python 3.13.0
 Creating virtualenv at: .venv
 Resolved 5 packages in 186ms
 Prepared 3 packages in 3ms
@@ -119,15 +119,15 @@ name = "hello-django"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = []
 ```
 
 And now, you should be able to add your existing dependencies to the pyproject.toml, either manually or with the `uv add` command. After all the dependencies are specified in `pyproject.toml` you can run `uv sync` to make sure everything is installed in your environment.
 
-## Installing dev dependencies
+## Adding dev dependencies
 
-`uv` also supports installing development dependencies:
+`uv` also supports adding development dependencies to the project:
 
 ```bash
 ❯ uv add --dev pytest pytest-django
@@ -159,7 +159,7 @@ dev-dependencies = [
 
 ## Installing dependencies in production
 
-When deploying your Django application to production, you can avoid installing dev dependencies by running:
+`uv sync` installs development dependencies by default. Because of this, it's good practice to instruct `uv` not to install dev dependencies in production using the `--no-dev` flag:
 
 ```bash
 ❯ uv sync --no-dev --frozen
@@ -183,8 +183,68 @@ If you use `uv run` to run your program in production, include the `--no-dev` an
 [2024-10-11 10:49:48 +0100] [9243] [INFO] Using worker: gthread
 [2024-10-11 10:49:48 +0100] [9280] [INFO] Booting worker with pid: 9280
 ```
+**Hint:** If you don't mind installing dependencies and running your app in a single step, you can omit the `uv sync` command. `uv run --no-dev --frozen` will ensure that all packages are installed before running.
 
-**Hint:** If you don't mind installing dependencies and running your app in a single step, you can omit the `uv sync` command. `uv run --no-dev --frozen` will make sure all packages are installed before running.
+## Installing dependencies in CI
+
+Like in production, you also want to make sure your tests are as reproducible as possible so the `--frozen` flag is good practice, but since your dev dependencies likely include tools for testing you usually don't add `--no-dev` like you do in production:
+
+```bash
+❯ uv sync --frozen
+```
+
+### GitHub Actions
+
+If you are running your tests on GitHub actions then using [Astral's official setup-uv action](https://github.com/astral-sh/setup-uv) is the easiest way:
+
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        enable-cache: true
+        version: "latest"
+    - name: Install dependencies
+      run: uv sync --frozen
+    - name: Collect static files
+      run: uv run --frozen python manage.py collectstatic
+    - name: Run Tests
+      run: uv run --frozen pytest
+```
+
+I like to have a separate `uv sync` step in tests so that it's clearer how long it took to install dependencies and how long to run any of the commands.
+
+If you don't want `uv` to also manage the Python version, you can use the [setup-python aciton](https://github.com/actions/setup-python):
+
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        enable-cache: true
+        version: "latest"
+```
+
+#### Using .python-version
+
+To avoid having multiple sources of truth for the Python version, you can create a `.python-version` file with the desired version and both `uv` and `setup-python` will use it.
+
+```bash
+❯ cat .python-version
+3.13.0
+```
 
 ## Avoiding uv run
 

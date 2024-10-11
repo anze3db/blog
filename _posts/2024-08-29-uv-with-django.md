@@ -5,11 +5,21 @@ date: 2024-08-29 00:00:00 +0000
 image: assets/cards/2024-08-29-uv-with-django.png
 ---
 
+## Quickjump
+
+ * [Create a new Django project with uv](#using-uv-to-create-a-new-django-project)
+ * [Add uv to an existing project](#using-uv-with-an-existing-django-project)
+ * [Dev dependencies](#adding-dev-dependencies)
+ * [Running uv in production](#installing-dependencies-in-production)
+ * [Running uv in CI](#installing-dependencies-in-ci)
+
+
+
+## What is `uv`?
+
 [Astral](https://astral.sh/) made a huge summer splash in the Python community last week when they released [`uv` 0.3.0](https://astral.sh/blog/uv-unified-python-packaging). 
 
 <!-- One could say that the uv values are very high this summer ☀️ -->
-
-## What is `uv`?
 
 `uv` is a Python package manager written in rust that has just gained the ability to be a project management tool (like [Pipenv](https://pipenv.pypa.io/en/latest/)/[PDM](https://pdm-project.org/en/latest/)), tool management ([pipx](https://github.com/pypa/pipx)), python installer ([pyenv](https://github.com/pyenv/pyenv)), and more!
 

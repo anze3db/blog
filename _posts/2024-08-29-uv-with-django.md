@@ -5,8 +5,6 @@ date: 2024-08-29 00:00:00 +0000
 image: assets/cards/2024-08-29-uv-with-django.png
 ---
 
-## Quickjump
-
  * [Create a new Django project with uv](#using-uv-to-create-a-new-django-project)
  * [Add uv to an existing project](#using-uv-with-an-existing-django-project)
  * [Dev dependencies](#adding-dev-dependencies)

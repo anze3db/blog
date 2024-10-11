@@ -1,4 +1,6 @@
-section > h1,h2,h3 {
+section>h1,
+h2,
+h3 {
     margin-bottom: 10px;
 }
 
@@ -6,4 +8,14 @@ section > h1,h2,h3 {
     .container {
         max-width: 845px;
     }
+}
+
+.highlight>code::selection {
+    color: #333;
+    background: #edf0f3;
+}
+
+.highlight>code>span::selection {
+    color: #333;
+    background: #edf0f3;
 }

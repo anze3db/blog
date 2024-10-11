@@ -266,7 +266,7 @@ To avoid having multiple sources of truth for the Python version, you can create
 
 ### Upgrading dependencies
 
-To upgrade your dependencies, run `uv lock --upgrade`, and it will update your `uv.lock` file based on the constraints in your dependencies definitions:
+To upgrade your dependencies, run `uv lock --upgrade`, and it will update your `uv.lock` file based on the constraints in your dependencies definition:
 
 ```
 ❯ uv lock --upgrade

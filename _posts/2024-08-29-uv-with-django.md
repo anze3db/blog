@@ -356,6 +356,7 @@ This is a really exciting time for Python and Python packaging! If you want to l
  * Simon Willison wrote some [notes on uv](https://simonwillison.net/2024/Aug/20/uv-unified-python-packaging/)
  * Jeff Triplet also wrote about the [uv updates](https://micro.webology.dev/2024/08/21/uv-updates-and.html)
 
-Special shoutout to [Hynek for letting me know about `--locked`](https://mastodon.social/@hynek/113288471085502367) ❤️!
 
 If you have any other tricks or ideas to simplify your Django workflows, [let me know](mailto:anze@pecar.me), and I'll add your suggestions to the blog post!
+
+ * Thank you [Hynek](https://hynek.me/) for [letting me know about `--locked`](https://mastodon.social/@hynek/113288471085502367) ❤️!

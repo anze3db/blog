@@ -157,10 +157,12 @@ dev-dependencies = [
 ]
 ```
 
+## Installing dependencies in production
+
 When deploying your Django application to production, you can avoid installing dev dependencies by running:
 
 ```bash
-❯ uv sync --no-dev
+❯ uv sync --no-dev --frozen
 Resolved 11 packages in 2ms
 Uninstalled 5 packages in 35ms
  - iniconfig==2.0.0
@@ -169,6 +171,20 @@ Uninstalled 5 packages in 35ms
  - pytest==8.3.2
  - pytest-django==4.8.0
 ```
+
+The `--frozen` command is recommended because it forces `uv` to use the `uv.lock` file as the source of truth. This way, only the package in the versions specified in your lock file will get installed, making your builds properly reproducible!
+
+If you use `uv run` to run your program in production, include the `--no-dev` and `--frozen` flags. Otherwise, `uv` will install the dev dependencies during the run step.
+
+```bash
+❯ uv run --no-dev --frozen gunicorn fedidevs.wsgi
+[2024-10-11 10:49:48 +0100] [9243] [INFO] Starting gunicorn 23.0.0
+[2024-10-11 10:49:48 +0100] [9243] [INFO] Listening at: unix:fedidevs.sock (9243)
+[2024-10-11 10:49:48 +0100] [9243] [INFO] Using worker: gthread
+[2024-10-11 10:49:48 +0100] [9280] [INFO] Booting worker with pid: 9280
+```
+
+**Hint:** If you don't mind installing dependencies and running your app in a single step, you can omit the `uv sync` command. `uv run --no-dev --frozen` will make sure all packages are installed before running.
 
 ## Avoiding uv run
 

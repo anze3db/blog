@@ -12,7 +12,7 @@ In a hurry? Jump to the relevant section:
  * [Dev dependencies](#adding-dev-dependencies)
  * [Running uv in production](#installing-dependencies-in-production)
  * [Running uv in CI](#installing-dependencies-in-ci)
- * [Upgrading dependencies](#installing-dependencies-in-ci)
+ * [Upgrading dependencies](#upgrading-dependencies)
 
 
 

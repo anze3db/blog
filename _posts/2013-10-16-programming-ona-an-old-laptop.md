@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Programming on a 5 year old laptop"
-category: 
-tags: [hardware, fun, work, fun]
+tags: linux
 ---
 
 

@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "The AMD Linux Drivers"
-category: 
-tags: [linux, drivers, catalyst, wtf]
+tags: linux
 ---
 
 

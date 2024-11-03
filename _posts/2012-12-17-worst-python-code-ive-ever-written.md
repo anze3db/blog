@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Worst python code I've ever written"
-category: 
-tags: [python, code]
+tags: python
 ---
 
 

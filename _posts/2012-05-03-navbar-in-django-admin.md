@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Navbar in Django Admin"
-category: 
-tags: [django, python, coding]
+tags: django
 ---
 
 

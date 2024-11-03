@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "The proper way of reading blogs"
-category: 
-tags: []
 ---
 
 

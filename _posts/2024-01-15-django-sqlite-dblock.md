@@ -3,6 +3,7 @@ title: "Django, SQLite, and the Database is Locked Error"
 description: "Explains `database is locked` errors in Django when using SQLite, and how to solve them."
 date: 2024-01-16 0:00:00 +0000
 image: /assets/cards/2024-01-16-django-sqlite-dblock.png
+tags: django sqlite
 ---
 
 SQLite is gaining traction as a viable option for web applications in production environments. Unfortunately, Django developers wanting to use SQLite in production need to be aware of the `database is locked` error. This blog post explains the two causes for this error and shows how to solve them.

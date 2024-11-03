@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Learning Haskell, wrote startsWith a bunch of times"
-category: 
-tags: [coding, programming, fun]
+tags: haskell
 ---
 
 

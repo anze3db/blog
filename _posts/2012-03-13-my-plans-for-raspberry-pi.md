@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "My plans for Raspberry Pi"
-category: 
-tags: [hardware, fun]
+tags: raspberrypi
 ---
 
 

@@ -3,6 +3,7 @@ title: "Django Streaming HTTP Responses"
 description: "How and when to use Streaming HTTP responses and when not to."
 date: 2024-03-21 0:00:00 +0000
 image: assets/cards/2024-03-21-django-streaming-responses.png
+tags: django
 ---
 
 In this blog post, I'll explain how and when to use Django's [StreamingHttpResponse](https://docs.djangoproject.com/en/5.0/ref/request-response/#streaminghttpresponse-objects), what you can accomplish with it, and when it might not be a good idea. Let's start with the how.

@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "The Chrome Javascript editor can do hot swapping"
-category: 
-tags: [gamedev, web, javascript]
+tags: javascript
 ---
 
 

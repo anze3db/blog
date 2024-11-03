@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "How working remotely helped me better understand the codebase"
-category: 
-tags: [programming, work, freelancing]
 ---
 
 

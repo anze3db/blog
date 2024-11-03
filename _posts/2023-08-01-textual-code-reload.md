@@ -3,6 +3,7 @@ layout: post
 title: "Textual App Auto Reload"
 description: "How to automatically reload your Textual app when code changes occur"
 date: 2023-08-01 0:00:00 +0000
+tags: python
 ---
 
 # CSS Live Editing

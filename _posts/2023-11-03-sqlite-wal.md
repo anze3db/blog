@@ -3,6 +3,7 @@ layout: post
 title: "SQLite Write-Ahead Logging"
 description: "Speed up your SQLite writes and reads with this crazy trick. 🤪"
 date: 2023-11-03 0:00:00 +0000
+tags: sqlite
 # image: /assets/pics/pytest-plugin-og.png
 ---
 

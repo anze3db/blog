@@ -3,6 +3,7 @@ layout: post
 title: "Fixing <code>_SixMetaPathImporter.find_spec() not found</code> warnings in Python 3.10"
 description: "..."
 date: 2022-11-16 7:00:00 +0000
+tags: python
 # image: assets/pics/django32-query-perf.png
 ---
 

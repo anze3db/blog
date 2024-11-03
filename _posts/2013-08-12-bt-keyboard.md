@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Can I write a blog post on this?"
-category: 
-tags: [blog, writing, fun, hardware]
 ---
 
 

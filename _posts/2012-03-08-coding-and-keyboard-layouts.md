@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Coding and keyboard layouts"
-category: 
-tags: [programming, development, coding]
 ---
 
 

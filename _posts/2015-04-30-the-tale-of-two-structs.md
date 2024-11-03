@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "The Tale of Two Structs"
-category:
-tags: [coding, go]
+tags: go
 ---
 
 

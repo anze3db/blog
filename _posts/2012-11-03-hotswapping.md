@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Why don't we have code hot swapping on mobile?"
-category: 
-tags: [gamedev, programming, android, mobile]
+tags: gamedev
 ---
 
 

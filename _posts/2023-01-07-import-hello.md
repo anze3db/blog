@@ -3,6 +3,7 @@ layout: post
 title: "import __hello__"
 description: "The `import __hello__` easter egg in Python."
 date: 2023-01-07 1:00:00 +0000
+tags: python
 # image: assets/pics/django32-query-perf.png
 ---
 

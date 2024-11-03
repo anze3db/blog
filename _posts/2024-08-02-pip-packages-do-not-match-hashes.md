@@ -2,7 +2,8 @@
 title: "Packages do not match the hashes pip error"
 description: "pip sometimes returns a checksum error when the urllib3 library is unable to parse a received TLS packet due to a network error. This pip issue will be resolved in 2025 when Python 3.9 is EOL, but you can get around it today by using wget or curl."
 date: 2024-08-02 00:00:00 +0000
-image: assets/cards/2024-08-02-pip-packages-do-not-match-hashes.png
+image: assets/cards/2024-08-02-pip-packages-do-not-match-hashes.png 
+tags: python
 ---
 
 Yesterday, I received a hashes mismatch error when trying to install the latest Django release candidate on my Raspberry Pi:

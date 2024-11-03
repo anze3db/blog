@@ -3,6 +3,7 @@ layout: post
 title: "Python Dependency Management"
 description: "Overview of common methods for managing Python dependencies"
 date: 2022-02-10 7:00:00 +0000
+tags: python
 # image: assets/pics/django32-query-perf.png
 ---
 

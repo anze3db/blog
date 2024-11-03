@@ -4,6 +4,7 @@ title: "Integer Overflow Error in a Python Application"
 description: "How we found and fixed an integer overflow error in our Django app."
 date: 2022-07-02 7:00:00 +0000
 image: /assets/pics/boring-sentry-error.png
+tags: python
 ---
 
 A Sentry error popped up that looked very suspicious.

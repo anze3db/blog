@@ -3,6 +3,7 @@ layout: post
 title: "RDS Blue/Green Deployments"
 description: "Upgrading your database with Blue/Green deployments"
 date: 2023-07-01 1:00:00 +0000
+tags: mysql
 # image: assets/pics/django32-query-perf.png
 ---
 

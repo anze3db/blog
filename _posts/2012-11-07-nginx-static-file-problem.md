@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Nginx and VirtualBox shared folders"
-category: 
-tags: [wtf, web, nginx]
 ---
 
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Why I chose Jekyll"
-category: 
-tags: [meta, blog]
 ---
 
 

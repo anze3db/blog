@@ -1,8 +1,9 @@
 ---
-title: "I made a YouTube video!"
+title: "Deploying a Django project to my Raspberry Pi (video)"
 description: "I made a video of me deploying a new Django project to my Raspberry Pi."
 date: 2024-03-18 0:00:00 +0000
 image: assets/cards/2024-03-18-rpi-django-youtube.png
+tags: raspberypi django
 ---
 
 🎥 [I made a video of me deploying a new Django project to my Raspberry Pi.](https://youtu.be/idL-Pmng36A) 🎥

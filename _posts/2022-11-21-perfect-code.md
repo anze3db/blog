@@ -3,6 +3,7 @@ layout: post
 title: "Your Code Doesn't Have to be Perfect"
 description: "An example of smelly code that served customers for over 6 years without issues before breaking."
 date: 2022-11-21 7:00:00 +0000
+tags: python django
 # image: assets/pics/django32-query-perf.png
 ---
 

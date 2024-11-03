@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Using a game engine to draw a 3D graph crossplatform"
-category: 
-tags: [gamedev, 3d, android]
+tags: gamedev 
 ---
 
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Shrinking the address bar width in browsers"
-category: 
-tags: [web, browsers]
 ---
 
 

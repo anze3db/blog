@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "I tried moving to Debian"
-category: 
-tags: [linux, fail, ubuntu]
+tags: linux
 ---
 
 

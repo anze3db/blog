@@ -3,6 +3,7 @@ layout: post
 title: "Enum with `str` or `int` Mixin Breaking Change in Python 3.11"
 description: "A change in how Python handles `str` and `int` mixins in Enum classes might break your code when you upgrade to Python 3.11."
 date: 2022-12-21 1:00:00 +0000
+tags: python
 # image: assets/pics/django32-query-perf.png
 ---
 

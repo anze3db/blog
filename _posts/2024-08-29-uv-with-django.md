@@ -3,6 +3,7 @@ title: "UV with Django"
 description: "Using UV to manage dependencies of your Django application."
 date: 2024-08-29 00:00:00 +0000
 image: assets/cards/2024-08-29-uv-with-django.png
+tags: django
 ---
 
 In a hurry? Jump to the relevant section:

@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Gnome Shell and Unity"
-category: 
-tags: [linux, desktop, ubuntu]
+tags: linux
 ---
 
 

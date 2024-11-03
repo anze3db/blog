@@ -3,6 +3,7 @@ title: "Django SQLite Production Config"
 description: "Optimize your Django SQLite configuration for production."
 date: 2024-06-14 0:00:00 +0000
 image: assets/cards/2024-06-12-sqlite-django-config.png
+tags: sqlite django
 ---
 
 The default SQLite configuration in Django is not ideal for running your application in production. SQLite is optimized for embedded low-concurrency systems out of the box, which is the exact opposite of what your Django application is supposed to do.

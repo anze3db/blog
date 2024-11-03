@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Game Jams: The most fun you can have while programming"
-category: 
-tags: [gamedev, programming]
+tags: gamedev
 ---
 
 

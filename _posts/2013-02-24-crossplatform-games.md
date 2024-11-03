@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Cross-platform Games"
-category: 
-tags: [gamedev, web, webgl]
+tags: gamedev
 ---
 
 

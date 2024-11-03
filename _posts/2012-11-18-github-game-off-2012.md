@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "My Github Game Off Submission"
-category: 
-tags: [gamedev, coding, fun]
+tags: gamedev
 ---
 
 

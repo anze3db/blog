@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Creating Tinder like animations with CSS"
-category: 
-tags: [sideprojects, freelancing, work, fun, webdev, css]
+tags: css
 ---
 
 <img src="/assets/pics/windowshopper.gif" alt="gif showing how the animation looks like" style="float: right;

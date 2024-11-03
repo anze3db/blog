@@ -3,6 +3,7 @@ layout: post
 title: "The Fastest Way to Build a Read-only JSON API"
 description: "A short story on how I managed to not overengineer a read-only JSON API."
 date: 2023-01-16 1:00:00 +0000
+tags: nginx
 # image: assets/pics/django32-query-perf.png
 ---
 

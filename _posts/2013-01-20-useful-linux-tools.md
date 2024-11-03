@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Useful GNU/Linux tools"
-category: 
-tags: [linux, bash]
+tags: linux
 ---
 
 

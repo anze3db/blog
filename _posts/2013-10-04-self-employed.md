@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "I'm glad I became fit before becoming self-employed"
-category: 
-tags: [life, freelancing, work]
 ---
 
 

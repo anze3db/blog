@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Google Analytics should use log scale"
-category: 
-tags: [stats, math, blog]
 ---
 
 

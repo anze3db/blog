@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Best Github shortcut ever"
-category: 
-tags: [mindblow, fun, git]
+tags: git
 ---
 
 

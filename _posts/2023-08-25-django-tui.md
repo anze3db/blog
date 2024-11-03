@@ -4,6 +4,7 @@ title: "Django-TUI: A Text User Interface for Django Commands"
 description: "How I've built django-tui"
 date: 2023-08-25 0:00:00 +0000
 image: assets/pics/django-tui.png
+tags: django
 ---
 
 ![django-tui screenshot](/assets/pics/django-tui.png)

@@ -4,6 +4,7 @@ title: "Fedidevs dev update #1"
 description: "Discover the most favorited posts from developers on Mastodon with Fedidevs Posts."
 date: 2023-09-16 0:00:00 +0000
 image: /assets/pics/fedidevs-posts.png
+tags: fedidevs
 ---
 
 I've just launched [Fedidevs Posts](https://fedidevs.com/posts), a page that curates the most popular posts by developers on the Fediverse.

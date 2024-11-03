@@ -4,6 +4,7 @@ title: "Automate Hatch Publish with GitHub Actions"
 description: "Scribbling down how I automated publishing to PyPI with GitHub Actions."
 date: 2023-08-18 0:00:00 +0000
 image: assets/pics/words-tui.png
+tags: python
 ---
 
 I have automated publishing my [words-tui project](https://pypi.org/project/words-tui/) to PyPI with GitHub Actions. This is the workflow file, saved at `.github/workflows/publish.yml`:

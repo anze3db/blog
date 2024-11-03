@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Disqus redesigned"
-category: 
-tags: [blog, meta]
 ---
 
 

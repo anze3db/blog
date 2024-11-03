@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Three CS students and a tablet"
-category: 
-tags: [android, programming, fun]
+tags: android
 ---
 
 

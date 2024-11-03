@@ -4,6 +4,7 @@ title: "Writing a Pytest plugin"
 description: "How to write a simple pytest plugin."
 date: 2023-10-06 0:00:00 +0000
 image: /assets/pics/pytest-plugin-og.png
+tags: python pytest
 ---
 
 I've been working on a `pytest` plugin, and I've learned how some of this black magic works, so I thought I'd share.

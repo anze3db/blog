@@ -3,6 +3,7 @@ title: "Django SQLite Benchmark"
 description: "How to configure SQLite for better throughput with Django."
 date: 2024-02-06 0:00:00 +0000
 image: assets/cards/2024-02-06-django-sqlite-benchmark.png
+tags: sqlite django
 ---
 
 SQLite is an excellent database for web applications, but its default configuration is targeted at embedded systems and isn't optimized for reads and writes from multiple processes and threads concurrently. Because of this, it needs tweaking to improve throughput and performance and reduce the number of errors you might see.

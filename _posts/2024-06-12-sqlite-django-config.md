@@ -35,6 +35,31 @@ Luckily, you can improve concurrency by tweaking a few settings. See how to do i
     ```
 -->
 
+## In Django 5.1 or newer
+
+In Django 5.1, you can tweak all the necessary changes in your `settings.py`:
+
+```python
+# yourproject/settings.py
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "OPTIONS": {
+            "transaction_mode": "IMMEDIATE",
+            "timeout": 5,  # seconds
+            "init_command": """
+                PRAGMA journal_mode=WAL;
+                PRAGMA synchronous=NORMAL;
+                PRAGMA mmap_size = 134217728;
+                PRAGMA journal_size_limit = 27103364;
+                PRAGMA cache_size=2000;
+            """,
+        },
+    }
+}
+```
+
+Note that you don't have to specify `PRAGMA foreign_keys = ON` because it is set by default by Django itself. You also don't need to use `PRAGMA busy_timeout` because you can achieve the same thing by setting the `timeout` database option.
 
 
 ## In Django 5.0, 4.2, or older
@@ -121,31 +146,6 @@ class DatabaseWrapper(base.DatabaseWrapper):
 
 ```
 
-## In Django 5.1 or newer
-
-In Django 5.1, you can tweak all the necessary changes in your `settings.py`:
-
-```python
-# yourproject/settings.py
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "OPTIONS": {
-            "transaction_mode": "IMMEDIATE",
-            "timeout": 5,  # seconds
-            "init_command": """
-                PRAGMA journal_mode=WAL;
-                PRAGMA synchronous=NORMAL;
-                PRAGMA mmap_size = 134217728;
-                PRAGMA journal_size_limit = 27103364;
-                PRAGMA cache_size=2000;
-            """,
-        },
-    }
-}
-```
-
-Note that you don't have to specify `PRAGMA foreign_keys = ON` because it is set by default by Django itself. You also don't need to use `PRAGMA busy_timeout` because you can achieve the same thing by setting the `timeout` database option.
 
 # Fin
 

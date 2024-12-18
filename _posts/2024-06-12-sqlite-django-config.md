@@ -34,6 +34,11 @@ Luckily, you can improve concurrency by tweaking a few settings. See how to do i
     }
     ```
 -->
+### ⚠️ WARNING ⚠️
+
+`PRAGMA journal_mode=WAL;` setting can **corrupt your database** if used on a network file system (NFS) commonly used by hosting providers like [PythonAnywhere](https://www.pythonanywhere.com/). Do not enable it if you are unsure about the type of file storage used.
+
+Make sure to go through [SQLite gotchas](/sqlite-prod) before using SQLite in production.
 
 ## In Django 5.1 or newer
 
@@ -58,6 +63,7 @@ DATABASES = {
     }
 }
 ```
+
 
 Note that you don't have to specify `PRAGMA foreign_keys = ON` because it is set by default by Django itself. You also don't need to use `PRAGMA busy_timeout` because you can achieve the same thing by setting the `timeout` database option.
 

@@ -98,6 +98,12 @@ sqlite3 db.sqlite3 'PRAGMA journal_mode=WAL;'
 
 With WAL enabled, writes will no longer block reads, and you should see an increase in throughput if your application is read-heavy. I have a whole blog post dedicated [to this topic](/sqlite-wal) if you'd like to know more.
 
+### ⚠️ WARNING ⚠️
+
+`PRAGMA journal_mode=WAL;` setting can **corrupt your database** if used on a network file system (NFS) commonly used by hosting providers like [PythonAnywhere](https://www.pythonanywhere.com/). Do not enable it if you are unsure about the type of file storage used.
+
+Make sure to go through [SQLite gotchas](/sqlite-prod) before using SQLite in production.
+
 ## Cause 1: SQLite timed out waiting for the lock
 
 This error is raised because only one process or thread can write to a SQLite database at a time. When a thread or process needs to write to the database, it has to acquire a database lock. If another thread or process already holds the lock, SQLite will wait for the lock to be released, retrying with exponential backoff for as long as your `timeout` value (5 seconds by default). It raises the `database is locked` error if it cannot require the lock in time.

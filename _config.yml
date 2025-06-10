@@ -10,15 +10,38 @@ exclude: [".rbenv-version", "README.md", "Rakefile"]
 title: Anže's Blog
 tagline: Python, Django, and the Web
 author:
-  name: Anže
+  name: Anže Pečar
   email: anze@pecar.me
   github: anze3db
   twitter: anze3db
 
+twitter:
+  username: anze3db
+  card: summary_large_image
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-og-image
 
+og_image:
+  collections: ["posts"]
+  output_dir: "assets/images/og"
+  image: "/assets/images/anze.jpeg"
+  domain: "Anže Pečar"
+  canvas:
+    background_color: "#0b1930"
+  header:
+    font_family: "Roboto, Bold"
+    color: "#EFEFEF"
+  content:
+    font_family: "Helvetica"
+    color: "#FEEFEF"
+  border_bottom:
+    width: 30
+    fill:
+      - "#1d4382"
 
 tag_page_layout: tag_page
 tag_page_dir: tag

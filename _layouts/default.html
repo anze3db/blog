@@ -11,32 +11,9 @@ name: twitter
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <!-- Primary Meta Tags -->
-  <title>{{ page.title }}</title>
-  <meta name="title" content="{{ page.title }}">
-  <meta name="description" content="{{ page.description }}" />
-  <meta name="author" content="{{ site.author.name }}" />
-  <link rel="canonical" href="{{site.url }}{{ page.url }}" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{site.url }}{{ page.url }}" />
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:description" content="{{ page.description }}" />
-  {% if page.image %}
-  <meta property="og:image" content="{{site.url }}/{{ page.image }}" />
-  {% else %}
-  <meta property="og:image" content="{{site.url }}/assets/me.jpg" />
-  {% endif %}
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:creator" content="@anze3db" />
-  <meta name="twitter:title" content="{{ page.title }}" />
-  {% if page.image %}
-  <meta name="twitter:image" content="{{site.url }}/{{ page.image }}" />
-  {% else %}
-  <meta name="twitter:card" content="summary" />
-  {% endif %}
+  {% seo %}
+
   <!-- RSS Link -->
   <link rel="alternate" type="application/rss+xml" href="{{ production_url }}/feed.xml" title="{{ site.title }}" />
   <!-- CSS -->

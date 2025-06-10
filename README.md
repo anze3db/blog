@@ -1,5 +1,9 @@
 My humble blog page
 
+```sh
+brew install libvips # needed for og image generation
+```
+
 
 ```sh
 bundle install

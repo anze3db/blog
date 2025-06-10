@@ -19,3 +19,7 @@ gem 'jekyll-feed'
 gem 'jekyll-sitemap'
 
 gem 'jekyll-tagging'
+
+gem 'jekyll-seo-tag'
+
+gem 'jekyll-og-image'

@@ -28,7 +28,6 @@ plugins:
 og_image:
   collections: ["posts"]
   output_dir: "assets/images/og"
-  force: true
   verbose: true
   image: "/assets/images/anze.jpeg"
   domain: "Anže Pečar"

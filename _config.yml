@@ -38,7 +38,7 @@ og_image:
     font_family: "Roboto, Bold"
     color: "#EFEFEF"
   content:
-    font_family: "Helvetica"
+    font_family: "Roboto"
     color: "#FEEFEF"
   border_bottom:
     width: 30

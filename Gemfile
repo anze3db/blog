@@ -23,3 +23,5 @@ gem 'jekyll-tagging'
 gem 'jekyll-seo-tag'
 
 gem 'jekyll-og-image'
+
+gem 'jekyll-compose', group: [:jekyll_plugins]

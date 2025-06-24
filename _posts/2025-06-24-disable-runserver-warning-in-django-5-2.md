@@ -18,7 +18,15 @@ Here is how it looks like in the terminal:
 
 The warning is helpful for newcomers because Django's development server is neither secure nor performant enough to be exposed to the internet.
 
-However, if you've already configured your production environment with a proper WSGI/ASGI server, seeing the warning every time your development server reloads becomes tedious. Luckily, there is a way to disable it with the [DJANGO_RUNSERVER_HIDE_WARNING](https://docs.djangoproject.com/en/5.2/ref/django-admin/#envvar-DJANGO_RUNSERVER_HIDE_WARNING) environment variable:
+However, if you've already configured your production environment with a proper WSGI/ASGI server, seeing the warning every time your development server reloads becomes tedious.
+
+## The Fix
+
+Luckily, there is a way to disable it with the [DJANGO_RUNSERVER_HIDE_WARNING](https://docs.djangoproject.com/en/5.2/ref/django-admin/#envvar-DJANGO_RUNSERVER_HIDE_WARNING) environment variable:
+
+```
+DJANGO_RUNSERVER_HIDE_WARNING=true python manage.py runserver
+```
 
 
 ![Warning in the terminal fixed](/assets/pics/django-5-2-warning-fixed.png)

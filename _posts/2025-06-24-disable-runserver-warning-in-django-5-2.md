@@ -22,7 +22,7 @@ However, if you've already configured your production environment with a proper 
 
 ## The Fix
 
-Luckily, there is a way to disable it with the [DJANGO_RUNSERVER_HIDE_WARNING](https://docs.djangoproject.com/en/5.2/ref/django-admin/#envvar-DJANGO_RUNSERVER_HIDE_WARNING) environment variable `DJANGO_RUNSERVER_HIDE_WARNING=true python manage.py runserver`:
+Luckily, there is a way to disable it with the [DJANGO_RUNSERVER_HIDE_WARNING](https://docs.djangoproject.com/en/5.2/ref/django-admin/#envvar-DJANGO_RUNSERVER_HIDE_WARNING) environment variable. `DJANGO_RUNSERVER_HIDE_WARNING=true python manage.py runserver`:
 
 ![Warning in the terminal fixed](/assets/pics/django-5-2-warning-fixed.png)
 

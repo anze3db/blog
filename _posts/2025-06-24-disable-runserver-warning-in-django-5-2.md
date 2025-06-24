@@ -28,6 +28,7 @@ Luckily, there is a way to disable it with the [DJANGO_RUNSERVER_HIDE_WARNING](h
 DJANGO_RUNSERVER_HIDE_WARNING=true python manage.py runserver
 ```
 
+Clean terminal:
 
 ![Warning in the terminal fixed](/assets/pics/django-5-2-warning-fixed.png)
 

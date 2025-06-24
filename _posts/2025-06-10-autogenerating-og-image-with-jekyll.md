@@ -2,6 +2,7 @@
 layout: post
 title: Autogenerating og:images with Jekyll
 date: 2025-06-10 02:38 +0100
+tags: jekyll
 ---
 
 This blog has been a static site powered by [Jekyll](https://jekyllrb.com/) for [over 13 years](https://blog.pecar.me/why-i-chose-jekyll), and I've been happy with the setup. After all this time, I still enjoy using my code editor to write new posts and `git commit` and `git push` to publish them.

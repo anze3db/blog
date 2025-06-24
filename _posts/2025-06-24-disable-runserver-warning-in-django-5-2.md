@@ -17,7 +17,7 @@ The warning is helpful for newcomers because Django's development server is neit
 However, if you've already configured your production environment with a proper WSGI/ASGI server, seeing the warning every time your development server reloads becomes tedious. Luckily, there is a way to disable it with the [DJANGO_RUNSERVER_HIDE_WARNING](https://docs.djangoproject.com/en/5.2/ref/django-admin/#envvar-DJANGO_RUNSERVER_HIDE_WARNING) environment variable:
 
 
-```python
+```
 ❯ DJANGO_RUNSERVER_HIDE_WARNING=true python manage.py runserver
 Watching for file changes with StatReloader
 Performing system checks...

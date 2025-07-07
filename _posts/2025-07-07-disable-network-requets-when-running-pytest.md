@@ -23,15 +23,15 @@ import socket
 
 @pytest.fixture(autouse=True)
 def block_external_requests(monkeypatch):
- original_getaddrinfo = socket.getaddrinfo
+    original_getaddrinfo = socket.getaddrinfo
 
-    def raise_on_external_request(*args, **kwargs):
+    def raise_on_external_request(host, *args, **kwargs):
         ALLOWED_HOSTS = {"localhost", "127.0.0.1", "::1", "0.0.0.0"}
-        if args[0] not in ALLOWED_HOSTS:
-            raise Exception(f"External request detected: {args[0]}")
-        return original_getaddrinfo(*args, **kwargs)
+        if host not in ALLOWED_HOSTS:
+            raise Exception(f"External request detected: {host}")
+        return original_getaddrinfo(host, *args, **kwargs)
 
- monkeypatch.setattr(socket, "getaddrinfo", raise_on_external_request)
+    monkeypatch.setattr(socket, "getaddrinfo", raise_on_external_request)
 ```
 
 There are a hundred different ways to do this (let me know your preferred method!), but with this pytest fixture, I was able to track down all the unintended requests in our test suite, and it will hopefully prevent such requests in the future as well. 🤞

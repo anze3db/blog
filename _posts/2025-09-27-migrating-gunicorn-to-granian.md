@@ -21,7 +21,13 @@ workers = 4
 threads = 4
 ```
 
-And this is how I now start Granian:
+I started the Gunicorn process with:
+
+```sh
+gunicorn fedidevs.wsgi
+```
+
+Since Granian doesn't have a dedicated setting file it's now all a single command:
 
 ```sh
 granian \

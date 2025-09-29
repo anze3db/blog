@@ -12,6 +12,26 @@ This is the second time I attempted to try out Granian. The first time I got blo
 
 Since then, Granian has added support for Unix sockets, so this is no longer a blocker. In fact, all the Gunicorn settings that I was using had their equivalent in Granian, including the ability to set the process name (again, extremely useful when running multiple Django Apps on a single host).
 
+This was my existing `gunicorn.conf.py` file:
+
+```python
+proc_name = "fedidevs"
+bind = "unix:fedidevs.sock"
+workers = 4
+threads = 4
+```
+
+And this is how I now start Granian:
+
+```sh
+granian \
+    --interface wsgi fedidevs.wsgi:application \
+    --process-name fedidevs \
+    --uds fedidevs.sock \
+    --workers 4 \
+    --blocking-threads 4
+```
+
 # Performance
 
 Granian is written in Rust, so it should be faster than Gunicorn, which is in pure Python. [Granian's benchmark](https://github.com/emmett-framework/granian/blob/master/benchmarks/vs.md#wsgi) says that Granian should be about `10ms` faster than Gunicorn Gthread for WSGI.

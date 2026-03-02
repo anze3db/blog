@@ -1,0 +1,41 @@
+baseURL = "https://blog.pecar.me"
+title = "Anže's Blog"
+languageCode = "en"
+
+[params]
+  tagline = "Python, Django, and the Web"
+  author = "Anže Pečar"
+  email = "anze@pecar.me"
+
+# Preserve /:title URL structure (matching Jekyll's permalink: /:title)
+# Tag URL structure: /tag/python (matching Jekyll's tag_page_dir)
+[permalinks]
+  [permalinks.page]
+    posts = '/:slug'
+  [permalinks.section]
+    posts = '/:slug'
+  [permalinks.term]
+    tags = '/tag/:slug'
+
+# Built-in RSS feed (replaces jekyll-feed)
+[outputFormats.RSS]
+  baseName = "feed"
+
+[services.rss]
+  limit = 50
+
+# Syntax highlighting with CSS classes (reuses existing vim.css)
+[markup.highlight]
+  noClasses = false
+
+# GFM-compatible markdown with inline HTML support (<video>, <mark>, etc.)
+[markup.goldmark.renderer]
+  unsafe = true
+
+# Built-in taxonomies (replaces jekyll-tagging)
+[taxonomies]
+  tag = "tags"
+
+# Sitemap (replaces jekyll-sitemap)
+[sitemap]
+  filename = "sitemap.xml"

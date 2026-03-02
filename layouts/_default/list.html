@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h2>Posts tagged with #{{ .Title }}</h2>
+{{ range .Pages }}
+<span>{{ .Date.Format "02 Jan 2006" }}</span>
+<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+{{ end }}
+
+<h2>Other tags</h2>
+{{ range .Site.Taxonomies.tags }}
+<a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>
+{{ end }}
+{{ end }}

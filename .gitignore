@@ -1,10 +1,5 @@
-_site/*
-.jekyll-cache
+public/
+resources/
+.hugo_build.lock
 Thumbs.db
 .DS_Store
-
-!.gitkeep
-
-.rbenv-version
-.bundle
-assets/images/og/posts/*

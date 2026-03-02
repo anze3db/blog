@@ -1,0 +1,66 @@
+{{- $ogImageURL := "" -}}
+{{- $base := resources.Get "og-base.png" -}}
+{{- if $base -}}
+{{- $titleFont := resources.Get "fonts/NotoSans-Bold.ttf" -}}
+{{- $smallFont := resources.Get "fonts/NotoSans-Medium.ttf" -}}
+
+{{/* Strip emoji characters that can't render in TTF fonts */}}
+{{- $title := .Title | replaceRE "[\\x{1F000}-\\x{1FAFF}\\x{2600}-\\x{27BF}\\x{FE00}-\\x{FE0F}\\x{200D}]+" "" |
+replaceRE "\\s+$" "" -}}
+
+{{/* Render title on a narrower canvas so text wraps before the avatar area.
+Canvas is 940px wide (avatar starts at x=990, leaving 50px gap). */}}
+{{- $textCanvas := $base.Crop "940x630" -}}
+{{- $textCanvas = $textCanvas.Filter (images.Text $title (dict
+"color" "#FFFFFF"
+"size" 64
+"x" 80
+"y" 125
+"font" $titleFont
+"linespacing" 16
+)) -}}
+
+{{/* Composite: text canvas first, then avatar on top, then bottom text */}}
+{{- $img := $base.Filter (images.Overlay $textCanvas 0 0) -}}
+
+{{/* Avatar (top-right, vertically centered with title text).
+   Title renders at y=125 with size=64 and linespacing=16.
+   Estimate line count from character length (~26 chars per line at 64px on 860px width).
+   avatar_y = text_center_y - avatar_height/2 */}}
+{{- $avatar := resources.Get "avatar.png" -}}
+{{- if $avatar -}}
+{{- $titleLen := len $title -}}
+{{- $avatarY := 92 -}}
+{{- if gt $titleLen 52 -}}
+  {{- $avatarY = 172 -}}
+{{- else if gt $titleLen 26 -}}
+  {{- $avatarY = 132 -}}
+{{- end -}}
+{{- $img = $img.Filter (images.Overlay $avatar 990 $avatarY) -}}
+{{- end -}}
+
+{{/* Date - bottom left */}}
+{{- $dateStr := .Date.Format "02 Jan 2006" -}}
+{{- $img = $img.Filter (images.Text $dateStr (dict
+"color" "#FFFFFF"
+"size" 24
+"x" 80
+"y" 545
+"font" $smallFont
+"linespacing" 2
+)) -}}
+
+{{/* URL - bottom right, centered with avatar (avatar center x=1055) */}}
+{{- $img = $img.Filter (images.Text "blog.pecar.me" (dict
+"color" "#FFFFFF"
+"size" 24
+"x" 1055
+"y" 545
+"alignx" "center"
+"font" $smallFont
+"linespacing" 2
+)) -}}
+
+{{- $ogImageURL = $img.Permalink -}}
+{{- end -}}
+{{- return $ogImageURL -}}

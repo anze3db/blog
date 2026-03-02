@@ -1,0 +1,51 @@
+{{- $title := .Site.Title -}}
+{{- if .IsPage -}}
+  {{- $title = printf "%s | %s" .Title .Site.Title -}}
+{{- end -}}
+<title>{{ $title }}</title>
+
+{{- with .Description | default .Summary | default .Site.Params.tagline }}
+<meta name="description" content="{{ . }}" />
+{{- end }}
+
+<meta name="author" content="{{ .Site.Params.author }}" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Title | default .Site.Title }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{- with .Description | default .Summary | default .Site.Params.tagline }}
+<meta property="og:description" content="{{ . }}" />
+{{- end }}
+{{- if .IsPage }}
+<meta property="og:type" content="article" />
+{{- else }}
+<meta property="og:type" content="website" />
+{{- end }}
+
+<!-- OG Image -->
+{{- $ogImage := "" -}}
+{{- if .Params.image -}}
+  {{- $ogImage = .Params.image -}}
+  {{- if not (hasPrefix $ogImage "http") -}}
+    {{- $ogImage = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $ogImage) -}}
+  {{- end -}}
+{{- else if .IsPage -}}
+  {{- $ogImage = partial "og-image.html" . -}}
+{{- end -}}
+{{- with $ogImage }}
+<meta property="og:image" content="{{ . }}" />
+{{- end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@anze3db" />
+<meta name="twitter:title" content="{{ .Title | default .Site.Title }}" />
+{{- with .Description | default .Summary | default .Site.Params.tagline }}
+<meta name="twitter:description" content="{{ . }}" />
+{{- end }}
+{{- with $ogImage }}
+<meta name="twitter:image" content="{{ . }}" />
+{{- end }}
+
+<link rel="canonical" href="{{ .Permalink }}" />

@@ -1,0 +1,13 @@
+{{ define "main" }}
+<span>{{ .Date.Format "02 Jan 2006" }}</span>
+<h1>{{ .Title }}</h1>
+<section>{{ .Content }}</section>
+<script>
+    document.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(function (heading) {
+        if (heading.id) {
+            heading.innerHTML =
+                '<a style="color: var(--h1-color);" href="#' + heading.id + '" class="header-link">' + heading.innerText + '<\/a>';
+        }
+    });
+</script>
+{{ end }}

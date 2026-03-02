@@ -1,6 +1,5 @@
 PORT := env("PORT", "4000")
 
-
 @_:
     just --list
 
@@ -8,11 +7,13 @@ manage *args:
     uv run manage.py {{ args }}
 
 @server:
-    bundle exec jekyll serve --port {{PORT}} --livereload
+    hugo server -p {{PORT}}
 
 @server-draft:
-    bundle exec jekyll serve --port {{PORT}} --livereload --drafts
+    hugo server -p {{PORT}} --buildDrafts
 
+@build:
+    hugo --minify
 
 @post title:
-    bundle exec jekyll post "{{title}}"
+    hugo new content posts/$(date +%Y-%m-%d)-{{title}}.md

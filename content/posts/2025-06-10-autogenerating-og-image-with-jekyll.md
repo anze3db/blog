@@ -9,7 +9,7 @@ This blog has been a static site powered by [Jekyll](https://jekyllrb.com/) for 
 
 However, there was one issue that often discouraged me from writing: I had to switch out of the code editor to generate the Open Graph image that appears on social media when I share the link to the blog post. For this particular blog post, this image looks like this:
 
-![og image for this post](assets/images/og/posts/autogenerating-og-image-with-jekyll.png)
+![og image for this post](/assets/pics/jekyll-og-image.png)
 
 ## jekyll-og-image
 

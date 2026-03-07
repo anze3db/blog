@@ -4,6 +4,7 @@ date: 2023-11-03
 slug: "sqlite-wal"
 summary: "Speed up your SQLite writes and reads with this crazy trick. 🤪"
 tags: ["sqlite"]
+series: ["Django SQLite"]
 ---
 
 I've been working with SQLite lately. It has become my go-to database for all projects!

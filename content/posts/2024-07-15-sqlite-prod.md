@@ -4,6 +4,7 @@ date: 2024-07-17
 slug: "sqlite-prod"
 summary: "What you need to know before putting SQLite in production"
 tags: ["sqlite", "django"]
+series: ["Django SQLite"]
 image: "/assets/cards/2024-07-15-sqlite-prod.png"
 ---
 

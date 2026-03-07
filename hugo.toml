@@ -35,6 +35,7 @@ languageCode = "en"
 # Built-in taxonomies (replaces jekyll-tagging)
 [taxonomies]
   tag = "tags"
+  series = "series"
 
 # Sitemap (replaces jekyll-sitemap)
 [sitemap]

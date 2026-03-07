@@ -1,6 +1,7 @@
 {{ define "main" }}
 <span>{{ .Date.Format "02 Jan 2006" }}</span>
 <h1>{{ .Title }}</h1>
+{{ partial "series.html" . }}
 <section>{{ .Content }}</section>
 <script>
     document.querySelectorAll('h1,h2,h3,h4,h5,h6').forEach(function (heading) {

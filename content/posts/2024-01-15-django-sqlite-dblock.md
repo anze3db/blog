@@ -4,6 +4,7 @@ date: 2024-01-16
 slug: "django-sqlite-dblock"
 summary: "Explains `database is locked` errors in Django when using SQLite, and how to solve them."
 tags: ["django", "sqlite"]
+series: ["Django SQLite"]
 image: "/assets/cards/2024-01-16-django-sqlite-dblock.png"
 ---
 

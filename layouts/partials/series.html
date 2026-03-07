@@ -1,0 +1,16 @@
+{{ with .GetTerms "series" }}
+<details open>
+  <summary style="color: inherit;">This post is part of the <strong>{{ (index . 0).Title }}</strong> series</summary>
+  <ol style="padding-left: 2.5rem;">
+    {{ range (index . 0).Pages.ByDate }}
+    <li>
+      {{ if eq .RelPermalink $.RelPermalink }}
+        {{ .Title }} (this post)
+      {{ else }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ol>
+</details>
+{{ end }}

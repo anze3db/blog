@@ -4,6 +4,7 @@ date: 2024-06-14
 slug: "sqlite-django-config"
 summary: "Optimize your Django SQLite configuration for production."
 tags: ["sqlite", "django"]
+series: ["Django SQLite"]
 image: "/assets/cards/2024-06-12-sqlite-django-config.png"
 ---
 

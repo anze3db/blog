@@ -1,5 +1,5 @@
 ---
-title: "Claude Fixes User Bug Report"
+title: "Claude Fixes User Bug"
 date: 2026-03-08
 series: ["Agentic Adventures"]
 ---

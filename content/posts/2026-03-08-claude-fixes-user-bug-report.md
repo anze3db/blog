@@ -54,7 +54,7 @@ accounts = accounts.filter(
 This single-word change (`Account.objects` → `accounts`) keeps the existing annotated queryset and just adds the filter, preserving `in_starter_pack` and `is_followed` annotations.
 ``````
 
-It nailed it. If I were looking at this problem myself, I'd probably come to the exact same conclusion. I'm not sure I'd be faster though, so if this was a competition, Claude would have won.
+It nailed it. If I were looking at this problem myself, I'd come to the exact same conclusion. I'm not sure I'd be faster though, so if this was a competition, Claude would have won.
 
 Cool, but a bug isn't fixed until there's a test for it.
 
@@ -66,7 +66,7 @@ I instructed Claude to add a test for this exact case, and off it went again. _E
 
 It wrote the test, ran it, and confirmed it passed. Everything looked good, so it happily reported that the job was done.
 
-The test looked plausible, but I decided to verify it. I reverted the bug fix and ran the tests again. The newly added test should have failed, but it still passed.
+The test looked plausible, and I almost shipped it as is, but I instead decided to verify it. I reverted the bug fix and ran the tests again. The newly added test should have failed, but it still passed!
 
 Claude's test didn't exercise the code it had fixed!
 
@@ -86,8 +86,8 @@ After a few more tokens, the test was fixed and working properly.
 
 Claude writes code faster than we do. It uses tools, runs your tests, parses outputs, and fixes failures. But it's still a system that generates the next most probable token.
 
-It can't actually know whether what it did is correct or expected. To it, [dropping your production database](https://alexeyondata.substack.com/p/how-i-dropped-our-production-database) or fixing a user-reported bug are the same. It's up to us to learn how to guide these tools so they don't generate garbage.
+It can't actually know whether what it did is correct or expected. To it, [dropping your production database](https://alexeyondata.substack.com/p/how-i-dropped-our-production-database) or fixing a user reported bug are the same. It's up to us to learn how to guide it to success.
 
-In this oneline bug fix, verifying was trivial. But when Claude writes thousands of lines of code and tests, it becomes a real challenge to review everything.
+In the oneline bug fix from the Fedidevs user, verifying was trivial. But when Claude writes thousands of lines of code and tests, it becomes a real challenge to review everything.
 
-This is going to be the biggest challenge of vibe coding or agentic engineering, however you want to call it.
+I've heard some teams are having success with [agent skills](https://agentskills.io/home) for validation, so I'll be looking into them in future posts.

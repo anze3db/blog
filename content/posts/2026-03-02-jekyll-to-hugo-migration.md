@@ -1,6 +1,9 @@
 ---
-title: "Agentic Adventures"
+title: "Jekyll to Hugo Migration"
 date: 2026-03-02T22:02:24Z
+series: ["Agentic Adventures"]
+aliases:
+  - /agentic-adventures
 ---
 
 In my [last post](/advent-of-code-2025/#ai-) I mentioned that software engineering is going to be more and more AI driven and since then I've begrudgingly accepted this new reality. The era of handcrafted code is mostly coming to an end.

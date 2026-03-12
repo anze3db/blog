@@ -1,5 +1,5 @@
 ---
-title: "Typing your Django project in 2026"
+title: "Typing Your Django Project in 2026"
 date: 2026-03-12T0:00:00Z
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Game Jams: The most fun you can have while programming"
+title: "Game Jams: The Most Fun You Can Have While Programming"
 date: 2013-01-09
 slug: "game-jams-the-most-fun-you-can-have-while-programming"
 tags: ["gamedev"]

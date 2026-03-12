@@ -1,5 +1,5 @@
 ---
-title: "Why don't we have code hot swapping on mobile?"
+title: "Why Don't We Have Code Hot Swapping on Mobile?"
 date: 2012-11-03
 slug: "hotswapping"
 tags: ["gamedev"]

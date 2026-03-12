@@ -1,5 +1,5 @@
 ---
-title: "Using a game engine to draw a 3D graph crossplatform"
+title: "Using a Game Engine to Draw a 3D Graph Crossplatform"
 date: 2013-08-30
 slug: "cpp-opengl"
 tags: ["gamedev"]

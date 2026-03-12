@@ -1,5 +1,5 @@
 ---
-title: "Creating Tinder like animations with CSS"
+title: "Creating Tinder-Like Animations with CSS"
 date: 2013-10-10
 slug: "tinder-css"
 tags: ["css"]

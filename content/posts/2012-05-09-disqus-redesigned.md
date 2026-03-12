@@ -1,5 +1,5 @@
 ---
-title: "Disqus redesigned"
+title: "Disqus Redesigned"
 date: 2012-05-09
 slug: "disqus-redesigned"
 ---

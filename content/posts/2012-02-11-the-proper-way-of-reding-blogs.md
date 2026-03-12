@@ -1,5 +1,5 @@
 ---
-title: "The proper way of reading blogs"
+title: "The Proper Way of Reading Blogs"
 date: 2012-02-11
 slug: "the-proper-way-of-reding-blogs"
 ---

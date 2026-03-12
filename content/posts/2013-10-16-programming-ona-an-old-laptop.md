@@ -1,5 +1,5 @@
 ---
-title: "Programming on a 5 year old laptop"
+title: "Programming on a 5 Year Old Laptop"
 date: 2013-10-16
 slug: "programming-ona-an-old-laptop"
 tags: ["linux"]

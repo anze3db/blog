@@ -1,5 +1,5 @@
 ---
-title: "Best Github shortcut ever"
+title: "Best Github Shortcut Ever"
 date: 2012-10-29
 slug: "best-github-shortcut-ever"
 tags: ["git"]

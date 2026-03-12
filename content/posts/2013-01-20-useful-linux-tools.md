@@ -1,5 +1,5 @@
 ---
-title: "Useful GNU/Linux tools"
+title: "Useful GNU/Linux Tools"
 date: 2013-01-20
 slug: "useful-linux-tools"
 tags: ["linux"]

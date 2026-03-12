@@ -1,5 +1,5 @@
 ---
-title: "Why I chose Jekyll"
+title: "Why I Chose Jekyll"
 date: 2012-02-02
 slug: "why-i-chose-jekyll"
 ---

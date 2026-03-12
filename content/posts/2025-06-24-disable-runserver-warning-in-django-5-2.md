@@ -1,5 +1,5 @@
 ---
-title: "Disable runserver warning in Django 5.2"
+title: "Disable Runserver Warning in Django 5.2"
 date: 2025-06-24
 slug: "disable-runserver-warning-in-django-5-2"
 tags: ["django"]

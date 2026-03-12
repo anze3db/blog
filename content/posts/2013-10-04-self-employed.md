@@ -1,5 +1,5 @@
 ---
-title: "I'm glad I became fit before becoming self-employed"
+title: "I'm Glad I Became Fit Before Becoming Self-Employed"
 date: 2013-10-04
 slug: "self-employed"
 ---

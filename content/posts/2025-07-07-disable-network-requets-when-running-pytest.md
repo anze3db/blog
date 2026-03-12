@@ -1,5 +1,5 @@
 ---
-title: "Disable network requests when running Pytest"
+title: "Disable Network Requests When Running Pytest"
 date: 2025-07-07
 slug: "disable-network-requets-when-running-pytest"
 tags: ["python"]

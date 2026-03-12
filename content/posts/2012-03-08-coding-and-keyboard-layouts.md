@@ -1,5 +1,5 @@
 ---
-title: "Coding and keyboard layouts"
+title: "Coding and Keyboard Layouts"
 date: 2012-03-08
 slug: "coding-and-keyboard-layouts"
 ---

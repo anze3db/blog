@@ -1,5 +1,5 @@
 ---
-title: "Shrinking the address bar width in browsers"
+title: "Shrinking the Address Bar Width in Browsers"
 date: 2013-07-17
 slug: "browser-layouts"
 ---

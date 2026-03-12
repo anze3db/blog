@@ -1,5 +1,5 @@
 ---
-title: "I tried moving to Debian"
+title: "I Tried Moving to Debian"
 date: 2012-10-19
 slug: "i-tried-moving-to-debian"
 tags: ["linux"]

@@ -1,5 +1,5 @@
 ---
-title: "Nginx and VirtualBox shared folders"
+title: "Nginx and VirtualBox Shared Folders"
 date: 2012-11-07
 slug: "nginx-static-file-problem"
 ---

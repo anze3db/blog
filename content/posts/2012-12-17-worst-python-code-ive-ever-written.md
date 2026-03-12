@@ -1,5 +1,5 @@
 ---
-title: "Worst python code I've ever written"
+title: "Worst Python Code I've Ever Written"
 date: 2012-12-17
 slug: "worst-python-code-ive-ever-written"
 tags: ["python"]

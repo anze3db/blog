@@ -1,5 +1,5 @@
 ---
-title: "Fedidevs dev update #1"
+title: "Fedidevs Dev Update #1"
 date: 2023-09-16
 slug: "fedidevs-posts"
 summary: "Discover the most favorited posts from developers on Mastodon with Fedidevs Posts."

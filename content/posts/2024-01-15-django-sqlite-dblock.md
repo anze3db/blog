@@ -1,5 +1,5 @@
 ---
-title: "Django, SQLite, and the Database is Locked Error"
+title: "Django, SQLite, and the Database Is Locked Error"
 date: 2024-01-16
 slug: "django-sqlite-dblock"
 summary: "Explains `database is locked` errors in Django when using SQLite, and how to solve them."

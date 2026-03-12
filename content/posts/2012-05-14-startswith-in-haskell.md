@@ -1,5 +1,5 @@
 ---
-title: "Learning Haskell, wrote startsWith a bunch of times"
+title: "Learning Haskell, Wrote startsWith a Bunch of Times"
 date: 2012-05-14
 slug: "startswith-in-haskell"
 tags: ["haskell"]

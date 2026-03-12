@@ -1,5 +1,5 @@
 ---
-title: "Prevent Flaky Tests due to Django's cache.clear()"
+title: "Prevent Flaky Tests Due to Django's cache.clear()"
 date: 2025-11-22
 slug: "prevent-flaky-tests-due-to-django-s-cache-clear"
 draft: true

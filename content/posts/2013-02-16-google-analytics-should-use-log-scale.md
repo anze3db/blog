@@ -1,5 +1,5 @@
 ---
-title: "Google Analytics should use log scale"
+title: "Google Analytics Should Use Log Scale"
 date: 2013-02-16
 slug: "google-analytics-should-use-log-scale"
 ---

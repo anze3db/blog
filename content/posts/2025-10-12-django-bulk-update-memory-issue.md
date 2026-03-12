@@ -1,5 +1,5 @@
 ---
-title: "Django bulk_update memory issue"
+title: "Django bulk_update Memory Issue"
 date: 2025-10-12
 slug: "django-bulk-update-memory-issue"
 ---

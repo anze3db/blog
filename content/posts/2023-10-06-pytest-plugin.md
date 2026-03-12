@@ -1,5 +1,5 @@
 ---
-title: "Writing a Pytest plugin"
+title: "Writing a Pytest Plugin"
 date: 2023-10-06
 slug: "pytest-plugin"
 summary: "How to write a simple pytest plugin."

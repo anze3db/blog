@@ -1,5 +1,5 @@
 ---
-title: "Deploying a Django project to my Raspberry Pi (video)"
+title: "Deploying a Django Project to My Raspberry Pi (Video)"
 date: 2024-03-18
 slug: "rpi-django-youtube"
 summary: "I made a video of me deploying a new Django project to my Raspberry Pi."

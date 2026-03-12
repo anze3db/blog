@@ -1,5 +1,5 @@
 ---
-title: "Fixing _SixMetaPathImporter.find_spec() not found warnings in Python 3.10"
+title: "Fixing _SixMetaPathImporter.find_spec() Not Found Warnings in Python 3.10"
 date: 2022-11-16
 slug: "six-warnings"
 tags: ["python"]

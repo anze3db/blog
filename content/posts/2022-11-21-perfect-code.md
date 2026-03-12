@@ -1,5 +1,5 @@
 ---
-title: "Your Code Doesn't Have to be Perfect"
+title: "Your Code Doesn't Have to Be Perfect"
 date: 2022-11-21
 slug: "perfect-code"
 summary: "An example of smelly code that served customers for over 6 years without issues before breaking."

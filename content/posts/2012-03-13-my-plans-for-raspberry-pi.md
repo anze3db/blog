@@ -1,5 +1,5 @@
 ---
-title: "My plans for Raspberry Pi"
+title: "My Plans for Raspberry Pi"
 date: 2012-03-13
 slug: "my-plans-for-raspberry-pi"
 tags: ["raspberrypi"]

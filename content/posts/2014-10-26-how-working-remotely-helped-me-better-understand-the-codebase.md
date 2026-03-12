@@ -1,5 +1,5 @@
 ---
-title: "How working remotely helped me better understand the codebase"
+title: "How Working Remotely Helped Me Better Understand the Codebase"
 date: 2014-10-26
 slug: "how-working-remotely-helped-me-better-understand-the-codebase"
 ---

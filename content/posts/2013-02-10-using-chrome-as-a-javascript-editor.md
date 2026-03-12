@@ -1,5 +1,5 @@
 ---
-title: "The Chrome Javascript editor can do hot swapping"
+title: "The Chrome Javascript Editor Can Do Hot Swapping"
 date: 2013-02-10
 slug: "using-chrome-as-a-javascript-editor"
 tags: ["javascript"]

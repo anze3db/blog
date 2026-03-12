@@ -1,5 +1,5 @@
 ---
-title: "Three CS students and a tablet"
+title: "Three CS Students and a Tablet"
 date: 2012-02-28
 slug: "three-cs-students-and-a-tablet"
 tags: ["android"]

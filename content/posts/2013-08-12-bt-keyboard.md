@@ -1,5 +1,5 @@
 ---
-title: "Can I write a blog post on this?"
+title: "Can I Write a Blog Post on This?"
 date: 2013-08-12
 slug: "bt-keyboard"
 ---

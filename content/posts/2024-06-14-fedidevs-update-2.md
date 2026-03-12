@@ -1,5 +1,5 @@
 ---
-title: "Fedidevs dev update #2"
+title: "Fedidevs Dev Update #2"
 date: 2024-06-17
 slug: "fedidevs-update-2"
 summary: "June update for fedidevs.com!"

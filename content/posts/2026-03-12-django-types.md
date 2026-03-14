@@ -85,7 +85,7 @@ row = Query(Bookmark.objects.filter(favourite=True), BookmarkAttrs).get()
 
 Now as long as your business logic always deals with your `BookmarkAttrs` instead of the underlying Django Model you should have no issues with types!
 
-Django Mantle hasn't been around long (first release Sep 26, 2025), and I have yet to use it, but the idea resonates with me.
+Django Mantle hasn't been around long (first release Sep 26, 2025), and I have yet to use it, but the idea resonates with me. [Here is a video](https://www.youtube.com/watch?v=qKkyBhXIJJU&t=10591s) of Carlton explaining the motivation behind it, it's worth the watch!
 
 ## Types in Django itself?
 

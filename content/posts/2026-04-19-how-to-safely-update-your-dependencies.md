@@ -123,5 +123,3 @@ Skills and skill marketplaces for your AI agents are another vector to worry abo
 ## Fin
 
 None of this is bulletproof, but hashes, cooldowns, and a sensible upgrade cadence gets you most of the way there. At [Fencer](http://fencer.dev/), we've helped various companies put these practices in place, so if you'd like a hand rolling them out, feel free to reach out.
-
-Did I miss anything? Let me know!

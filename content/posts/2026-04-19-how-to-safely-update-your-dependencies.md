@@ -84,6 +84,12 @@ The best solution is to automate your dependency upgrades. Dependabot is the can
 
 If an individual package upgrade turns out to be a lot of work, you can always pin that specific package to the older version and handle it separately.
 
+## Don't run updates locally
+
+I also try to avoid updating dependencies on my work or personal laptop and prefer to do it in a CI job with no access to anything critical. This way the blast radius is greatly reduced.
+
+For this we have a GitHub Actions job that runs automatically once a week, and we can also kick it off manually when we need newer dependencies.
+
 ## Update with cooldowns
 
 When you update dependencies periodically, you are always at risk that the latest version you're upgrading to has been compromised. These attacks are usually detected and yanked within a few, but you can still get unlucky and pull the bad version during that window.

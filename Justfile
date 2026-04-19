@@ -16,4 +16,4 @@ manage *args:
     hugo --minify
 
 @post title:
-    hugo new content posts/$(date +%Y-%m-%d)-{{title}}.md
+    hugo new content "posts/$(date +%Y-%m-%d)-$(echo '{{title}}' | tr '[:upper:] ' '[:lower:]-').md"

@@ -92,7 +92,7 @@ For this we have a GitHub Actions job that runs automatically once a week, and w
 
 ## Update with cooldowns
 
-When you update dependencies periodically, you are always at risk that the latest version you're upgrading to has been compromised. These attacks are usually detected and yanked within a few, but you can still get unlucky and pull the bad version during that window.
+When you update dependencies periodically, you are always at risk that the latest version you're upgrading to has been compromised. These attacks are usually detected and yanked within a few hours, but you can still get unlucky and pull the bad version during that window.
 
 Dependency cooldowns help here. They instruct your tool to install a new version if it was published more than a specified period ago. The longer the cooldown, the lower the risk of installing a compromised package, but the longer you wait for legitimate security patches too.
 

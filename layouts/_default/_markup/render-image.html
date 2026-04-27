@@ -1,0 +1,11 @@
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+{{- $path := strings.TrimPrefix "/" $src -}}
+{{- $path = strings.TrimPrefix "assets/" $path -}}
+{{- with resources.Get $path -}}
+  {{- $img := .Fit "1200x1200 webp q82" -}}
+  <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" width="{{ $img.Width }}" height="{{ $img.Height }}">
+{{- else -}}
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}

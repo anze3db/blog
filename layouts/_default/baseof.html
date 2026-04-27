@@ -12,9 +12,12 @@
   <!-- RSS Link -->
   <link rel="alternate" type="application/rss+xml" href="{{ .Site.BaseURL }}feed.xml" title="{{ .Site.Title }}" />
   <!-- CSS -->
-  <link href="/css/vim.css?v=2" rel="stylesheet" />
-  <link href="/css/pico.min.css" rel="stylesheet" />
-  <link href="/css/site.css?v=3" rel="stylesheet" />
+  {{ $vim_css := resources.Get "css/vim.css" | fingerprint }}
+  <link href="{{ $vim_css.RelPermalink }}" rel="stylesheet" integrity="{{ $vim_css.Data.Integrity }}" />
+  {{ $pico_css := resources.Get "css/pico.min.css" | fingerprint }}
+  <link href="{{ $pico_css.RelPermalink }}" rel="stylesheet" integrity="{{ $pico_css.Data.Integrity }}" />
+  {{ $site_css := resources.Get "css/site.css" | fingerprint }}
+  <link href="{{ $site_css.RelPermalink }}" rel="stylesheet" integrity="{{ $site_css.Data.Integrity }}" />
   <style>
     blockquote>p {
       margin: 0;

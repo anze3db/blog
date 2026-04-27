@@ -82,4 +82,4 @@ As I am writing this I am feeling exhausted. As an introvert, all the conferenci
 
 ![Image](/assets/pics/athens-16.jpg)
 
-I'm terrible at taking selfies so I stole this one from [Paolo](https://www.paulox.net), I hope he doesn't mind!
+I'm terrible at taking selfies so I stole this one from [Paolo](https://www.paulox.net), I hope he doesn't mind! PS: he also wrote [his own writeup on DjangoCon 2026](https://www.paulox.net/2026/04/27/my-djangocon-europe-2026/). Be sure to check it out!

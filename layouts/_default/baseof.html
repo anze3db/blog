@@ -55,6 +55,23 @@
   </footer>
   <script data-goatcounter="https://blog-pecar.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <dialog id="lightbox" class="lightbox"><img alt=""></dialog>
+  <script>
+    (function () {
+      var dlg = document.getElementById('lightbox');
+      if (!dlg) return;
+      var img = dlg.querySelector('img');
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('.gallery a[data-lightbox]');
+        if (!a) return;
+        e.preventDefault();
+        img.src = a.getAttribute('href');
+        img.alt = a.querySelector('img') ? a.querySelector('img').alt : '';
+        dlg.showModal();
+      });
+      dlg.addEventListener('click', function () { dlg.close(); });
+    })();
+  </script>
 </body>
 
 </html>

@@ -19,3 +19,45 @@ h3 {
     color: #333;
     background: #edf0f3;
 }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+    margin: 1.5rem 0;
+}
+
+.gallery a {
+    display: block;
+    cursor: zoom-in;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.lightbox {
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: 95vw;
+    max-height: 95vh;
+    cursor: zoom-out;
+}
+
+.lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox img {
+    display: block;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}

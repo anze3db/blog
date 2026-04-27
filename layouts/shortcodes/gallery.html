@@ -1,0 +1,17 @@
+{{- $base := .Get "base" | default "" -}}
+{{- $items := split (trim .Inner "\n\r ") "\n" -}}
+<div class="gallery">
+  {{- range $items -}}
+    {{- $line := trim . " \r\t" -}}
+    {{- if $line -}}
+      {{- $parts := split $line "|" -}}
+      {{- $src := trim (index $parts 0) " " -}}
+      {{- $alt := "" -}}
+      {{- if gt (len $parts) 1 -}}{{- $alt = trim (index $parts 1) " " -}}{{- end -}}
+      {{- if and $base (not (hasPrefix $src "/")) (not (hasPrefix $src "http")) -}}
+        {{- $src = printf "%s/%s" (strings.TrimRight "/" $base) $src -}}
+      {{- end -}}
+      <a href="{{ $src }}" data-lightbox><img src="{{ $src }}" alt="{{ $alt }}" loading="lazy"></a>
+    {{- end -}}
+  {{- end -}}
+</div>

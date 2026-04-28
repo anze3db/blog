@@ -4,7 +4,6 @@ date: 2024-06-17
 slug: "fedidevs-update-2"
 summary: "June update for fedidevs.com!"
 tags: ["fedidevs"]
-image: "/assets/cards/2024-06-16-fedidevs-update-2.png"
 ---
 
 [Fedidevs.com](https://fedidevs.com?utm_source=blog&utm_campaign=update2) had an exciting couple of months, so it's time for an update post!

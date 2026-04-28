@@ -4,7 +4,6 @@ date: 2024-03-18
 slug: "rpi-django-youtube"
 summary: "I made a video of me deploying a new Django project to my Raspberry Pi."
 tags: ["raspberypi", "django"]
-image: "/assets/cards/2024-03-18-rpi-django-youtube.png"
 ---
 
 🎥 [I made a video of me deploying a new Django project to my Raspberry Pi.](https://youtu.be/idL-Pmng36A) 🎥

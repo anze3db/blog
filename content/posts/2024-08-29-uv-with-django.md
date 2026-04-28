@@ -4,7 +4,6 @@ date: 2024-08-29
 slug: "uv-with-django"
 summary: "Using UV to manage dependencies of your Django application."
 tags: ["django"]
-image: "/assets/cards/2024-08-29-uv-with-django.png"
 ---
 
 In a hurry? Jump to the relevant section:

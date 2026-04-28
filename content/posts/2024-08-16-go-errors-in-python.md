@@ -4,7 +4,6 @@ date: 2024-08-16
 slug: "go-errors-in-python"
 summary: "Adding special syntax to Javascript or Python to allow Go-like error handling feels like a good idea at first glance, but I think it doesn't improve the issues with error handling in these two languages."
 tags: ["python", "go", "javascript"]
-image: "/assets/cards/2024-08-16-go-errors-in-python.png"
 ---
 
 Yesterday, I saw [this proposal](https://github.com/arthurfiorette/proposal-safe-assignment-operator) to add Golike error handling to Javascript, which got me thinking about whether or not this would make sense in my go-to language, Python.

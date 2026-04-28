@@ -3,7 +3,6 @@ title: "Thoughts on Code Reviews"
 date: 2024-03-06
 slug: "code-reviews"
 summary: "My thoughts on code reviews."
-image: "/assets/cards/2024-03-06-code-reviews.png"
 ---
 
 I recently got asked about my opinion on code reviews. This was my answer.

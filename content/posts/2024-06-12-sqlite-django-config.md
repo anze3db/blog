@@ -5,7 +5,6 @@ slug: "sqlite-django-config"
 summary: "Optimize your Django SQLite configuration for production."
 tags: ["sqlite", "django"]
 series: ["Django SQLite"]
-image: "/assets/cards/2024-06-12-sqlite-django-config.png"
 ---
 
 The default SQLite configuration in Django is not ideal for running your application in production. SQLite is optimized for embedded low-concurrency systems out of the box, which is the exact opposite of what your Django application is supposed to do.

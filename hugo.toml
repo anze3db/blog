@@ -1,6 +1,7 @@
 baseURL = "https://blog.pecar.me"
 title = "Anže's Blog"
 locale = "en"
+timeout = "120s"
 
 [params]
   tagline = "Python, Django, and the Web"

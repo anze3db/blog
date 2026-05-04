@@ -1,6 +1,6 @@
 baseURL = "https://blog.pecar.me"
 title = "Anže's Blog"
-languageCode = "en"
+locale = "en"
 
 [params]
   tagline = "Python, Django, and the Web"

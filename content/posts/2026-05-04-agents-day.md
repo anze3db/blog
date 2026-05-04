@@ -1,6 +1,7 @@
 ---
 title: "Agents Day Lisbon"
 date: 2026-05-04T19:38:17+01:00
+series: ["Agentic Adventures"]
 ---
 
 Last week I attended the [Agents Day](https://www.agentsday.org/) Hackathon in Lisbon. It was a full day of talks, socializing, and building agents.

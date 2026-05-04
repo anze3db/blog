@@ -14,8 +14,9 @@
       {{- $path := $src -}}
       {{- if ne $base "" -}}{{- $path = printf "%s/%s" $base $src -}}{{- end -}}
       {{- with resources.Get $path -}}
-        {{- $thumb := .Fill "600x600 webp q80" -}}
-        {{- $full := .Fit "1920x1920 webp q82" -}}
+        {{- $img := .Filter images.AutoOrient -}}
+        {{- $thumb := $img.Fill "600x600 webp q80" -}}
+        {{- $full := $img.Fit "1920x1920 webp q82" -}}
         <a href="{{ $full.RelPermalink }}" data-lightbox><img src="{{ $thumb.RelPermalink }}" alt="{{ $alt }}" loading="lazy" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"></a>
       {{- end -}}
     {{- end -}}

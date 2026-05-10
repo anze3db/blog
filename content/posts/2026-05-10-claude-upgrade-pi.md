@@ -49,6 +49,6 @@ Changes between 2.36 and 2.41 are small, so the realistic risk on mostly-ASCII d
 
 I've done many system upgrades over the years and they are always a pain. On paper, this was probably one of the worst upgrades I've done. In practice, it felt like a breeze because I never had to look up any of the things that went wrong.
 
-Yes, there is a chance the OS is in an inconsistent state and something might blow up at some point later. And yes, Claude could have even set up a backdoor, since I didn't verify all the commands that it ran.
+Yes, there is a chance the OS is in an inconsistent state and something might blow up at some point later. And yes, Claude could have even set up a backdoor, since I didn't verify all the commands that it ran. 🤷‍♂️
 
 But the Raspberry Pi is working and doing its job on the new version. I'm not ready to unleash Claude on my primary Raspberry Pi with live production databases, but Claude and the rest of the LLM tooling are slowly gaining more and more of my trust.

@@ -10,7 +10,7 @@ Doing an in-place dist upgrade on a Raspberry Pi is [generally not recommended](
 
 ## The deal
 
-I gave Claude a single instruction: do the dist-upgrade, but keep Postgres pinned on 15. Physical replication needs the same major version on both sides, and my primary is still on Bookworm and therefore Postgres 15.
+I gave Claude a single instruction: do the dist-upgrade, but keep Postgres pinned on 15. Physical replication needs the same major version on both sides, and my primary is still on Bookworm and Postgres 15.
 
 I had to do exactly two things during the whole upgrade:
 

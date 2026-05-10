@@ -1,6 +1,6 @@
 ---
 title: "Letting Claude Upgrade My Raspberry Pi"
-date: 2026-05-09T19:00:00+01:00
+date: 2026-05-10T19:00:00+01:00
 series: ["Agentic Adventures"]
 ---
 

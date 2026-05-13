@@ -1,6 +1,9 @@
 ---
 title: "Fedidevs 9h Outage Postmortem"
 date: 2026-05-13T09:54:55+01:00
+slug: fedidevs-postmortem
+aliases:
+  - /fedidevs-9h-outage-postmortem/
 ---
 
 Today I had almost 9 hours of downtime on fedidevs.com and some of my other sites that I run on a Raspberry Pi at home. The alert came in just as I was heading to bed and I didn't see it until I woke up this morning 🫣

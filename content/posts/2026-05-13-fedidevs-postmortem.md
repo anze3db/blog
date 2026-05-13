@@ -1,9 +1,11 @@
 ---
-title: "Fedidevs Postmortem"
+title: "Postmortem: a 9-hour Pi outage"
 date: 2026-05-13T09:54:55+01:00
 ---
 
-Today I had almost 9 hours of downtime on fedidevs.com and some of my other sites that I run on a Raspberry Pi at home. The alert came in just as I was heading to bed and I didn't see it until I woke up this morning 🫣
+Today I had almost 9 hours of downtime on [fedidevs.com](https://fedidevs.com) and some of my other sites that I run on a Raspberry Pi at home. The alert came in just as I was heading to bed and I didn't see it until I woke up this morning 🫣
+
+![Fedidevs postmortem](/assets/pics/fedidevs-postmortem.png)
 
 Since [Jake on Mastodon](https://fosstodon.org/@jake@theorangeone.net/116566388806900818) asked for a Cloudflare-style postmortem, here it is:
 
